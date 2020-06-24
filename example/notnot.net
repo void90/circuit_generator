@@ -165,12 +165,11 @@ Mp1 3 4 2 2 pmos W={2*XX*Wmin} L={Lmin}
 .ends NOT_SUB
 *************************************************************************************************
 
-.SUBCKT CIRCUIT 1 2 3 4
-NOT1 NOT_SUB
-NOT2 NOT_SUB
+.SUBCKT NOTNOT in out vcc gnd
+NOT1 gnd vcc link in NOT_SUB
+NOT2 gnd vcc out link NOT_SUB
+.ends NOTNOT
 
-
-*** DEFINE NOMINAL CIRCUIT
-NOTNOT 1 2 3 4 CIRCUIT
+CIR_NOTNOT NOTNOT XX=XXX
 
 .end
