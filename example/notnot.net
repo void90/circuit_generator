@@ -146,7 +146,7 @@
 .PARAM Wmin=36.05883n
 
 .PARAM XXX=1
-
+.TRAN 0.1p 820p
 ************************************************************************************************
 * not
 ************************************************************************************************
@@ -170,6 +170,11 @@ NOT1 gnd vcc link in NOT_SUB
 NOT2 gnd vcc out link NOT_SUB
 .ends NOTNOT
 
-CIR_NOTNOT NOTNOT XX=XXX
+***Alimentazione
+Vdc vcc 0 DC 1
+***Segnale
+Vac in 0 DC 1
+
+.PRINT tran V(input) V(out)
 
 .end
