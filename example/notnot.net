@@ -1,9 +1,6 @@
 * PTM 45nm Metal Gate / High-K  
 
 .INCLUDE 16nm_HP.pm 
-
-.option filetype=ascii
-
 .INCLUDE ST65LIKE_cell_library_v2020_1.net
 
 .PARAM vthVARn=0.3423
@@ -26,10 +23,13 @@
 .SUBCKT NOTNOT 0 vcc out in 
 NOT1 0 vcc link in NOT_SUB
 NOT2 0 vcc out link NOT_SUB
-.ends
+
 
 XNOTNOT 0 vdd output input NOTNOT XX=XXX
+
 
 Vdd vdd 0 1
 
 Vin input 0 PWL(0 0 200p 0 201p 1 820p 1)
+
+.ends
