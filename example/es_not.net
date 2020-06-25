@@ -1,0 +1,15 @@
+*not 
+*download model from ptm.asu.edu 
+.INCLUDE 16nm_HP.pm 
+
+Mn1 nodez nodeIN 0 0 nmos W=16nm L=16nm 
+Mp1 nodez nodeIN node1 node1 pmos W=32nm L=16nm 
+
+Cl nodez 0 0.15fF 
+
+Vdd node1 0 1 
+Vin nodeIN 0 pwl(0 0 100p 0 110p 1 200p 1 210p 0) 
+
+.tran 0.1p 250p 
+
+.end
