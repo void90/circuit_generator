@@ -1,5 +1,5 @@
 * PTM 45nm Metal Gate / High-K  
-
+.option filetype=ascii
 .INCLUDE 16nm_HP.pm 
 .INCLUDE ST65LIKE_cell_library_v2020_1.net
 
@@ -20,16 +20,16 @@
 
 .TRAN 0.1p 820p
 
-.SUBCKT NOTNOT 0 vcc out in 
-NOT1 0 vcc link in NOT_SUB
-NOT2 0 vcc out link NOT_SUB
+.SUBCKT NOT 0 vcc out in XX=XXX
+XNOT1 0 vcc link in NOT_SUB
+XNOT2 0 vcc out link NOT_SUB
+.ENDS NOT
 
+XNN 0 vd output input NOT XX=1
 
-XNOTNOT 0 vdd output input NOTNOT XX=XXX
+Vdd vd 0 1
 
+Vin input 0 PWL(0 0 5p 0 6p 1 820p 1)
 
-Vdd vdd 0 1
-
-Vin input 0 PWL(0 0 200p 0 201p 1 820p 1)
-
-.ends
+.print v(input) v(output) v(link)
+.end
