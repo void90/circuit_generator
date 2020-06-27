@@ -1,0 +1,27 @@
+SIMPLE FULL ADDER
+
+.option filetype=ascii
+***LIBRERIE
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.INCLUDE 16nm_HP.pm
+
+***VARIABILI GLOBALI
+.PARAM vthVARn=0.3423
+.PARAM vthVARp=-0.23122
+.PARAM ndepVARn=3.96e+018
+.PARAM ndepVARp=1.68e+018
+.PARAM toxpVAR=5.21e-010
+.PARAM Lmin=51.71336n
+.PARAM Wmin=36.05883n
+.PARAM XXX=1
+.PARAM tr=50p
+.TRAN 0.1p 820p
+***RICHIAMO FULL ADDER
+XFA 0 vdd S Cout v1 v2 v3 FA_SUB XX=XXX
+
+***mi aspetto S=1 e Cout=0
+Vin1 v1 0 PWL(0 0 5p 0 6p 1 820p 1)
+Vin2 v2 0 PWL(0 0 820p 0)
+Vin3 v3 0 PWL(0 0 820p 0)
+
+V_D vdd 0 1
