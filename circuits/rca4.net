@@ -18,8 +18,7 @@ RIPPLE CARRY ADDER
 .PARAM tr=50p
 
 ***DEFINIZIONE DEL SOTTOCIRCUITO***
-.subckt RCA_SUB 0 Vdd sum0 sum1 cout1 cin0 a0in a1in b0in b1in XX=1 
-	
+.subckt RCA_SUB 0 Vdd sum0 sum1 cout1 cin0 a0in a1in b0in b1in XX=1 	
 	xfa0 0 Vdd sum0 cout0 cin0 a0in b0in FA_SUB XX=XXX
 	xfa1 0 Vdd sum1 cout1 cout0 a1in b1in FA_SUB XX=XXX
 .ends RCA_SUB
