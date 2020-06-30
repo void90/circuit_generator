@@ -21,28 +21,24 @@ RIPPLE CARRY ADDER
 .subckt RCA_SUB 0 Vdd sum0 sum1 cout1 cin0 a0in b0in a1in b1in XX=1 	
 	xfa0 0 Vdd sum0 cout0 cin0 a0in b0in FA_SUB XX=XXX
 	xfa1 0 Vdd sum1 cout1 cout0 a1in b1in FA_SUB XX=XXX
-*	xfa2 0 Vdd sum2 cout2 cout1 a2in b2in FA_SUB XX=XXX
 .ends RCA_SUB
 
 ***DICHIARAZIONE DEL COMPONENTE***
 xrca 0 Vcc S0 S1 Cout Cin A0 B0 A1 B1 RCA_SUB XX=XXX
 
-.PRINT tran V(A0) V(B0) V(A1) V(B1) V(S0) V(S1)
 .TRAN 0.1p 820p
 
 ***
 V0 A0 0 PWL(0 0 820p 0)
 *V0 A0 0 PWL(0 0 5p 0 6p 1 820p 1)
+*V2 A1 0 PWL(0 0 820p 0)
+V2 A1 0 PWL(0 0 5p 0 6p 1 820p 1)
+
+
 V1 B0 0 PWL(0 0 820p 0)
 *V1 B0 0 PWL(0 0 5p 0 6p 1 820p 1)
-V2 A1 0 PWL(0 0 820p 0)
-*V2 A1 0 PWL(0 0 5p 0 6p 1 820p 1)
-V3 B1 0 PWL(0 0 820p 0) 
-*V3 B1 0 PWL(0 0 5p 0 6p 1 820p 1)
-V4 A2 0 PWL(0 0 820p 0)
-*V4 A2 0 PWL(0 0 5p 0 6p 1 820p 1)
-V5 B2 0 PWL(0 0 820p 0)
-*V5 B2 0 PWL(0 0 5p 0 6p 1 820p 1)
+*V3 B1 0 PWL(0 0 820p 0) 
+V3 B1 0 PWL(0 0 5p 0 6p 1 820p 1)
 
 V_dd Vcc 0 1
 

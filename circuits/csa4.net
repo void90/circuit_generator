@@ -32,12 +32,13 @@ XC 0 Vdd Cout Coutnot NOT_SUB XX=1
 .ends FAcsa_SUB
 
 ***
-.subckt csa 0 Vdd ina0 inb0 ina1 inb1 XX=1
-XSETUP0 0 Vdd p0 g0 ina0 inb0 SETUP_SUB XX=1
-XSETUP1 0 Vdd p1 g1 ina1 inb1 SETUP_SUB XX=1
-X0 0 Vdd sum0 cout0 p0 g0 0 FAcsa_SUB XX=1
-XaddC1 0 Vdd sum1 cout1 p1 g1 Vdd FAcsa_sub XX=1 
-.ends
+*.subckt csa 0 Vdd ina0 inb0 ina1 inb1 XX=1
+*XSETUP0 0 Vdd p0 g0 ina0 inb0 SETUP_SUB XX=1
+*XSETUP1 0 Vdd p1 g1 ina1 inb1 SETUP_SUB XX=1
+*X0 0 Vdd sum0 cout0 p0 g0 0 FAcsa_SUB XX=1
+*XaddC1 0 Vdd sum1 cout1 p1 g1 Vdd FAcsa_sub XX=1 
+*.ends
+
 
 .TRAN 0.1p 820p
 
