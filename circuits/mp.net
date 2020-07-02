@@ -2,6 +2,7 @@
 
 .option filetype=ascii
 
+**************************
 ***CARICAMENTO LIBRERIE***
 .INCLUDE ST65LIKE_cell_library_v2020_1.net
 .INCLUDE 16nm_HP.pm
