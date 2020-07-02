@@ -1,0 +1,34 @@
+MOLTIPLICATORE PARALLELO
+
+.option filetype=ascii
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.INCLUDE 16nm_HP.pm
+.PARAM Lmin=51.71336n
+.PARAM Wmin=36.05883n
+.PARAM XXX=1
+
+.subckt PART_SUB 0 Vdd out0 out1 out2 out3 xin0 xin1 xin2 xin3 y XX=1
+	xand0 0 Vdd out0 xin0 y AND2_SUB XX=XXX
+	xand1 0 Vdd out1 xin1 y AND2_SUB XX=XXX
+	xand2 0 Vdd out2 xin2 y AND2_SUB XX=XXX
+	xand3 0 Vdd out3 xin3 y AND2_SUB XX=XXX
+.ends
+
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cout-1 ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1
+	xfa0	0 Vdd sum0 cout0 cout-1 ain0 bin0 FA_SUB XX=XXX
+	xfa1	0 Vdd sum1 cout1 cout0 ain1 bin1 FA_SUB XX=XXX
+	xfa2	0 Vdd sum2 cout2 cout1 ain2 bin2 FA_SUB XX=XXX
+	xfa3	0 Vdd sum3 cout3 cout2 ain3 bin3 FA_SUB XX=XXX
+.ends
+
+***numeroOut= uscita schiera di porte and
+***snumero znumero= uscita sommatori
+.subckt MP_SUB 0 Vdd z0 z1 z2 z3 xin_0 xin_1 xin_2 xin_3 yin_0 yin_1 yin_2 yin_3 XX=1
+.ends
+
+xmp 0 Vcc Xz0 Xz1 Xz2 Xz3 Xxin_0 Xxin_1 Xxin_2 Xxin_3 Xyin_0 Xyin_1 Xyin_2 Xyin_3 MP_SUB XX=XXX
+
+
+V_dd Vcc 0 1
+.TRAN 0.1p 820p
+.end

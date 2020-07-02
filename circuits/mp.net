@@ -16,35 +16,35 @@
 
 **************************
 ***DEFINIZIONE DEI SOTTOCIRCUITI***
-.subckt PART_SUB 0 Vdd out0 out1 out2 out3 x0in x1in x2in x3in y XX=1
-	xand0 0 Vdd out0 x0in y AND2_SUB XX=XXX
-	xand1 0 Vdd out1 x1in y AND2_SUB XX=XXX
-	xand2 0 Vdd out2 x2in y AND2_SUB XX=XXX
-	xand3 0 Vdd out3 x3in y AND2_SUB XX=XXX
+.subckt PART_SUB 0 Vdd out0 out1 out2 out3 xin0 xin1 xin2 xin3 y XX=1
+	xand0 0 Vdd out0 xin0 y AND2_SUB XX=XXX
+	xand1 0 Vdd out1 xin1 y AND2_SUB XX=XXX
+	xand2 0 Vdd out2 xin2 y AND2_SUB XX=XXX
+	xand3 0 Vdd out3 xin3 y AND2_SUB XX=XXX
 .ends
 
-.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cin0 a0in a1in a2in a3in b0in b1in b2in b3in XX=1 
-	xfa0 0 Vdd sum0 cout0 0 a0in b0in FA_SUB XX=XXX
-	xfa1 0 Vdd sum1 cout1 cout0 a1in b1in FA_SUB XX=XXX
-	xfa2 0 Vdd sum2 cout2 cout1 a2in b2in FA_SUB XX=XXX
-	xfa3 0 Vdd sum3 cout3 cout2 a3in b3in FA_SUB XX=XXX
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cin0 ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1 
+	xfa0 0 Vdd sum0 cout0 0 ain0 bin0 FA_SUB XX=XXX
+	xfa1 0 Vdd sum1 cout1 cout0 ain1 bin1 FA_SUB XX=XXX
+	xfa2 0 Vdd sum2 cout2 cout1 ain2 bin2 FA_SUB XX=XXX
+	xfa3 0 Vdd sum3 cout3 cout2 ain3 bin3 FA_SUB XX=XXX
 .ends 
 
 ***numeroOut= uscita schiera di porte and
 ***snumero znumero= uscita sommatori
-.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 c0 0xin 1xin 2xin  3xin 0yin 1yin 2yin 3yin XX=1
-	xpart0 0 Vdd z0    0out1 0out2 0out3 0xin 1xin 2xin  3xin  0yin PART_SUB XX=XXX
-	xpart1 0 Vdd 1out0 1out1 1out2 1out3 0xin 1xin 2xin  3xin  1yin PART_SUB XX=XXX
+.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 c0 xin_0 xin_1 xin_2 xin_3 yin_0 yin_1 yin_2 yin_3 XX=1
+	xpart0 0 Vdd z0    0out1 0out2 0out3 xin_0 xin_1 xin_2  xin_3  yin_0 PART_SUB XX=XXX
+	xpart1 0 Vdd 1out0 1out1 1out2 1out3 xin_0 xin_1 xin_2  xin_3  yin_1 PART_SUB XX=XXX
 	xadd0  0 Vdd z1    s1    s2    s3    c3   c0   0out1 0out2 0out3 0 1out0 1out1 1out2 1out3 RCA_SUB XX=XXX
-	xpart3 0 Vdd 2out0 2out1 2out2 2out3 0xin 1xin 2xin  3xin  2yin PART_SUB XX=XXX
+	xpart2 0 Vdd 2out0 2out1 2out2 2out3 xin_0 xin_1 xin_2  xin_3  yin_2 PART_SUB XX=XXX
 	xadd1  0 Vdd z2    s4    s5    s6    c6   c0   s1    s2    s3   c3 2out0 2out1 2out2 2out3 RCA_SUB XX=XXX
-	xpart4 0 Vdd 3out0 3out1 3out2 3out3 0xin 1xin 2xin  3xin  3yin PART_SUB XX=XXX
+	xpart3 0 Vdd 3out0 3out1 3out2 3out3 xin_0 xin_1 xin_2  xin_3  yin_3 PART_SUB XX=XXX
 	xadd2  0 Vdd z3    z4    z5    z6    z7   c0   s4    s5    s6   c6 3out0 3out1 3out2 3out3 RCA_SUB XX=XXX
 .ends
 
 **************************
 ***DICHIARAZIONE DEL COMPONENTI***
-xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 cc0 x0 x1 x2 x3 y0 y1 y2 y3 MP_SUB XX=XXX
+xmp 0 Vcc Xz0 Xz1 Xz2 Xz3 Xz4 Xz5 Xz6 Xz7 Xc0 Xx0 Xx1 Xx2 Xx3 Xy0 Xy1 Xy2 Xy3 MP_SUB XX=XXX
 
 **************************
 ***COMANDI DI SIMULAZIONE***

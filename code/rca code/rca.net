@@ -1,0 +1,22 @@
+RIPPLE CARRY ADDER
+
+.option filetype=ascii
+
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.INCLUDE 16nm_HP.pm
+.PARAM Lmin=51.71336n
+.PARAM Wmin=36.05883n
+.PARAM XXX=1
+
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cout-1 ina0 ina1 ina2 ina3 inb0 inb1 inb2 inb3  XX=1
+	xfa0	0 Vdd sum0 cout0 cout-1  ina0 inb0 FA_SUB XX=XXX
+	xfa1	0 Vdd sum1 cout1 cout0  ina1 inb1 FA_SUB XX=XXX
+	xfa2	0 Vdd sum2 cout2 cout1  ina2 inb2 FA_SUB XX=XXX
+	xfa3	0 Vdd sum3 cout3 cout2  ina3 inb3 FA_SUB XX=XXX
+.ends
+
+xrca 0 Vcc sum0 sum1 sum2 sum3 cout3 Xcout-1 ina0 ina1 ina2 ina3 inb0 inb1 inb2 inb3 RCA_SUB XX=XXX
+
+V_dd Vcc 0 1
+.TRAN 0.1p 820p
+.end
