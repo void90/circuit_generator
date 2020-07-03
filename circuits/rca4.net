@@ -55,7 +55,6 @@ xrca 0 Vcc S0 S1 S2 S3 Cout Cin A0 A1 A2 A3 B0  B1 B2 B3 RCA_SUB XX=XXX
 .TRAN 0.1p 820p
 
 
-
 V0 A0 0 PWL(0 0 820p 0) ; A0 = 0
 *V0 A0 0 PWL(0 0 5p 0 6p 1 820p 1); A0 = 1
 
