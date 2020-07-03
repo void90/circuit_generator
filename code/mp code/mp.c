@@ -6,8 +6,12 @@ int main (int argc, char *argv)
 	fp=fopen("mp.net", "w");
 	char *and[2]={"out", "xin"};
 	char *adds[5]={"sum", "cout", "ain", "bin"};
+	char *mulcomp[7]={"z", "out", "xin_", "yin_", "s", "c"}
 	char *mul[3]={"z", "xin_", "yin_"};
-	int i, j, max=4, max2=8;
+	int i, j, max, max2;
+	printf("Inserire numero di bit:\n");
+	scanf("%d", &max);
+	max2=max*2;
 	fprintf(fp, "MOLTIPLICATORE PARALLELO\n\n.option filetype=ascii\n.INCLUDE ST65LIKE_cell_library_v2020_1.net\n.INCLUDE 16nm_HP.pm\n.PARAM Lmin=51.71336n\n.PARAM Wmin=36.05883n\n.PARAM XXX=1\n\n.subckt PART_SUB 0 Vdd ");
 //.subckt schiera and
 	for(i=0; i<2; i++)
@@ -51,9 +55,10 @@ int main (int argc, char *argv)
 		}
 	}
 	fprintf(fp, "XX=1\n");
+//Corpo del componente MANCA QUESTA PARTEEEEEE
 	for(i=0; i<max; i++)
 	{
-//STRUTTURA INTERNA MANCANTE
+		fprintf(fp, "\txpart%d 0 Vdd", i, );
 		
 	}
 	fprintf(fp, ".ends\n\n");
