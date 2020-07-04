@@ -7,84 +7,34 @@ MOLTIPLICATORE PARALLELO
 .PARAM Wmin=36.05883n
 .PARAM XXX=1
 
-.subckt PART_SUB 0 Vdd out0 out1 out2 out3 out4 out5 out6 out7 out8 out9 out10 out11 out12 out13 out14 out15 out16 out17 out18 out19 out20 out21 out22 out23 out24 out25 out26 out27 out28 out29 out30 out31 xin0 xin1 xin2 xin3 xin4 xin5 xin6 xin7 xin8 xin9 xin10 xin11 xin12 xin13 xin14 xin15 xin16 xin17 xin18 xin19 xin20 xin21 xin22 xin23 xin24 xin25 xin26 xin27 xin28 xin29 xin30 xin31 y XX=1
+.subckt PART_SUB 0 Vdd out0 out1 out2 out3 xin0 xin1 xin2 xin3 y XX=1
 	xand0 0 Vdd out0 xin0 y AND2_SUB XX=XXX
 	xand1 0 Vdd out1 xin1 y AND2_SUB XX=XXX
 	xand2 0 Vdd out2 xin2 y AND2_SUB XX=XXX
 	xand3 0 Vdd out3 xin3 y AND2_SUB XX=XXX
-	xand4 0 Vdd out4 xin4 y AND2_SUB XX=XXX
-	xand5 0 Vdd out5 xin5 y AND2_SUB XX=XXX
-	xand6 0 Vdd out6 xin6 y AND2_SUB XX=XXX
-	xand7 0 Vdd out7 xin7 y AND2_SUB XX=XXX
-	xand8 0 Vdd out8 xin8 y AND2_SUB XX=XXX
-	xand9 0 Vdd out9 xin9 y AND2_SUB XX=XXX
-	xand10 0 Vdd out10 xin10 y AND2_SUB XX=XXX
-	xand11 0 Vdd out11 xin11 y AND2_SUB XX=XXX
-	xand12 0 Vdd out12 xin12 y AND2_SUB XX=XXX
-	xand13 0 Vdd out13 xin13 y AND2_SUB XX=XXX
-	xand14 0 Vdd out14 xin14 y AND2_SUB XX=XXX
-	xand15 0 Vdd out15 xin15 y AND2_SUB XX=XXX
-	xand16 0 Vdd out16 xin16 y AND2_SUB XX=XXX
-	xand17 0 Vdd out17 xin17 y AND2_SUB XX=XXX
-	xand18 0 Vdd out18 xin18 y AND2_SUB XX=XXX
-	xand19 0 Vdd out19 xin19 y AND2_SUB XX=XXX
-	xand20 0 Vdd out20 xin20 y AND2_SUB XX=XXX
-	xand21 0 Vdd out21 xin21 y AND2_SUB XX=XXX
-	xand22 0 Vdd out22 xin22 y AND2_SUB XX=XXX
-	xand23 0 Vdd out23 xin23 y AND2_SUB XX=XXX
-	xand24 0 Vdd out24 xin24 y AND2_SUB XX=XXX
-	xand25 0 Vdd out25 xin25 y AND2_SUB XX=XXX
-	xand26 0 Vdd out26 xin26 y AND2_SUB XX=XXX
-	xand27 0 Vdd out27 xin27 y AND2_SUB XX=XXX
-	xand28 0 Vdd out28 xin28 y AND2_SUB XX=XXX
-	xand29 0 Vdd out29 xin29 y AND2_SUB XX=XXX
-	xand30 0 Vdd out30 xin30 y AND2_SUB XX=XXX
-	xand31 0 Vdd out31 xin31 y AND2_SUB XX=XXX
 .ends
 
-.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7 sum8 sum9 sum10 sum11 sum12 sum13 sum14 sum15 sum16 sum17 sum18 sum19 sum20 sum21 sum22 sum23 sum24 sum25 sum26 sum27 sum28 sum29 sum30 sum31 cout31 cout-1 ain0 ain1 ain2 ain3 ain4 ain5 ain6 ain7 ain8 ain9 ain10 ain11 ain12 ain13 ain14 ain15 ain16 ain17 ain18 ain19 ain20 ain21 ain22 ain23 ain24 ain25 ain26 ain27 ain28 ain29 ain30 ain31 bin0 bin1 bin2 bin3 bin4 bin5 bin6 bin7 bin8 bin9 bin10 bin11 bin12 bin13 bin14 bin15 bin16 bin17 bin18 bin19 bin20 bin21 bin22 bin23 bin24 bin25 bin26 bin27 bin28 bin29 bin30 bin31 XX=1
-	xfa0	0 Vdd sum0 cout0 cout-1 ain0 bin0 FA_SUB XX=XXX
-	xfa1	0 Vdd sum1 cout1 cout0 ain1 bin1 FA_SUB XX=XXX
-	xfa2	0 Vdd sum2 cout2 cout1 ain2 bin2 FA_SUB XX=XXX
-	xfa3	0 Vdd sum3 cout3 cout2 ain3 bin3 FA_SUB XX=XXX
-	xfa4	0 Vdd sum4 cout4 cout3 ain4 bin4 FA_SUB XX=XXX
-	xfa5	0 Vdd sum5 cout5 cout4 ain5 bin5 FA_SUB XX=XXX
-	xfa6	0 Vdd sum6 cout6 cout5 ain6 bin6 FA_SUB XX=XXX
-	xfa7	0 Vdd sum7 cout7 cout6 ain7 bin7 FA_SUB XX=XXX
-	xfa8	0 Vdd sum8 cout8 cout7 ain8 bin8 FA_SUB XX=XXX
-	xfa9	0 Vdd sum9 cout9 cout8 ain9 bin9 FA_SUB XX=XXX
-	xfa10	0 Vdd sum10 cout10 cout9 ain10 bin10 FA_SUB XX=XXX
-	xfa11	0 Vdd sum11 cout11 cout10 ain11 bin11 FA_SUB XX=XXX
-	xfa12	0 Vdd sum12 cout12 cout11 ain12 bin12 FA_SUB XX=XXX
-	xfa13	0 Vdd sum13 cout13 cout12 ain13 bin13 FA_SUB XX=XXX
-	xfa14	0 Vdd sum14 cout14 cout13 ain14 bin14 FA_SUB XX=XXX
-	xfa15	0 Vdd sum15 cout15 cout14 ain15 bin15 FA_SUB XX=XXX
-	xfa16	0 Vdd sum16 cout16 cout15 ain16 bin16 FA_SUB XX=XXX
-	xfa17	0 Vdd sum17 cout17 cout16 ain17 bin17 FA_SUB XX=XXX
-	xfa18	0 Vdd sum18 cout18 cout17 ain18 bin18 FA_SUB XX=XXX
-	xfa19	0 Vdd sum19 cout19 cout18 ain19 bin19 FA_SUB XX=XXX
-	xfa20	0 Vdd sum20 cout20 cout19 ain20 bin20 FA_SUB XX=XXX
-	xfa21	0 Vdd sum21 cout21 cout20 ain21 bin21 FA_SUB XX=XXX
-	xfa22	0 Vdd sum22 cout22 cout21 ain22 bin22 FA_SUB XX=XXX
-	xfa23	0 Vdd sum23 cout23 cout22 ain23 bin23 FA_SUB XX=XXX
-	xfa24	0 Vdd sum24 cout24 cout23 ain24 bin24 FA_SUB XX=XXX
-	xfa25	0 Vdd sum25 cout25 cout24 ain25 bin25 FA_SUB XX=XXX
-	xfa26	0 Vdd sum26 cout26 cout25 ain26 bin26 FA_SUB XX=XXX
-	xfa27	0 Vdd sum27 cout27 cout26 ain27 bin27 FA_SUB XX=XXX
-	xfa28	0 Vdd sum28 cout28 cout27 ain28 bin28 FA_SUB XX=XXX
-	xfa29	0 Vdd sum29 cout29 cout28 ain29 bin29 FA_SUB XX=XXX
-	xfa30	0 Vdd sum30 cout30 cout29 ain30 bin30 FA_SUB XX=XXX
-	xfa31	0 Vdd sum31 cout31 cout30 ain31 bin31 FA_SUB XX=XXX
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cout-1 ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1
+	xfa0 0 Vdd sum0 cout0 cout-1 ain0 bin0 FA_SUB XX=XXX
+	xfa1 0 Vdd sum1 cout1 cout0 ain1 bin1 FA_SUB XX=XXX
+	xfa2 0 Vdd sum2 cout2 cout1 ain2 bin2 FA_SUB XX=XXX
+	xfa3 0 Vdd sum3 cout3 cout2 ain3 bin3 FA_SUB XX=XXX
 .ends
 
-***numeroOut= uscita schiera di porte and
-***snumero znumero= uscita sommatori
-.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 c0 z8 z9 z10 z11 z12 z13 z14 z15 z16 z17 z18 z19 z20 z21 z22 z23 z24 z25 z26 z27 z28 z29 z30 z31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 c0 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_0 yin_1 yin_2 yin_3 yin_4 yin_5 yin_6 yin_7 c0 yin_8 yin_9 yin_10 yin_11 yin_12 yin_13 yin_14 yin_15 yin_16 yin_17 yin_18 yin_19 yin_20 yin_21 yin_22 yin_23 yin_24 yin_25 yin_26 yin_27 yin_28 yin_29 yin_30 yin_31 XX=1
+***numeroOut=uscita porte and
+***snumero znumero=uscita sommatori
+.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 c0 xin_0 xin_1 xin_2 xin_3 yin_0 yin_1 yin_2 yin_3 XX=1
+	xpart0 0 Vdd z0 0out1 0out2 0out3 xin_0 xin_1 xin_2 xin_3 yin_0 PART_SUB XX=XXX
+	xpart1 0 Vdd 1out0 1out1 1out2 1out3 xin_0 xin_1 xin_2 xin_3 yin_1 PART_SUB XX=XXX
+	xadd0 0 Vdd z1 s1 s2 s3 c3 c0 0out1 0out2 0out3 0 1out0 1out1 1out2 1out3 RCA_SUB XX=XXX
+	xpart2 0 Vdd 2out0 2out1 2out2 2out3 xin_0 xin_1 xin_2 xin_3 yin_2 PART_SUB XX=XXX
+	xadd1 0 Vdd z2 s4 s5 s6 c6 c0 s1 s2 s3 c3 2out0 2out1 2out2 2out3 RCA_SUB XX=XXX
+	xpart3 0 Vdd 3out0 3out1 3out2 3out3 xin_0 xin_1 xin_2 xin_3 yin_3 PART_SUB XX=XXX
+	xadd2 0 Vdd z3 z4 z5 z6 z7 c0 s4 s5 s6 c6 3out0 3out1 3out2 3out3 RCA_SUB XX=XXX
 .ends
 
-xmp 0 Vcc Xz0 Xz1 Xz2 Xz3 Xz4 Xz5 Xz6 Xz7 c0 Xz8 Xz9 Xz10 Xz11 Xz12 Xz13 Xz14 Xz15 Xz16 Xz17 Xz18 Xz19 Xz20 Xz21 Xz22 Xz23 Xz24 Xz25 Xz26 Xz27 Xz28 Xz29 Xz30 Xz31 Xxin_0 Xxin_1 Xxin_2 Xxin_3 Xxin_4 Xxin_5 Xxin_6 Xxin_7 c0 Xxin_8 Xxin_9 Xxin_10 Xxin_11 Xxin_12 Xxin_13 Xxin_14 Xxin_15 Xxin_16 Xxin_17 Xxin_18 Xxin_19 Xxin_20 Xxin_21 Xxin_22 Xxin_23 Xxin_24 Xxin_25 Xxin_26 Xxin_27 Xxin_28 Xxin_29 Xxin_30 Xxin_31 Xyin_0 Xyin_1 Xyin_2 Xyin_3 Xyin_4 Xyin_5 Xyin_6 Xyin_7 c0 Xyin_8 Xyin_9 Xyin_10 Xyin_11 Xyin_12 Xyin_13 Xyin_14 Xyin_15 Xyin_16 Xyin_17 Xyin_18 Xyin_19 Xyin_20 Xyin_21 Xyin_22 Xyin_23 Xyin_24 Xyin_25 Xyin_26 Xyin_27 Xyin_28 Xyin_29 Xyin_30 Xyin_31 MP_SUB XX=XXX
+xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zc0 zx0 zx1 zx2 zx3 zy0 zy1 zy2 zy3 MP_SUB XX=XXX
 
-
+.TRAN 0.1p 500p
 V_dd Vcc 0 1
-.TRAN 0.1p 820p
 .end
