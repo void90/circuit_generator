@@ -3,7 +3,7 @@
 
 
 
-int main () {
+int main (int argc, char **argv) {
 
 	int i, j, n;
 	printf("Inserire numero di bit del Ripple Carry Adder da generare:\n");
@@ -13,7 +13,7 @@ int main () {
 	
 	
 	FILE *fp;
-	fp=fopen("rca.net", "w");
+	fp=fopen("argv[1]", "w");
 	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ST65LIKE_cell_library_v2020_1.net\n.INCLUDE 16nm_HP.pm\n.INCLUDE param.net\n");
 	fprintf (fp, ".subckt RCA_SUB 0 Vdd ");		//DICHIARAZIONE SOTTOCIRCUITO
 
