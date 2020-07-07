@@ -1,0 +1,142 @@
+CARRY SELECT ADDER
+.option filetype=ascii
+
+***LIBRERIE***
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.INCLUDE 16nm_HP.pm
+
+***PARAMETRI GLOBALI***
+.PARAM Lmin=51.71336n
+.PARAM Wmin=36.05883n
+.PARAM XXX=1
+.TRAN 0.1p 820p
+
+***Setup logic
+***Indipendente Numero dei bit nel circuito finale (NO CAMBIARE)
+.subckt SETUP_SUB 0 Vdd p g inA inB XX=1
+	xp 0 Vdd p inA inB XOR2_SUB XX=1
+	xg 0 Vdd g inA inB AND2_SUB XX=1
+.ends
+
+***Cout Logic
+
+***Indipendente Numero dei bit nel circuito finale (NO CAMBIARE)
+.subckt COUT_SUB 0 Vdd cout g p cin XX=1
+	xand 0 Vdd node p cin AND2_SUB XX=1
+	xnor 0 Vdd Coutnot g node NOR2_SUB XX=1
+	xor 0 Vdd cout Coutnot NOT_SUB XX=1
+.ends
+
+***Adder 4 bit
+***Indipendente Numero dei bit nel circuito finale (NO CAMBIARE)
+.subckt FAcsa_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cout-1 p0 p1 p2 p3 g0 g1 g2 g3 XX=1
+	xsum0 0 Vdd sum0 p0 cout-1 XOR2_SUB XX=1
+	xcout0 0 Vdd cout0 g0 p0 cout-1 COUT_SUB XX=1 
+	xsum1 0 Vdd sum1 p1 cout0 XOR2_SUB XX=1
+	xcout1 0 Vdd cout1 g1 p1 cout0 COUT_SUB XX=1
+	xsum2 0 Vdd sum2 p2 cout1 XOR2_SUB XX=1
+	xcout2 0 Vdd cout2 g2 p2 cout1 COUT_SUB XX=1
+	xsum3 0 Vdd sum3 p3 cout2 XOR2_SUB XX=1
+	xcout3 0 Vdd cout3 g3 p3 cout2 COUT_SUB XX=1
+.ends 
+
+***CSA 4 bit
+***Indipendente Numero dei bit nel circuito finale (NO CAMBIARE)
+.subckt CSA4_SUB 0 Vdd sum0 sum1 sum2 sum3 cout cin0 cin1 cin ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1
+	xsetup0 0 Vdd p0 g0 ain0 bin0 SETUP_SUB XX=1
+	xsetup1 0 Vdd p1 g1 ain1 bin1 SETUP_SUB XX=1
+	xsetup2 0 Vdd p2 g2 ain2 bin2 SETUP_SUB XX=1
+	xsetup3 0 Vdd p3 g3 ain3 bin3 SETUP_SUB XX=1
+	xadd0 0 Vdd sum00 sum01 sum02 sum03 cout03 cin0 p0 p1 p2 p3 g0 g1 g2 g3 FAcsa_SUB XX=1
+	xadd1 0 Vdd sum10 sum11 sum12 sum13 cout13 cin1 p0 p1 p2 p3 g0 g1 g2 g3 FAcsa_SUB XX=1
+	xmuxcout 0 Vdd cout cout03 cout13 cin mux21_SUB XX=1
+	xmuxs0 0 Vdd sum0 sum00 sum10 cin mux21_SUB XX=1
+	xumxs1 0 Vdd sum1 sum01 sum11 cin mux21_SUB XX=1
+	xmuxs2 0 Vdd sum2 sum02 sum12 cin mux21_SUB XX=1
+	xmuxs3 0 Vdd sum3 sum03 sum13 cin mux21_SUB XX=1
+.ends
+
+***Questo componente racchiude per numeroBit>4 più CSA4_SUB quindi cambia in base al numero dei bit
+.subckt CSA_SUB 0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7 sum8 sum9 sum10 sum11 sum12 sum13 sum14 sum15 sum16 sum17 sum18 sum19 sum20 sum21 sum22 sum23 sum24 sum25 sum26 sum27 sum28 sum29 sum30 sum31 cout31 cin0 cin1 cin ain0 ain1 ain2 ain3 ain4 ain5 ain6 ain7 ain8 ain9 ain10 ain11 ain12 ain13 ain14 ain15 ain16 ain17 ain18 ain19 ain20 ain21 ain22 ain23 ain24 ain25 ain26 ain27 ain28 ain29 ain30 ain31 bin0 bin1 bin2 bin3 bin4 bin5 bin6 bin7 bin8 bin9 bin10 bin11 bin12 bin13 bin14 bin15 bin16 bin17 bin18 bin19 bin20 bin21 bin22 bin23 bin24 bin25 bin26 bin27 bin28 bin29 bin30 bin31 XX=1
+	xcsa4_0 0 Vdd sum0 sum1 sum2 sum3 cout3 cin0 cin1 cin ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 CSA4_SUB XX=1
+	xcsa4_1 0 Vdd sum4 sum5 sum6 sum7 cout7 cin0 cin1 cout3 ain4 ain5 ain6 ain7 bin4 bin5 bin6 bin7 CSA4_SUB XX=1
+	xcsa4_2 0 Vdd sum8 sum9 sum10 sum11 cout11 cin0 cin1 cout7 ain8 ain9 ain10 ain11 bin8 bin9 bin10 bin11 CSA4_SUB XX=1
+	xcsa4_3 0 Vdd sum12 sum13 sum14 sum15 cout15 cin0 cin1 cout11 ain12 ain13 ain14 ain15 bin12 bin13 bin14 bin15 CSA4_SUB XX=1
+	xcsa4_4 0 Vdd sum16 sum17 sum18 sum19 cout19 cin0 cin1 cout15 ain16 ain17 ain18 ain19 bin16 bin17 bin18 bin19 CSA4_SUB XX=1
+	xcsa4_5 0 Vdd sum20 sum21 sum22 sum23 cout23 cin0 cin1 cout19 ain20 ain21 ain22 ain23 bin20 bin21 bin22 bin23 CSA4_SUB XX=1
+	xcsa4_6 0 Vdd sum24 sum25 sum26 sum27 cout27 cin0 cin1 cout23 ain24 ain25 ain26 ain27 bin24 bin25 bin26 bin27 CSA4_SUB XX=1
+	xcsa4_7 0 Vdd sum28 sum29 sum30 sum31 cout31 cin0 cin1 cout27 ain28 ain29 ain30 ain31 bin28 bin29 bin30 bin31 CSA4_SUB XX=1
+.ends
+
+xcsa 0 Vcc s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 CCout C0 C1 Ci a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12 a13 a14 a15 a16 a17 a18 a19 a20 a21 a22 a23 a24 a25 a26 a27 a28 a29 a30 a31 b0 b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13 b14 b15 b16 b17 b18 b19 b20 b21 b22 b23 b24 b25 b26 b27 b28 b29 b30 b31 CSA_SUB XX=1
+
+VinA31 A31 0 0
+VinA30 A30 0 0
+VinA29 A29 0 0
+VinA28 A28 0 0
+VinA27 A27 0 0
+VinA26 A26 0 0
+VinA25 A25 0 0
+VinA24 A24 0 0
+VinA23 A23 0 0
+VinA22 A22 0 0
+VinA21 A21 0 0
+VinA20 A20 0 0
+VinA19 A19 0 0
+VinA18 A18 0 0
+VinA17 A17 0 0
+VinA16 A16 0 0
+VinA15 A15 0 0
+VinA14 A14 0 0
+VinA13 A13 0 0
+VinA12 A12 0 0
+VinA11 A11 0 0
+VinA10 A10 0 0
+VinA9 A9 0 0
+VinA8 A8 0 0
+VinA7 A7 0 0
+VinA6 A6 0 0
+VinA5 A5 0 0
+VinA4 A4 0 0
+VinA3 A3 0 0
+VinA2 A2 0 1
+VinA1 A1 0 0
+VinA0 A0 0 1
+VinB31 B31 0 0
+VinB30 B30 0 0
+VinB29 B29 0 0
+VinB28 B28 0 0
+VinB27 B27 0 0
+VinB26 B26 0 0
+VinB25 B25 0 0
+VinB24 B24 0 0
+VinB23 B23 0 0
+VinB22 B22 0 0
+VinB21 B21 0 0
+VinB20 B20 0 0
+VinB19 B19 0 0
+VinB18 B18 0 0
+VinB17 B17 0 0
+VinB16 B16 0 0
+VinB15 B15 0 0
+VinB14 B14 0 0
+VinB13 B13 0 0
+VinB12 B12 0 0
+VinB11 B11 0 0
+VinB10 B10 0 0
+VinB9 B9 0 0
+VinB8 B8 0 0
+VinB7 B7 0 0
+VinB6 B6 0 0
+VinB5 B5 0 0
+VinB4 B4 0 0
+VinB3 B3 0 0
+VinB2 B2 0 0
+VinB1 B1 0 1
+VinB0 B0 0 1
+***Tensioni Fisse
+V_C0 C0 0 0
+V_C1 C1 0 1
+V_dd Vcc 0 1
+V_Ci Ci 0 0
+.end
