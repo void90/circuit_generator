@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <math.h>
 
-int main (int argc, char *argv)
+int main (int argc, char **argv)
 {
 	FILE *fp;
-	fp=fopen("mp.net", "w");
+	fp=fopen(argv[1], "w");
 	char *str[10]={"out", "xin", "sum", "ain", "bin", "z", "xin_", "yin_", "s", "c"};
 	//variabili di loop
 	int i, j, count, count2;
