@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main (int argc, char *argv)
+int main (int argc, char **argv)
 {
 	FILE *fp;
 	fp=fopen("mp.net", "w");

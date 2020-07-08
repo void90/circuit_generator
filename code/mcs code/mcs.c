@@ -2,14 +2,14 @@
 #include <math.h>
 
 
-int main () {
+int main (int argc, char **argv) {
 
 	int i, j, n, out_idx = 0;
 	printf("Inserire numero di bit dei fattori in ingresso al Moltiplicatore Carry Save da generare:\n");
 	scanf("%d", &n);
-	char *param[]={"out", "x"};
-	char *param2[] = {"sum", " Cout", "a", "b"};
-	char *param3[] = {"z", "x", "y"};
+	char *param[3]={"out", "x", "y"};
+	char *param2[4] = {"sum", " Cout", "a", "b"};
+	char *param3[3] = {"z", "x", "y"};
 	
 	FILE *fp;
 	fp=fopen("mcs.net", "w");
@@ -52,7 +52,7 @@ int main () {
 	{
 		for( j = 0; j < n; j++)
 		{
-			fprintf(fp, "%s%d ", param[j], j);
+			fprintf(fp, "%s%d ", param[i], j);
 		}
 	}
 	fprintf(fp, "\tXX=1\n");
@@ -209,6 +209,7 @@ int main () {
 		}
 	}
 	fprintf(fp, ".ends \n\n");
+
 	fclose(fp);
 	return 0;
 }
