@@ -1,0 +1,6 @@
+a)scrivere parte 1 dello script
+lo script legge un file contentente gli ingressi e il valore atteso, memorizzare i valori, richiamare il programma generatore e fornirgli in ingresso i parametri di ingresso letti
+
+b) per tutti i codici .c
+-modificare inserimento parametri
+-integrare param.net nel codice per rispettare le specifiche
