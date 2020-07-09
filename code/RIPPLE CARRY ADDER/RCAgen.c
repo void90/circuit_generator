@@ -60,24 +60,25 @@ int main (int argc, char **argv) {
 	int N = n;
 	int A_binary[N];
 	int B_binary[N];
-	int S_binary[N];
+	int S_binary[N+1];
 	for (i = 0; i < N; i++) {
 		A_binary[i] = 0;
 		B_binary[i] = 0;
 		S_binary[i] = 0;
 	}
+	S_binary[N] = 0;
 
 	start: printf ("Digitare gli operandi da sommare:\n");
 	scanf ("%d %d", &a, &b);
 	int s = a+b;
-	if (s > pow(2, n)-1) {
+	if (s > pow(2, n)) {
 		printf ("Numero di bit insufficienti alla rappresentazione del risultato e/o degli operandi.\n");
 		goto start;
 	}
 	
 	printf ("Risultato atteso: %d\n", s);	//risultato decimale atteso
 
-	for (i = N-1; i >= 0; i--) {		//risultato binario atteso
+	for (i = N; i >= 0; i--) {		//risultato binario atteso
 		S_binary[i] = s%2;
 		s = s/2;
 	}
@@ -99,6 +100,7 @@ int main (int argc, char **argv) {
 	for (i = 0; i < N; i++) {
 		printf ("%d ", S_binary[i]);
 	}
+	printf ("\nCarry_out = %d\n", S_binary[0]);
 
 
 
