@@ -1,0 +1,45 @@
+RIPPLE CARRY ADDER
+
+.option filetype=ascii
+
+***LIBRERIE***
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.INCLUDE 16nm_HP.pm
+
+***PARAMETRI GLOBALI***
+.PARAM vthVARn=0.3423
+.PARAM vthVARp=-0.23122
+.PARAM ndepVARn=3.96e+018
+.PARAM ndepVARp=1.68e+018
+.PARAM toxpVAR=5.21e-010
+.PARAM Lmin=51.71336n
+.PARAM Wmin=36.05883n
+.PARAM XXX=1
+.PARAM tr=50p
+
+***DEFINIZIONE DEL SOTTOCIRCUITO***
+.subckt RCA_SUB 0 Vdd sum cout cin ain bin XX=1 	
+	xfa0 0 Vdd sum cout cin ain bin FA_SUB XX=XXX
+.ends RCA_SUB
+
+***DICHIARAZIONE DEL COMPONENTE***
+xrca 0 Vcc S C C0 A0 B0 RCA_SUB XX=XXX
+
+.PRINT tran V(A0) V(B0) V(Cin) V(S0) V(Cout)
+.TRAN 0.1p 200p
+
+***
+*V0 A0 0 PWL(0 0 200p 0)
+V0 A0 0 PWL(0 0 10p 0 11p 1 200p 1)
+
+*V1 B0 0 PWL(0 0 200p 0)
+V1 B0 0 PWL(0 0 10p 0 11p 1 200p 1)
+
+*V2 C0 0 PWL(0 0 200p 0)
+V2 C0 0 PWL(0 0 10p 0 11p 1 200p 1)
+
+
+
+V_dd Vcc 0 DC 1
+
+.end
