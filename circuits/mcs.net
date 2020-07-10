@@ -7,10 +7,6 @@
 .INCLUDE 16nm_HP.pm
 
 ***PARAMETRI GLOBALI*** 	----> Lmin Wmin come da specifiche Mastrandrea (16nm)
-.PARAM vthVARn=0.3423
-.PARAM vthVARp=-0.23122
-.PARAM ndepVARp=1.68e+018
-.PARAM toxpVAR=5.21e-010
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
@@ -49,26 +45,28 @@ xmcs4 0 vcc xz0 xz1 xz2 xz3 xz4 xz5 xz6 xz7 xx0 xx1 xx2 xx3 xy0 xy1 xy2 xy3 MCS_
 ***COMANDI DI SIMULAZIONE***
 
 .TRAN 0.1p 820p
+.measure tran yeval FIND v(xz0) AT=500p
 
 **Alimentazione
 V_dd Vcc 0 1
 **Segnale
-V0 xx0 0 PWL(0 0 5p 0 6p 1 820p 1)
-V1 xx1 0 PWL(0 0 5p 0 6p 1 820p 1)
-V2 xx2 0 PWL(0 0 5p 0 6p 1 820p 1)
-V3 xx3 0 PWL(0 0 5p 0 6p 1 820p 1)
-V4 xy0 0 PWL(0 0 5p 0 6p 1 820p 1)
-V5 xy1 0 PWL(0 0 5p 0 6p 1 820p 1)
-V6 xy2 0 PWL(0 0 5p 0 6p 1 820p 1)
-V7 xy3 0 PWL(0 0 5p 0 6p 1 820p 1)
+V0 xx0 0 PWL(0 0 5p 0 6p 1 520p 1)
+V1 xx1 0 PWL(0 0 5p 0 6p 1 520p 1)
+V2 xx2 0 PWL(0 0 5p 0 6p 1 520p 1)
+V3 xx3 0 PWL(0 0 5p 0 6p 1 520p 1)
+V4 xy0 0 PWL(0 0 5p 0 6p 1 520p 1)
+V5 xy1 0 PWL(0 0 5p 0 6p 1 520p 1)
+V6 xy2 0 PWL(0 0 5p 0 6p 1 520p 1)
+V7 xy3 0 PWL(0 0 5p 0 6p 1 520p 1)
 .end
 
 .control
 run
-plot xz0 xz1 
-plot xz2 xz3
-plot xz4 xz5
-plot xz6 xz7
+*plot xz0 xz1 
+*plot xz2 xz3
+*plot xz4 xz5
+*plot xz6 xz7
+quit
 .endc
 
 

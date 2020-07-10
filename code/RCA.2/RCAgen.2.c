@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 
 
@@ -72,7 +73,9 @@ int main (int argc, char **argv) {
 	S_binary[N] = 0;	//inizializzazione a zero del bit di carry_out
 
 	fpr = fopen ("RCAdata.txt", "r");		//apertura file di lettura dati
-	fscanf (fpr, "%d %d %d", &a, &b, &s);
+	fscanf (fpr, "%d %d %d", &s, &s, &s);
+	a = atoi (argv[3]);
+	b = atoi (argv[4]);
 
 	
 	for (i = N; i >= 0; i--) {		//conversione somma da decimale a binario

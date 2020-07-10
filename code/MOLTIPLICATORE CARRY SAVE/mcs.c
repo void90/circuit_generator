@@ -9,7 +9,6 @@ int main (int argc, char **argv) {
 	scanf("%d", &n);
 	char *param[3]={"out", "x", "y"};
 	char *param2[4] = {"sum", " Cout", "a", "b"};
-	char *param3[3] = {"z", "x", "y"};
 	
 	FILE *fp;
 	fp=fopen(argv[1], "w");
@@ -232,14 +231,15 @@ int main (int argc, char **argv) {
 		P_binary[i] = 0;
 	}
 
-	start: printf ("Digitare gli operandi da moltiplicare:\n");
+//	start: 
+	printf ("Digitare gli operandi da moltiplicare:\n");
 	scanf ("%d %d", &x, &y);
 	int p = x*y;
-	if (p > pow(2, 2*N)-1) {
+/*	if (p > pow(2, 2*N)-1) {
 		printf ("Numero di bit insufficienti alla rappresentazione del risultato e/o degli operandi.\n");
 		goto start;
 	}
-	
+*/	
 	printf ("Risultato atteso: %d\n", p);	//risultato decimale atteso
 
 	for (i = 2*N-1; i >= 0; i--) {		//risultato binario atteso
@@ -264,9 +264,7 @@ int main (int argc, char **argv) {
 	for (i = 0; i < 2*N; i++) {
 		printf ("%d", P_binary[i]);
 	}
-
-
-
+	printf ("\n");
 
 	
 	for (i = n-1, j = 0; i >= 0, j < N; i--, j++) {			//VALORI DI X
@@ -279,6 +277,7 @@ int main (int argc, char **argv) {
 	fprintf(fp, "V_dd Vcc 0 1\n.end");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
 	
 	fclose(fp);
+	
 	return 0;
 }
 	
