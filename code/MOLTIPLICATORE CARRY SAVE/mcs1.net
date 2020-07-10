@@ -1,0 +1,28 @@
+*MOLTIPLICATORE CARRY SAVE
+
+.option filetype=ascii
+
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.INCLUDE 16nm_HP.pm
+.INCLUDE param.net
+
+.subckt AND_ARRAY_SUB	0 Vdd out0 x0 y	XX=1
+xand0	0 Vdd out0 x0 y	AND2_SUB XX=XXX
+.ends 
+
+.subckt ADD_ARRAY_SUB	0 Vdd sum0  Cout0 a0 b0 	XX=1
+xadd0	 0 vdd sum0 cout0 cin0 b0 a0	 FA_SUB XX=XXX
+.ends 
+
+.subckt MCS_SUB	0 Vdd out0 x0 y0 	XX=1
+xand_Level0	 0 vdd	z0 0out1 	x0 	y0	AND_ARRAY_SUB XX = XXX
+xand_Level1	 0 vdd	1out0 	x0 	y1	AND_ARRAY_SUB XX = XXX
+.ends 
+
+xmcs1 0 Vcc xz0 xz1 xx0 xy0 MCS_SUB XX = XXX
+
+.TRAN 0.1p 500p
+VinX0 X0 0 1
+VinY0 Y0 0 0
+V_dd Vcc 0 1
+.end

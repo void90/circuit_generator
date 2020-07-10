@@ -1,0 +1,8 @@
+***DEFINIZIONE DEI PARAMETRI GLOBALI***
+
+.PARAM Lmin=16n
+.PARAM Wmin=16n
+
+.PARAM XXX=1
+
+***************************************

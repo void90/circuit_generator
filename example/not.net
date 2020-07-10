@@ -23,8 +23,8 @@
 
 .TRAN 0.1p 820p
 
-XNOT 0 vcc out in NOT_SUB XX=XXX
+XNOT 0 alim output input NOT_SUB XX=XXX
 
-Vdd vcc 0 1
+Vdd alim 0 1
 
-Vin in 0 PWL(0 0 200p 0 201p 1 820p 1)
+Vin input 0 PWL(0 0 200p 0 201p 1 820p 1)
