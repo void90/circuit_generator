@@ -1,8 +1,8 @@
 #!/bin/bash
 i=0	
-file="fileInput.txt" 
+file="inputFile.txt" 
 
-if [ -e $file && -r $file ]
+if [ -e $file ] && [ -r $file ]
 then
 	for word in $(<$file)
 	do
@@ -14,8 +14,9 @@ else
 	exit -1	
 fi
 
-echo "./rca.out $1 $2 ${stringa[0]} ${stringa[1]}"
-./rca.out $1 $2 ${stringa[0]} ${stringa[1]} 
+echo "bin/rca.out $1 $2 ${stringa[0]} ${stringa[1]}"
+bin/rca.out $1 $2 ${stringa[0]} ${stringa[1]} 
 echo "ngspice $1"
+cd netlist
 ngspice $1
 exit 0

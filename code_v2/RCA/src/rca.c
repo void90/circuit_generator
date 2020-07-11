@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main (int argc, char **argv)
 {
@@ -9,16 +10,18 @@ int main (int argc, char **argv)
 	short int i, j;
 	char *param[4]={"sum", " cout", " ain", " bin"};
 	char *param2[4] = {"S", " Cout", " A", " B"};
+	char fileInput[50]={"netlist/"};
+	strcat(fileInput, argv[1]);
 //Apertura file
 	FILE *fp;
-	fp=fopen(argv[1], "w");
+	fp=fopen(fileInput, "w");
 	if(fp==NULL)
 	{
 		printf("File doesen't exist.\n");
 		return-1;
 	}
 //Stampe netlist iniziali fisse
-	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ST65LIKE_cell_library_v2020_1.net\n.INCLUDE 16nm_HP.pm\n");
+	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
 	fprintf(fp, ".PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n");	
 //Codice generazione netlist cartella code
 	//DICHIARAZIONE SOTTOCIRCUITO

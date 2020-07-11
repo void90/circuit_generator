@@ -1,7 +1,7 @@
 *RIPPLE CARRY ADDER
 .option filetype=ascii
-.INCLUDE ST65LIKE_cell_library_v2020_1.net
-.INCLUDE 16nm_HP.pm
+.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
+.INCLUDE ../lib/16nm_HP.pm
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
