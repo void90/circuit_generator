@@ -31,16 +31,3 @@ xadd_Level6	 0 vdd	z3 6sum1 6sum2 	6cout0 6cout1 6cout2 	4cout0 4cout1 4cout2 	5
 xadd_Level7	 0 vdd	z4 z5    z6    	7cout0 7cout1 z7    	0     7cout0 7cout1 	6cout0 6cout1 6cout2 	5sum1 5sum2 4out3 	ADD_ARRAY_SUB XX = XXX
 	.ends 
 
-xmcs4 0 Vcc xz0 xz1 xz2 xz3 xz4 xz5 xz6 xz7 xx0 xx1 xx2 xx3 xy0 xy1 xy2 xy3 MCS_SUB XX = XXX
-
-.TRAN 0.1p 500p
-VinX3 X3 0 0
-VinX2 X2 0 0
-VinX1 X1 0 0
-VinX0 X0 0 1
-VinY3 Y3 0 0
-VinY2 Y2 0 0
-VinY1 Y1 0 0
-VinY0 Y0 0 1
-V_dd Vcc 0 1
-.end
