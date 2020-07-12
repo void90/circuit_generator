@@ -1,5 +1,5 @@
 (verificare se compilare con eventuali ottimizzazioni -O3 tipo)
 1.Modificare for per fare tante simulazioni quante sono le righe di inputFile.txt
-2.Reiterare per tutti i programmi
+2.Aggiustare o riscrivere netlist+codice moltiplicatore carry save
 
 1.programma confronta

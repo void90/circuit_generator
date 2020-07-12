@@ -68,11 +68,11 @@ int main (int argc, char **argv)
 	b = atoi (argv[4]);
 	int A_binary[n], B_binary[n];
 /*TEST*/int S_binary[n+1];		//comprende anche il bit di carry
-	for (i = n; i >= 0; i--)
-	{	//conversione somma da decimale a binario
-		S_binary[i] = s%2;		
-		s = s/2;
-	}
+/*TEST*/for (i = n; i >= 0; i--)
+/*TEST*/{	//conversione somma da decimale a binario
+/*TEST*/	S_binary[i] = s%2;		
+/*TEST*/	s = s/2;
+/*TEST*/}
 	for (i = n-1; i >= 0; i--)
 	{	//conversione operandi da decimale a binario
 		A_binary[i] = a%2;
@@ -109,9 +109,9 @@ int main (int argc, char **argv)
 	fprintf(fp, "\n.control\nrun\n");
 /*TEST*/for(i=0; i<n; i++)
 /*TEST*/{
-/*TEST*/	fprintf(fp, "plot S%d\n", i);
+/*TEST*/	fprintf(fp, "plot xz%d\n", i);
 /*TEST*/}
-	fprintf(fp, "\n.endc\n.end");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
+	fprintf(fp, "\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
 	fclose(fp);
 	return 0;
