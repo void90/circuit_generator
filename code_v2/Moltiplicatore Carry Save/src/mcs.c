@@ -12,13 +12,15 @@ int main (int argc, char **argv) {
 	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
 	char *param3[3] = {"z", "x", "y"};
 	int num_level = n*2;
-	char *fileInput = &PATH;
-	printf ("Infirizzo PATH:%p\nIndirizzo fileInput:%p\nGrandezza PATH:%ld\n", &PATH, &fileInput, sizeof(PATH) );
-	fileInput = (char *) malloc (sizeof(PATH)+sizeof(argv[1]));
-	printf ("Grandezza post MALLOC:%ld\n", sizeof (fileInput) );
+char fileInput[50]={"netlist/"};
+strcat(fileInput, argv[1]);
+//	char *fileInput = &PATH;
+//	printf ("Infirizzo PATH:%p\nIndirizzo fileInput:%p\nGrandezza PATH:%ld\n", &PATH, &fileInput, sizeof(PATH) );
+//	fileInput = (char *) malloc (sizeof(PATH)+sizeof(argv[1]));
+//	printf ("Grandezza post MALLOC:%ld\n", sizeof (fileInput) );
 	
-	strcat(fileInput, PATH);
-	strcat(fileInput, argv[1]);
+//	strcat(fileInput, PATH);
+//	strcat(fileInput, argv[1]);
 //Apertura file
 	FILE *fp;
 	fp=fopen(fileInput, "w");
@@ -29,7 +31,7 @@ int main (int argc, char **argv) {
 	}
 //	free (fileInput);
 //Stampe netlist iniziali fisse
-	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
+	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
 	fprintf(fp, ".PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n");	
 //Codice generazione netlist cartella code
 //DICHIARAZIONE SOTTOCIRCUITO AND_ARRAY_SUB: [n x AND2_SUB]	
@@ -60,7 +62,8 @@ int main (int argc, char **argv) {
 	fprintf(fp, "\tXX=1\n");
 	for ( i = 0; i < n-1 ; i++)
 	{
-		fprintf (fp,"xadd%d\t 0 vdd %s%d %s%d %s%d %s%d %s%d\t FA_SUB XX=XXX\n", i, param2[0], i, param2[1], i, param[2], i, param[3], i, param[4], i);
+		fprintf(fp, "\txadd%d 0 Vdd sum%d cout%d cin%d a%d b%d  FA_SUB XX = XXX\n", i, i, i, i, i, i);
+//		fprintf (fp,"xadd%d\t 0 vdd %s%d %s%d %s%d %s%d %s%d\t FA_SUB XX=XXX\n", i, param2[0], i, param2[1], i, param[2], i, param[3], i, param[4], i);
 	}
 	fprintf(fp, ".ends \n\n");
 	
@@ -68,7 +71,8 @@ int main (int argc, char **argv) {
 	fprintf (fp, ".subckt MCS_SUB\t0 Vdd\t");
 	for( j = 0; j < num_level; j++)
 			{
-				fprintf(fp, "%s%d ", param3[i], j);
+				fprintf(fp, "z%d ", j);
+//				fprintf(fp, "%s%d ", param3[i], j);
 			}
 	fprintf(fp, "\t");
 	for( i = 1; i < 3; i++ ) 
@@ -285,7 +289,7 @@ int main (int argc, char **argv) {
 /*TEST*/}
 	fprintf(fp, "\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
-fclose(fp);
+	fclose(fp);
 	return 0;
 }
 	

@@ -16,7 +16,7 @@ fi
 
 echo "bin/mcs.out $1 $2 ${stringa[0]} ${stringa[1]}"
 bin/mcs.out $1 $2 ${stringa[0]} ${stringa[1]} 
-#echo "ngspice $1"
-#cd netlist
-#ngspice $1
+echo "ngspice $1"
+cd netlist
+ngspice $1
 exit 0
