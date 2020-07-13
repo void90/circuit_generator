@@ -14,7 +14,7 @@ int main (int argc, char **argv) {
 	
 	FILE *fp;
 	fp=fopen(argv[1], "w");
-	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n\n.option filetype=ascii\n\n.INCLUDE ST65LIKE_cell_library_v2020_1.net\n.INCLUDE 16nm_HP.pm\n.INCLUDE param.net\n\n");
+	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n\n.option filetype=ascii\n\n.INCLUDE ST65LIKE_cell_library_v2020_1.net\n.INCLUDE 16nm_HP.pm\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.TRAN 0.1p 500p\n.PARAM XXX=1\n\n\n");
 
 //DICHIARAZIONE SOTTOCIRCUITO 4xAND2_SUB	
 	fprintf (fp, ".subckt AND_ARRAY_SUB\t0 Vdd ");
@@ -284,7 +284,7 @@ int main (int argc, char **argv) {
 		fprintf(fp, "VinY%d xy%d 0 %d\n", i, i, Y_binary[j]);
 	}
 	
-	fprintf (fp, ".control\nrun\nplot xz0 xz1 \n plot xz2 xz3\nplot xz4 xz5 \nplot xz6 xz7\n.endc\n");
+//	fprintf (fp, ".control\nrun\nplot xz0 xz1 \n plot xz2 xz3\nplot xz4 xz5 \nplot xz6 xz7\n.endc\n");
 
 	fprintf(fp, "V_dd Vcc 0 1\n.end");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
 	fclose(fp);

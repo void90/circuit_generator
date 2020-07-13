@@ -6,7 +6,7 @@
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
-	short int i, j, out_idx=0;
+	short int i, j, z;
 	char *param[3]={"out", "xin", "yin"};
 	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
 	char fileInput[50]={"netlist/"};
@@ -50,7 +50,7 @@ int main (int argc, char **argv)
 		fprintf(fp, "\txadd%d 0 Vdd sum%d cout%d cin%d a%d b%d FA_SUB XX = XXX\n", i, i, i, i, i, i);
 	}
 	//.subckt MCS_SUB
-	fprintf(fp, ".ends\n\n* Zi->Uscute moltiplicatore; c->Carry d'uscita; Mj,Nj->Fattori d'ingresso. 	-----	Con [i=0,..,7; j=0,..,3]\n.subckt MCS_SUB 0 Vdd ");
+	fprintf(fp, ".ends\n\n* Zi->Uscute moltiplicatore; c->Carry d'uscita; Mj,Nj->Fattori d'ingresso. 	-----	Con [i=0,..,7; j=0,..,3]\n*xadd_array0 0 vdd z1 0sum1 0sum2 0cout0 0cout1 0cout2 0 0 0 1out0 1out1 1out2 0out1 0out2 0out3 ADD_ARRAY_SUB XX = XXX\n*xadd_array1 0 vdd z2 1sum1 1sum2 1cout0 1cout1 1cout2 0cout0 0cout1 0cout2 2out0 2out1 2out2 0sum1 0sum2 1out3 ADD_ARRAY_SUB XX = XXX\n*xadd_array2 0 vdd z3 2sum1 2sum2 2cout0 2cout1 2cout2 1cout0 1cout1 1cout2 3out0 3out1 3out2 1sum1 1sum2 2out3 ADD_ARRAY_SUB XX = XXX\n*xadd_level3 0 vdd z4 z5 z6 3cout0 3cout1 z7 0 3cout0 3cout1 2cout0 2cout1 2cout2 2sum1 2sum2 3out3 ADD_ARRAY_SUB XX = XXX\n\n.subckt MCS_SUB 0 Vdd ");
 	for(i=0; i<n*2; i++)
 	{
 		fprintf(fp, "z%d ", i);
@@ -63,149 +63,7 @@ int main (int argc, char **argv)
 		}
 	}
 	fprintf(fp, "XX = 1\n");
-	int num_level = n*2;
-	//Gestire: se n=1 deve essere solo una porta AND
-
-	for ( i = 0; i < num_level; i++)	//Il num totale di livelli AND+ADD è pari al doppio dei bit
-	{
-		if ( i == 0 )
-		{
-			fprintf (fp,"xand_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"%dout%d ", i, j+1);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"x%d ", j);
-			} 
-			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i);
-		}
-		
-		if ( i == 1 )
-		{
-			fprintf (fp,"xand_Level%d\t 0 vdd\t", i);		
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"%dout%d ", i, j);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"x%d ", j);
-			} 
-			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i);
-		}
-		
-		// Ogni Array di somatori sono in numero pari a Num_bit_fattore - 1
-		if ( (i > 1) && (i%2 == 0) && (i < (num_level - 1)) )		//Livelli intermedi di ADDIZIONE
-		{			
-			fprintf (fp,"xadd_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
-			for ( j = 0; j < (n-2); j++)					// n-2 perchè il primo termine di somma è sempre Zi
-			{
-				fprintf (fp,"%dsum%d ", i, j+1);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < (n-1); j++)
-			{
-				fprintf (fp,"%dcout%d ", i, j);
-			}
-			fprintf (fp,"\t");
-			// Connessione Cin: livello 2 sono sempre tutti HA
-			if ( i == 2 )
-			{
-				for ( j = 0; j < (n-1); j++)
-				{
-					fprintf (fp,"0     ");
-				}
-			} else 
-			{
-				for ( j = 0; j < (n-1); j++)
-				{
-					fprintf (fp,"%dcout%d ", i-2, j );
-				}
-			}
-			fprintf (fp,"\t");
-			// Connessione Ai e Bi: nel Livello 2 gli ingressi sono solo da porte and, altrimenti gli ingressi sono dalle porte and e dalle somme
-			for ( j = 0; j < (n-1); j++)		//Ai
-			{
-				fprintf (fp,"%dout%d ", i-1, j);
-			}
-			fprintf (fp,"\t");
-			if ( i == 2 )					//Bi
-			{
-				for ( j = 0; j < (n-1); j++)		//Livello 2: gli ingressi vengono solo dalle porte and e non dalle uscite dei sommatori precedenti
-				{
-					fprintf (fp,"%dout%d ", i-2, j+1 );
-				}
-			} else 
-			{
-				for ( j = 0; j < (n-2); j++)
-				{
-					fprintf (fp,"%dsum%d ", i-2, j+1 );
-				}
-				fprintf (fp,"%dout%d ", i-3, n-1 );
-			}
-			fprintf (fp,"\t");				
-			fprintf (fp,"\tADD_ARRAY_SUB XX = XXX\n");
-		} else if ( (i > 1) && (i%2 == 1) && (i < (num_level - 1)) )		//Livelli intermedi di ADDIZIONE
-		{
-			fprintf (fp,"xand_Level%d\t 0 vdd\t", i);		
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"%dout%d ", i, j);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"x%d ", j);
-			} 
-			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i-2);
-
-		} else if ( (i > 1) && (i >= (num_level - 2)) )			//Ultimi 2 livelli finali di ADDIZIONE
-		{
-			fprintf (fp,"xadd_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
-			for ( j = 0; j < (n-2); j++)
-			{
-				out_idx += j;
-				fprintf (fp,"z%d    ", out_idx);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < (n-2); j++)
-			{
-				fprintf (fp,"%dcout%d ", i, j);
-			}
-			fprintf (fp,"z%d    \t", ++out_idx);				//pre incremento
-			// Connessione Cin: livello 2 sono sempre tutti HA
-					fprintf (fp,"0     ");
-			{
-				for ( j = 1; j < (n-1); j++)
-				{
-					fprintf (fp,"%dcout%d ", i, j-1 );
-				}
-			}
-			fprintf (fp,"\t");
-			// Connessione Ai e Bi: nel Livello 2 gli ingressi sono solo da porte and, altrimenti gli ingressi sono dalle porte and e dalle somme
-			for ( j = 0; j < (n-1); j++)		//Ai
-			{
-				fprintf (fp,"%dcout%d ", i-1, j);
-			}
-			fprintf (fp,"\t");
-			
-			for ( j = 0; j < (n-2); j++)
-				{
-				fprintf (fp,"%dsum%d ", i-2, j+1 );
-			}
-			fprintf (fp,"%dout%d ", i-3, n-1 );
-			fprintf (fp,"\tADD_ARRAY_SUB XX = XXX\n");
-			
-			fprintf (fp,"\t");
-		}
-	}
-	fprintf(fp, ".ends \n\n");
-
-/*	for(i=0; i<=n; i++)
+	for(i=0; i<=n; i++)
 	{
 		if(i!=n)
 		{
@@ -239,9 +97,22 @@ int main (int argc, char **argv)
 					fprintf(fp, "%dsum%d ", i-1, j);
 				}
 			}
-			for(z=i-1; z>=0; z--)
+			for(z=i-1; z>=-1; z--)
 			{
 				for(j=0; j<n-1; j++)
+				{
+					if(z<0)
+					{
+						fprintf(fp, "0 ");
+					}
+					else
+					{
+						fprintf(fp, "%dcout%d ", z, j);	
+					}	
+				}
+			}
+
+/*				for(j=0; j<n-1; j++)
 				{
 					if(i==n && j==n-2 && z==i-1)
 					{
@@ -260,11 +131,10 @@ int main (int argc, char **argv)
 					}
 				}
 			}
-fprintf(fp, "%dout%d ADD_ARRAY_SUB XX = XXX\n", i-1, n-1);
+*/fprintf(fp, "%dout%d ADD_ARRAY_SUB XX = XXX\n", i-1, n-1);
 		}
 	}
 	fprintf(fp, ".ends\n\n");
-*/
 	//DICHIARAZIONE COMPONENTE
 	fprintf(fp, "\n\nxmcs 0 Vcc ");
 	for(i=0; i<n*2; i++)
