@@ -6,9 +6,9 @@
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
-	short int i, j, z;
+	short int i, j, z, a, b;
 	char *param[3]={"out", "xin", "yin"};
-	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
+	char *param2[6] = {"sum", "Cout", "Cin", "a", "b", "out"};
 	char fileInput[50]={"netlist/"};
 	strcat(fileInput, argv[1]);
 //Apertura file
@@ -97,41 +97,38 @@ int main (int argc, char **argv)
 					fprintf(fp, "%dsum%d ", i-1, j);
 				}
 			}
-			for(z=i-1; z>=-1; z--)
+			for(j=i-1; j>i-3; j--)
 			{
-				for(j=0; j<n-1; j++)
+				for(z=0; z<n-1; z++)
 				{
-					if(z<0)
+					if(j>=0)
+					{
+						fprintf(fp, "%dcout%d ", j, z);
+					}
+					else if(j==-1 && i==1)
 					{
 						fprintf(fp, "0 ");
 					}
-					else
-					{
-						fprintf(fp, "%dcout%d ", z, j);	
-					}	
 				}
+				
 			}
-
-/*				for(j=0; j<n-1; j++)
+			a=5; b=0;
+			for(j=i; j>=i-1; j--)
+			{
+				for(z=b; z<n-1; z++)
 				{
-					if(i==n && j==n-2 && z==i-1)
-					{
-						fprintf(fp, "z%d 0 ", n*2-1);
-					}
+					if(j==i-1 && i>1)
+					{	fprintf(fp, "%d", j-1);}
 					else
-					{
-						if(i>=0)
-						{
-							fprintf(fp, "%dcout%d ", i-1, j);
-						}
-						else
-						{
-							fprintf(fp, "0 ");
-						}
-					}
+					{	fprintf(fp, "%d", j);}
+					fprintf(fp, "%s%d ", param2[a], z);
 				}
+				b=1;
+				if(j==i && i!=1)
+				{a=0;}
+				
 			}
-*/fprintf(fp, "%dout%d ADD_ARRAY_SUB XX = XXX\n", i-1, n-1);
+fprintf(fp, "%dout%d ADD_ARRAY_SUB XX = XXX\n", i-1, n-1);
 		}
 	}
 	fprintf(fp, ".ends\n\n");
