@@ -2,7 +2,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#define PATH "./../netlist/"
 
 int main (int argc, char **argv) {
 //Inizializzazione variabili
@@ -12,12 +11,7 @@ int main (int argc, char **argv) {
 	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
 	char *param3[3] = {"z", "x", "y"};
 	int num_level = n*2;
-	char *fileInput = &PATH;
-	printf ("Infirizzo PATH:%p\nIndirizzo fileInput:%p\nGrandezza PATH:%ld\n", &PATH, &fileInput, sizeof(PATH) );
-	fileInput = (char *) malloc (sizeof(PATH)+sizeof(argv[1]));
-	printf ("Grandezza post MALLOC:%ld\n", sizeof (fileInput) );
-	
-	strcat(fileInput, PATH);
+	char fileInput[50]={"netlist/"};
 	strcat(fileInput, argv[1]);
 //Apertura file
 	FILE *fp;
@@ -27,7 +21,7 @@ int main (int argc, char **argv) {
 		printf("File doesen't exist.\n");
 		return-1;
 	}
-//	free (fileInput);
+	
 //Stampe netlist iniziali fisse
 	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
 	fprintf(fp, ".PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n");	
