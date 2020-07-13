@@ -8,17 +8,18 @@ int main (int argc, char **argv) {
 	printf("Inserire numero di bit dei fattori in ingresso al Moltiplicatore Carry Save da generare:\n");
 	scanf("%d", &n);
 	char *param[3] = {"out", "x", "y"};
-	char *param2[5] = {"sum", " cout", "cin", "a", "b"};
+	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
 	char *param3[3] = {"z", "x", "y"};
 	int num_level = n*2;
-	
+	char y_idx = 2;
+
 	FILE *fp;
 	fp=fopen(argv[1], "w");
 	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n\n.option filetype=ascii\n\n.INCLUDE ST65LIKE_cell_library_v2020_1.net\n.INCLUDE 16nm_HP.pm\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.TRAN 0.1p 500p\n.PARAM XXX=1\n\n\n");
 
 //DICHIARAZIONE SOTTOCIRCUITO 4xAND2_SUB	
 	fprintf (fp, ".subckt AND_ARRAY_SUB\t0 Vdd ");
-	for( i = 0; i < 2; i++ ) 
+	for( i = 0; i < 2; i++ ) 	// i < 2 e non i < 3 perchè y la stampo a parte!
 	{
 		for( j = 0; j < n; j++ )
 		{
@@ -44,12 +45,13 @@ int main (int argc, char **argv) {
 	fprintf(fp, "\tXX=1\n");
 	for ( i = 0; i < n-1 ; i++)	//non è fino ad n!!!!!!
 	{
-		fprintf (fp,"xadd%d\t 0 vdd sum%d cout%d cin%d b%d a%d\t FA_SUB XX=XXX\n", i, i, i, i, i, i);
+		fprintf (fp,"xadd%d\t 0 vdd sum%d Cout%d Cin%d b%d a%d\t FA_SUB XX=XXX\n", i, i, i, i, i, i);
 	}
 	fprintf(fp, ".ends \n\n");
+
 	
 //DICHIARAZIONE MCS_SUB
-	fprintf (fp, ".subckt MCS_SUB\t0 Vdd ");
+	fprintf (fp, ".subckt MCS_SUB\t0 Vdd\t");
 	for( i = 0; i < 3; i++ ) 
 	{
 		if ( i == 0 )
@@ -58,8 +60,7 @@ int main (int argc, char **argv) {
 			{
 				fprintf(fp, "%s%d ", param3[i], j);
 			}
-
-			fprintf(fp, "\t");
+		fprintf(fp, "\t");
 		} else 
 		{
 			for( j = 0; j < n; j++)
@@ -102,6 +103,7 @@ int main (int argc, char **argv) {
 		
 	for ( i = 2; i < num_level; i++)	//Il num totale di livelli AND+ADD è pari al doppio dei bit
 	{
+
 		// Ogni Array di somatori sono in numero pari a Num_bit_fattore - 1
 		if ( i%2 == 0 )		//Livelli intermedi di ADDIZIONE
 		{			
@@ -165,7 +167,7 @@ int main (int argc, char **argv) {
 			{
 				fprintf (fp,"x%d ", j);
 			} 
-			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i-2);
+			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", y_idx++);
 
 		} else if ( (i > 1) && (i >= (num_level - 1)) )			//Ultimo livello finali di ADDIZIONE
 		{
@@ -245,11 +247,12 @@ int main (int argc, char **argv) {
 	printf ("Digitare gli operandi da moltiplicare:\n");
 	scanf ("%d %d", &x, &y);
 	int p = x*y;
-/*	if (p > pow(2, 2*N)-1) {
-		printf ("Numero di bit insufficienti alla rappresentazione del risultato e/o degli operandi.\n");
-		goto start;
-	}
-*/	
+
+//	if (p > pow(2, 2*N)-1) {
+//		printf ("Numero di bit insufficienti alla rappresentazione del risultato e/o degli operandi.\n");
+//		goto start;
+//	}
+	
 	printf ("Risultato atteso: %d\n", p);	//risultato decimale atteso
 
 	for (i = 2*N-1; i >= 0; i--) {		//risultato binario atteso
@@ -283,12 +286,8 @@ int main (int argc, char **argv) {
 	for (i = n-1, j = 0; i >= 0, j < N; i--, j++) {			//VALORI DI Y
 		fprintf(fp, "VinY%d xy%d 0 %d\n", i, i, Y_binary[j]);
 	}
-	
-//	fprintf (fp, ".control\nrun\nplot xz0 xz1 \n plot xz2 xz3\nplot xz4 xz5 \nplot xz6 xz7\n.endc\n");
-
 	fprintf(fp, "V_dd Vcc 0 1\n.end");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
 	fclose(fp);
-	
 	return 0;
 }
 	
