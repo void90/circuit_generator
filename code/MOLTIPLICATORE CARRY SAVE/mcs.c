@@ -7,8 +7,10 @@ int main (int argc, char **argv) {
 	int i, j, n, out_idx = 0;
 	printf("Inserire numero di bit dei fattori in ingresso al Moltiplicatore Carry Save da generare:\n");
 	scanf("%d", &n);
-	char *param[3]={"out", "x", "y"};
-	char *param2[4] = {"sum", " Cout", "a", "b"};
+	char *param[3] = {"out", "x", "y"};
+	char *param2[5] = {"sum", " cout", "cin", "a", "b"};
+	char *param3[3] = {"z", "x", "y"};
+	int num_level = n*2;
 	
 	FILE *fp;
 	fp=fopen(argv[1], "w");
@@ -32,15 +34,15 @@ int main (int argc, char **argv) {
 
 //DICHIARAZIONE SOTTOCIRCUITO 3xFA_SUB	
 	fprintf (fp, ".subckt ADD_ARRAY_SUB\t0 Vdd ");
-	for( i = 0; i < 4; i++ ) 
+	for( i = 0; i < 5; i++ ) 
 	{
-		for( j = 0; j < n; j++)
+		for( j = 0; j < n-1; j++)
 		{
 			fprintf(fp, "%s%d ", param2[i], j);
 		}
 	}
 	fprintf(fp, "\tXX=1\n");
-	for ( i = 0; i < n; i++)	//non è fino ad n!!!!!!
+	for ( i = 0; i < n-1 ; i++)	//non è fino ad n!!!!!!
 	{
 		fprintf (fp,"xadd%d\t 0 vdd sum%d cout%d cin%d b%d a%d\t FA_SUB XX=XXX\n", i, i, i, i, i, i);
 	}
@@ -50,50 +52,58 @@ int main (int argc, char **argv) {
 	fprintf (fp, ".subckt MCS_SUB\t0 Vdd ");
 	for( i = 0; i < 3; i++ ) 
 	{
-		for( j = 0; j < n; j++)
+		if ( i == 0 )
 		{
-			fprintf(fp, "%s%d ", param[i], j);
+			for( j = 0; j < num_level; j++)
+			{
+				fprintf(fp, "%s%d ", param3[i], j);
+			}
+
+			fprintf(fp, "\t");
+		} else 
+		{
+			for( j = 0; j < n; j++)
+			{
+				fprintf(fp, "%s%d ", param3[i], j);
+			}
+			fprintf(fp, "\t");
 		}
 	}
 	fprintf(fp, "\tXX=1\n");
 	
-	int num_level = n*2;
+	
 	//Gestire: se n=1 deve essere solo una porta AND
+	//Prima AND 0
 
-	for ( i = 0; i < num_level; i++)	//Il num totale di livelli AND+ADD è pari al doppio dei bit
+		fprintf (fp,"xand_Level0\t 0 vdd\tz%d    ", out_idx++);	//out_idx con post increment
+		for ( j = 0; j < n-1; j++)
+		{
+			fprintf (fp,"0out%d ", j+1);
+		} 
+		fprintf (fp,"\t");
+		for ( j = 0; j < n; j++)
+		{
+			fprintf (fp,"x%d ", j);
+		} 
+		fprintf (fp,"\ty0\tAND_ARRAY_SUB XX = XXX\n");
+	
+	//seconda AND 1
+		fprintf (fp,"xand_Level1\t 0 vdd\t");		
+		for ( j = 0; j < n; j++)
+		{
+			fprintf (fp,"1out%d ", j);
+		} 
+		fprintf (fp,"\t");
+		for ( j = 0; j < n; j++)
+		{
+			fprintf (fp,"x%d ", j);
+		} 
+		fprintf (fp,"\ty1\tAND_ARRAY_SUB XX = XXX\n");
+		
+	for ( i = 2; i < num_level; i++)	//Il num totale di livelli AND+ADD è pari al doppio dei bit
 	{
-		if ( i == 0 )
-		{
-			fprintf (fp,"xand_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"%dout%d ", i, j+1);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"x%d ", j);
-			} 
-			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i);
-		}
-		
-		if ( i == 1 )
-		{
-			fprintf (fp,"xand_Level%d\t 0 vdd\t", i);		
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"%dout%d ", i, j);
-			} 
-			fprintf (fp,"\t");
-			for ( j = 0; j < n; j++)
-			{
-				fprintf (fp,"x%d ", j);
-			} 
-			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i);
-		}
-		
 		// Ogni Array di somatori sono in numero pari a Num_bit_fattore - 1
-		if ( (i > 1) && (i%2 == 0) && (i < (num_level - 1)) )		//Livelli intermedi di ADDIZIONE
+		if ( i%2 == 0 )		//Livelli intermedi di ADDIZIONE
 		{			
 			fprintf (fp,"xadd_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
 			for ( j = 0; j < (n-2); j++)					// n-2 perchè il primo termine di somma è sempre Zi
@@ -143,7 +153,7 @@ int main (int argc, char **argv) {
 			}
 			fprintf (fp,"\t");				
 			fprintf (fp,"\tADD_ARRAY_SUB XX = XXX\n");
-		} else if ( (i > 1) && (i%2 == 1) && (i < (num_level - 1)) )		//Livelli intermedi di ADDIZIONE
+		} else if ( (i%2 == 1) && (i < (num_level - 1)) )		//Livelli intermedi di AND
 		{
 			fprintf (fp,"xand_Level%d\t 0 vdd\t", i);		
 			for ( j = 0; j < n; j++)
@@ -157,7 +167,7 @@ int main (int argc, char **argv) {
 			} 
 			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", i-2);
 
-		} else if ( (i > 1) && (i >= (num_level - 2)) )			//Ultimi 2 livelli finali di ADDIZIONE
+		} else if ( (i > 1) && (i >= (num_level - 1)) )			//Ultimo livello finali di ADDIZIONE
 		{
 			fprintf (fp,"xadd_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
 			for ( j = 0; j < (n-2); j++)
@@ -189,9 +199,9 @@ int main (int argc, char **argv) {
 			
 			for ( j = 0; j < (n-2); j++)
 				{
-				fprintf (fp,"%dsum%d ", i-2, j+1 );
+				fprintf (fp,"%dsum%d ", i-1, j+1 );
 			}
-			fprintf (fp,"%dout%d ", i-3, n-1 );
+			fprintf (fp,"%dout%d ", i-2, n-1 );
 			fprintf (fp,"\tADD_ARRAY_SUB XX = XXX\n");
 			
 			fprintf (fp,"\t");
@@ -268,14 +278,15 @@ int main (int argc, char **argv) {
 
 	
 	for (i = n-1, j = 0; i >= 0, j < N; i--, j++) {			//VALORI DI X
-		fprintf(fp, "VinX%d X%d 0 %d\n", i, i, X_binary[j]);
+		fprintf(fp, "VinX%d xx%d 0 %d\n", i, i, X_binary[j]);
 	}
 	for (i = n-1, j = 0; i >= 0, j < N; i--, j++) {			//VALORI DI Y
-		fprintf(fp, "VinY%d Y%d 0 %d\n", i, i, Y_binary[j]);
+		fprintf(fp, "VinY%d xy%d 0 %d\n", i, i, Y_binary[j]);
 	}
+	
+	fprintf (fp, ".control\nrun\n.endc\n");
 
 	fprintf(fp, "V_dd Vcc 0 1\n.end");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
-	
 	fclose(fp);
 	
 	return 0;
