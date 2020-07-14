@@ -38,10 +38,10 @@ xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zc0 x0 x1 x2 x3 y0 y1 y2 y3 MP_SUB XX=
 
 VinX3 X3 0 0
 VinX2 X2 0 0
-VinX1 X1 0 0
-VinX0 X0 0 0
+VinX1 X1 0 1
+VinX0 X0 0 1
 VinY3 Y3 0 0
-VinY2 Y2 0 0
+VinY2 Y2 0 1
 VinY1 Y1 0 0
 VinY0 Y0 0 1
 
@@ -51,5 +51,6 @@ V_dd Vcc 0 1
 .control
 run
 plot zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 
+quit
 .endc
 .end

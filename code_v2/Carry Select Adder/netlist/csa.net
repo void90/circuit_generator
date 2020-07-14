@@ -63,13 +63,13 @@ CARRY SELECT ADDER
 
 xcsa 0 Vcc s0 s1 s2 s3 CCout C0 C1 Ci a0 a1 a2 a3 b0 b1 b2 b3 CSA_SUB XX=1
 
-VinA3 A3 0 0
-VinA2 A2 0 1
+VinA3 A3 0 1
+VinA2 A2 0 0
 VinA1 A1 0 1
 VinA0 A0 0 1
 VinB3 B3 0 0
 VinB2 B2 0 0
-VinB1 B1 0 0
+VinB1 B1 0 1
 VinB0 B0 0 1
 ***Tensioni Fisse
 V_C0 C0 0 0
@@ -84,5 +84,6 @@ plot S1
 plot S2
 plot S3
 
+quit
 .endc
 .end

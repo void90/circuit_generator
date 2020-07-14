@@ -34,11 +34,11 @@ xmcs4 0 Vcc xout0 xout1 xout2 xout3 xout4 xout5 xout6 xout7 xx0 xx1 xx2 xx3 xy0 
 VinA3 xx3 0 0
 VinA2 xx2 0 0
 VinA1 xx1 0 0
-VinA0 xx0 0 0
+VinA0 xx0 0 1
 VinB3 xy3 0 0
 VinB2 xy2 0 0
-VinB1 xy1 0 0
-VinB0 xy0 0 1
+VinB1 xy1 0 1
+VinB0 xy0 0 0
 V_dd Vcc 0 1 
 
 .control
@@ -48,5 +48,6 @@ plot xz1
 plot xz2
 plot xz3
 
+quit
 .endc
 .end

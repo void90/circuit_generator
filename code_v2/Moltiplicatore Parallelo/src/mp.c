@@ -208,7 +208,7 @@ int main (int argc, char **argv)
 /*TEST*/{
 /*TEST*/	fprintf(fp, "zz%d ", i);
 /*TEST*/}
-	fprintf(fp, "\n.endc\n.end");	//TERMINAZIONE NETLIST
+	fprintf(fp, "\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
 	fclose(fp);
 	return 0;
