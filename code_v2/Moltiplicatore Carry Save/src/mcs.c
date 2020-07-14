@@ -2,7 +2,6 @@
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#define PATH "./../netlist/"
 
 int main (int argc, char **argv) {
 //Inizializzazione variabili
@@ -14,13 +13,6 @@ int main (int argc, char **argv) {
 	int num_level = n*2;
 char fileInput[50]={"netlist/"};
 strcat(fileInput, argv[1]);
-//	char *fileInput = &PATH;
-//	printf ("Infirizzo PATH:%p\nIndirizzo fileInput:%p\nGrandezza PATH:%ld\n", &PATH, &fileInput, sizeof(PATH) );
-//	fileInput = (char *) malloc (sizeof(PATH)+sizeof(argv[1]));
-//	printf ("Grandezza post MALLOC:%ld\n", sizeof (fileInput) );
-	
-//	strcat(fileInput, PATH);
-//	strcat(fileInput, argv[1]);
 //Apertura file
 	FILE *fp;
 	fp=fopen(fileInput, "w");
