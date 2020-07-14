@@ -43,10 +43,10 @@ V_dd Vcc 0 1
 
 .control
 run
-plot xz0
-plot xz1
-plot xz2
-plot xz3
+plot xout0
+plot xout1
+plot xout2
+plot xout3
 
 quit
 .endc

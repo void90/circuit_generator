@@ -165,7 +165,7 @@ int main (int argc, char **argv)
 	y=atoi(argv[4]);
 	int X_binary[max];
 	int Y_binary[max];
-/*TEST*/int P_binary[max*2];
+///*TEST*/int P_binary[max*2];
 	for (i = max-1; i >= 0; i--)
 	{	//conversione operandi da decimale a binario
 		X_binary[i] = x%2;
@@ -175,7 +175,7 @@ int main (int argc, char **argv)
 	}
 /*TEST*/for (i = 2*max-1; i >= 0; i--)
 /*TEST*/{	//conversione prodotto da decimale a binario
-/*TEST*/	P_binary[i] = p%2;
+///*TEST*/	P_binary[i] = p%2;
 /*TEST*/	p = p/2;
 /*TEST*/}
 //Scrittura ingressi convertiti nella netlist
@@ -197,10 +197,11 @@ int main (int argc, char **argv)
 /*TEST*/for (i = 0; i < max; i++) {
 /*TEST*/	printf ("%d ", Y_binary[i]);
 /*TEST*/}
-/*TEST*/printf ("\nRisultato atteso:\n");
-/*TEST*/for (i = 0; i < 2*max; i++) {
-/*TEST*/	printf ("%d ", P_binary[i]);
-/*TEST*/}
+///*TEST*/printf ("\nRisultato atteso:\n");
+///*TEST*/for (i = 0; i < 2*max; i++) {
+///*TEST*/	printf ("%d ", P_binary[i]);
+///*TEST*/}
+	printf("\n");
 //----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
 	fprintf(fp, "\n.control\nrun\nplot ");

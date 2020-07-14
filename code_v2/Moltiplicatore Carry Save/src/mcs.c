@@ -235,10 +235,10 @@ strcat(fileInput, argv[1]);
 	a = atoi (argv[3]);
 	b = atoi (argv[4]);
 	int A_binary[n], B_binary[n];
-/*TEST*/int S_binary[n+1];		//comprende anche il bit di carry
+///*TEST*/int S_binary[n+1];		//comprende anche il bit di carry
 /*TEST*/for (i = n; i >= 0; i--)
 /*TEST*/{	//conversione somma da decimale a binario
-/*TEST*/	S_binary[i] = s%2;		
+///*TEST*/	S_binary[i] = s%2;		
 /*TEST*/	s = s/2;
 /*TEST*/}
 	for (i = n-1; i >= 0; i--)
@@ -267,11 +267,12 @@ strcat(fileInput, argv[1]);
 /*TEST*/for (i = 0; i < n; i++) {
 /*TEST*/	printf ("%d ", B_binary[i]);
 /*TEST*/}
-/*TEST*/printf ("\nRisultato atteso:\n");
-/*TEST*/for (i = 1; i <= n; i++) {
-/*TEST*/	printf ("%d ", S_binary[i]);
-/*TEST*/}
-/*TEST*/printf ("\nCarry_out = %d\n", S_binary[0]);	//stampa del carry_out
+///*TEST*/printf ("\nRisultato atteso:\n");
+///*TEST*/for (i = 1; i <= n; i++) {
+///*TEST*/	printf ("%d ", S_binary[i]);
+///*TEST*/}
+///*TEST*/printf ("\nCarry_out = %d\n", S_binary[0]);	//stampa del carry_out
+	printf("\n");
 //----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
 	fprintf(fp, "\n.control\nrun\n");

@@ -88,11 +88,11 @@ int main (int argc, char **argv)
 	int a=atoi(argv[3]);
 	int b=atoi(argv[4]);
 	int A_binary[max], B_binary[max];
-/*TEST*/int S_binary[max];
+///*TEST*/int S_binary[max];
 /*TEST*/int s = a+b;
 /*TEST*/printf ("Risultato atteso: %d\n", s);	//risultato decimale atteso
 /*TEST*/for (i = max-1; i >= 0; i--) {		//risultato binario atteso
-/*TEST*/	S_binary[i] = s%2;
+///*TEST*/	S_binary[i] = s%2;
 /*TEST*/	s = s/2;
 /*TEST*/}
 	for (i = max-1; i >= 0; i--)
@@ -121,11 +121,12 @@ int main (int argc, char **argv)
 /*TEST*/for (i = 0; i < max; i++) {
 /*TEST*/	printf ("%d ", B_binary[i]);
 /*TEST*/}
-/*TEST*/printf ("\nRisultato atteso:\n");
-/*TEST*/for (i = 1; i <= max; i++) {
-/*TEST*/	printf ("%d ", S_binary[i]);
-/*TEST*/}
-/*TEST*/printf ("\nCarry_out = %d\n", S_binary[0]);	//stampa del carry_out
+///*TEST*/printf ("\nRisultato atteso:\n");
+///*TEST*/for (i = 1; i <= max; i++) {
+///*TEST*/	printf ("%d ", S_binary[i]);
+///*TEST*/}
+///*TEST*/printf ("\nCarry_out = %d\n", S_binary[0]);	//stampa del carry_out
+	printf("\n");
 //----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
 	fprintf(fp, "\n.control\nrun\n");
