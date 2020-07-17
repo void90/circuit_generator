@@ -1,6 +1,6 @@
 # circuit_generator
 
-La cartella contenente i codici definitivi è "code_v2". All'intenrno della cartella sono presenti 4 sottocartelle, ogniuna delle quali avente il nome del circuito associato.
+La cartella contenente i codici definitivi è "code_v2". All'interno della cartella sono presenti 4 sottocartelle, ognuna delle quali avente il nome del circuito associato.
 
 Per compilare il singolo programma contenuto all'interno della cartella, dopo avervi acceduto, utilizzare il Makefile:
 e.g.
