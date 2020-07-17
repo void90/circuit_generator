@@ -79,11 +79,11 @@ V_Ci Ci 0 0
 
 .control
 run
-plot S0
-plot S1
-plot S2
-plot S3
+*plot S0
+*plot S1
+*plot S2
+*plot S3
 
-quit
+*quit
 .endc
 .end
