@@ -87,5 +87,3 @@ vina3#branch                       3.51246e-10
 
 
 No. of Data Rows : 8208
-k = 8.207000e+03
-s0[k] = 8.798706e-01

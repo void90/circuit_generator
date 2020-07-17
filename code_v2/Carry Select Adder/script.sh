@@ -1,7 +1,9 @@
 #!/bin/bash
 i=0
 j=0	
-file="inputFile.txt" 
+file="inputFile.txt"
+netName=$1
+numBit=$2
 if [ -e $file ] && [ -r $file ]
 then
 	for word in $(<$file)
@@ -16,12 +18,12 @@ then
 	i=0
 	while [ $i -lt $j ]
 	do
-		echo "bin/csa.out $1 $2 ${stringa[i]} ${stringa[i+1]}"
-		bin/csa.out $1 $2 ${stringa[i]} ${stringa[i+1]} 
+		echo "bin/csa.out $netName $numBit ${stringa[i]} ${stringa[i+1]}"
+		bin/csa.out $netName $numBit ${stringa[i]} ${stringa[i+1]} 
 		(( i= i+3 ))		
-		echo "ngspice $1"
+		echo "ngspice $netName"
 		cd netlist
-		ngspice $1
+		ngspice $netName
 		cd ..
 	done
 else

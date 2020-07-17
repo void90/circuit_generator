@@ -1,19 +1,18 @@
 (verificare se compilare con eventuali ottimizzazioni -O3 tipo)
-1-Modificare script.sh con variabili di ingresso
 2-generatorenet.c
-	-parametro alimentazione della netlist
+	-parametro alimentazione della netlist e togliere loop
 	-modificare netlist produzione file con un valore per ogni tensione
 3-confronta.c
 	-prelevamento valori da file e conversione in binario (prove con cast) e costruzione array
-Modi che ci ha fatto vedere mastrandrea
-let k=length(time)-1
-print k
-ptint s0[k]
-write output.txt s0[k]
 
+Modi che ci ha fatto vedere mastrandrea
+	let k=length(time)-1
+	print k
+	ptint s0[k]
+	write output.txt s0[k]
 OPPURE
-letk=length(time)-1
-ngspice -b rca.net >output.txt
+	letk=length(time)-1
+	ngspice -b rca.net >output.txt
 
 	-warning se valore indefinito
 	-(chicco) programma conversione da binario a decimale

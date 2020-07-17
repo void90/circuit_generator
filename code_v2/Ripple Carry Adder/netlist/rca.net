@@ -26,13 +26,10 @@ V_dd Vcc 0 1
 
 .control
 run
-*plot S0
-*plot S1
-*plot S2
-*plot S3
-let k=length(time)-1
-print k s0[k]
+let k= length(time)-1
+*print s0[k]
 *write output.txt s0[k]
+*echo ${s0[k]} >output.txt
 *quit
 .endc
 .end
