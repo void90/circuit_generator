@@ -276,7 +276,7 @@ strcat(fileInput, argv[1]);
 //----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
 	fprintf(fp, "\n.control\nrun\n");
-/*TEST*/for(i=0; i<n; i++)
+/*TEST*/for(i=0; i<n*2; i++)
 /*TEST*/{
 /*TEST*/	fprintf(fp, "plot xout%d\n", i);
 /*TEST*/}

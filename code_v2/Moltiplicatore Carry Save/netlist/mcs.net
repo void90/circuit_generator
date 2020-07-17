@@ -47,6 +47,10 @@ plot xout0
 plot xout1
 plot xout2
 plot xout3
+plot xout4
+plot xout5
+plot xout6
+plot xout7
 
 quit
 .endc

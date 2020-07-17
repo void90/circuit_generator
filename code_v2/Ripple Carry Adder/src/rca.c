@@ -110,7 +110,7 @@ int main (int argc, char **argv)
 	fprintf(fp, "\n.control\nrun\n");
 /*TEST*/for(i=0; i<n; i++)
 /*TEST*/{
-/*TEST*/	fprintf(fp, "plot xz%d\n", i);
+/*TEST*/	fprintf(fp, "plot S%d\n", i);
 /*TEST*/}
 	fprintf(fp, "\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
