@@ -5,6 +5,7 @@
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
+*.PARAM ALIM=1
 .TRAN 0.1p 820p
 .subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3  cout3 cin0  ain0  ain1  ain2  ain3  bin0  bin1  bin2  bin3 XX=1
 xfa0 0 Vdd sum0 cout0 cin0 ain0 bin0 FA_SUB XX=XXX 
@@ -25,11 +26,13 @@ V_dd Vcc 0 1
 
 .control
 run
-plot S0
-plot S1
-plot S2
-plot S3
-
-quit
+*plot S0
+*plot S1
+*plot S2
+*plot S3
+let k=length(time)-1
+print k s0[k]
+*write output.txt s0[k]
+*quit
 .endc
 .end
