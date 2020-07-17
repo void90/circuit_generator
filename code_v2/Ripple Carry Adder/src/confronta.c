@@ -24,11 +24,13 @@ int main(int argc, char **argv)
 			{
 				bin_dec[rows]=1;
 				bin_car[rows]='1';
+				bin_intero[rows]=1;
 			}
 			else
 			{
 				bin_dec[rows]=0;	
 				bin_car[rows]='0';
+				bin_intero[rows]=0;
 			}
 			count=0;
 			rows++;
@@ -44,7 +46,7 @@ for(int i=0; i<rows; i++)
 }
 printf("\nStampa in binario come interi\nArray bin_int di INT salvati in decimale:");
 for(int i=0; i<rows; i++)
-{printf("%c ", bin_car[i]);
+{printf("%d ", bin_intero[i]);
 }
 printf("\n");
 	fclose(outVal);
