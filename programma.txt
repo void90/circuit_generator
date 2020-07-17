@@ -1,21 +1,18 @@
 (verificare se compilare con eventuali ottimizzazioni -O3 tipo)
 2-generatorenet.c
-	-parametro alimentazione della netlist e togliere loop
-	-modificare netlist produzione file con un valore per ogni tensione
+	-parametro alimentazione nello script
+*FATTO-parametro alimentazione nella scrittura della netlist
+*FATTO-togliere loop del plot
+*FATTO-modificare netlist produzione file con un valore per ogni tensione
 3-confronta.c
 	-prelevamento valori da file e conversione in binario (prove con cast) e costruzione array
-
-Modi che ci ha fatto vedere mastrandrea
-	let k=length(time)-1
-	print k
-	ptint s0[k]
-	write output.txt s0[k]
-OPPURE
-	letk=length(time)-1
-	ngspice -b rca.net >output.txt
-
+(non è concesso il cast da char a float)
+Il file del seguente punto si trova in code_v2/Ripple Carry Adder/src, si chiama confronta.c e legge per provare il file output.txt, che contiene i risultati di una simulazione
+Il file va lanciato con: ./confronta.out (per te chicco senza ./)
 	-warning se valore indefinito
 	-(chicco) programma conversione da binario a decimale
 	-confronto con il valore atteso che corrisponde a $stringa[2+i]
 	-decidere come mostrare risultato simulazione e del confronto
+
+4-Inserire i controlli
 

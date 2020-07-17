@@ -2,6 +2,7 @@
 .option filetype=ascii
 .INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
 .INCLUDE ../lib/16nm_HP.pm
+.PARAM ALIM=1
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
@@ -33,25 +34,18 @@ xadd_Level7	 0 vdd	z4 z5    z6    	7cout0 7cout1 z7    	0     7cout0 7cout1 	6co
 xmcs4 0 Vcc xout0 xout1 xout2 xout3 xout4 xout5 xout6 xout7 xx0 xx1 xx2 xx3 xy0 xy1 xy2 xy3 MCS_SUB XX = XXX
 VinA3 xx3 0 0
 VinA2 xx2 0 0
-VinA1 xx1 0 0
-VinA0 xx0 0 1
+VinA1 xx1 0 ALIM
+VinA0 xx0 0 ALIM
 VinB3 xy3 0 0
 VinB2 xy2 0 0
-VinB1 xy1 0 1
+VinB1 xy1 0 ALIM
 VinB0 xy0 0 0
-V_dd Vcc 0 1 
+V_dd Vcc 0 ALIM
 
 .control
 run
-plot xout0
-plot xout1
-plot xout2
-plot xout3
-plot xout4
-plot xout5
-plot xout6
-plot xout7
-
+let k=length(time)-1
+print xout0[k] xout1[k] xout2[k] xout3[k] xout4[k] xout5[k] xout6[k] xout7[k]>outputValue.txt
 quit
 .endc
 .end

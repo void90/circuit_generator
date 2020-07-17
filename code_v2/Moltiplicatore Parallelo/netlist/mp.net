@@ -3,6 +3,7 @@ MOLTIPLICATORE PARALLELO
 .option filetype=ascii
 .INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
 .INCLUDE ../lib/16nm_HP.pm
+.PARAM ALIM=1
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
@@ -38,19 +39,20 @@ xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zc0 x0 x1 x2 x3 y0 y1 y2 y3 MP_SUB XX=
 
 VinX3 X3 0 0
 VinX2 X2 0 0
-VinX1 X1 0 1
-VinX0 X0 0 1
+VinX1 X1 0 ALIM
+VinX0 X0 0 ALIM
 VinY3 Y3 0 0
-VinY2 Y2 0 1
+VinY2 Y2 0 ALIM
 VinY1 Y1 0 0
-VinY0 Y0 0 1
+VinY0 Y0 0 ALIM
 
 V_c0 zc0 0 0
-V_dd Vcc 0 1 
+V_dd Vcc 0 ALIM
 
 .control
 run
-plot zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 
+let k= length(time)-1
+print  zz0[k] zz1[k] zz2[k] zz3[k] zz4[k] zz5[k] zz6[k] zz7[k]>outputValue.txt
 quit
 .endc
 .end

@@ -5,7 +5,7 @@
 
 int main (int argc, char **argv) {
 //Inizializzazione variabili
-	int n = atoi(argv[2]);
+	int n = atoi(argv[2]), alim=1;
 	short int i, j, out_idx = 0, y_idx = 2;
 	char *param[3] = {"out", "x", "y"};
 	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
@@ -21,10 +21,13 @@ strcat(fileInput, argv[1]);
 		printf("File doesen't exist.\n");
 		return-1;
 	}
-//	free (fileInput);
+	//Inserimento eventuale dell'alimentazione
+	if(argc==6)
+	{	
+		alim=atoi(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n");	
+	fprintf(fp, ".PARAM ALIM=%d\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
 //Codice generazione netlist cartella code
 //DICHIARAZIONE SOTTOCIRCUITO AND_ARRAY_SUB: [n x AND2_SUB]	
 	fprintf (fp, ".subckt AND_ARRAY_SUB\t0 Vdd ");
@@ -251,13 +254,21 @@ strcat(fileInput, argv[1]);
 //Scrittura ingressi convertiti nella netlist
 	for (i = n-1, j = 0; j < n; i--, j++)
 	{	//inizializzazione valori di A sulla netlist
-		fprintf(fp, "VinA%d x%s%d 0 %d\n", i, param[1], i, A_binary[j]);	
+		fprintf(fp, "VinA%d x%s%d 0 ", i, param[1], i);
+		if(A_binary[j]==1)
+		{	fprintf(fp, "ALIM\n");}	
+		else
+		{	fprintf(fp, "0\n");}			
 	}
 	for (i = n-1, j = 0; j < n; i--, j++)
 	{	//inizializzazione valori di B sulla netlist
-		fprintf(fp, "VinB%d x%s%d 0 %d\n", i, param[2], i, B_binary[j]);
+		fprintf(fp, "VinB%d x%s%d 0 ", i, param[2], i);
+		if(B_binary[j]==1)
+		{	fprintf(fp, "ALIM\n");}	
+		else
+		{	fprintf(fp, "0\n");}		
 	}
-	fprintf(fp, "V_dd Vcc 0 1 \n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
+	fprintf(fp, "V_dd Vcc 0 ALIM\n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
 //--------------STAMPA PER VERIFICA CONVERSIONE INGRESSI E RISULTATO ATTESO------------------------------------
 /*TEST*/printf ("Operando A:\n");
 /*TEST*/for (i = 0; i < n; i++) {
@@ -275,12 +286,12 @@ strcat(fileInput, argv[1]);
 	printf("\n");
 //----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
-	fprintf(fp, "\n.control\nrun\n");
-/*TEST*/for(i=0; i<n*2; i++)
-/*TEST*/{
-/*TEST*/	fprintf(fp, "plot xout%d\n", i);
-/*TEST*/}
-	fprintf(fp, "\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
+	fprintf(fp, "\n.control\nrun\nlet k=length(time)-1\nprint");
+	for(i=0; i<n*2; i++)
+	{
+		fprintf(fp, " xout%d[k]", i);
+	}
+	fprintf(fp, ">outputValue.txt\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
 	fclose(fp);
 	return 0;

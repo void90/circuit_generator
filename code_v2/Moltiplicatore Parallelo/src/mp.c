@@ -9,7 +9,7 @@ int main (int argc, char **argv)
 	//variabili di loop
 	short int i, j, count, count2;
 	//variabili di parametri
-	int a, max, max_var, max_var2;
+	int a, max, max_var, max_var2, alim=1;
 	char *str[10]={"out", "xin", "sum", "ain", "bin", "z", "xin_", "yin_", "s", "c"};
 	char fileInput[50]={"netlist/"};
 	strcat(fileInput, argv[1]);
@@ -22,9 +22,12 @@ int main (int argc, char **argv)
 		return-1;
 	}
 	max = atoi(argv[2]);
+	//Inserimento eventuale dell'alimentazione
+	if(argc==6)
+	{	alim=atoi(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "MOLTIPLICATORE PARALLELO\n\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ");
+	fprintf(fp, ".PARAM ALIM=%d\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ", alim);
 //DICHIARAZIONE SOTTOCIRCUITO .subckt PART_SUB (and)
 	a=0;
 	for(i=0; i<max; i++)
@@ -181,13 +184,21 @@ int main (int argc, char **argv)
 //Scrittura ingressi convertiti nella netlist
 	for (i = max-1, j = 0; j < max; i--, j++)
 	{	//inizializzazione valori di X sulla netlist
-		fprintf(fp, "VinX%d X%d 0 %d\n", i, i, X_binary[j]);
+		fprintf(fp, "VinX%d X%d 0 ", i, i);
+		if(X_binary[j]==1)
+		{	fprintf(fp, "ALIM\n");}
+		else
+		{	fprintf(fp, "0\n");}
 	}
 	for (i = max-1, j = 0; j < max; i--, j++)
 	{	//inizializzazione valori di Y sulla netlist
-		fprintf(fp, "VinY%d Y%d 0 %d\n", i, i, Y_binary[j]);
+		fprintf(fp, "VinY%d Y%d 0 ", i, i);
+		if(Y_binary[j]==1)
+		{	fprintf(fp, "ALIM\n");}
+		else
+		{	fprintf(fp, "0\n");}
 	}
-	fprintf(fp, "\nV_c0 zc0 0 0\nV_dd Vcc 0 1 \n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
+	fprintf(fp, "\nV_c0 zc0 0 0\nV_dd Vcc 0 ALIM\n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
 //--------------STAMPA PER VERIFICA CONVERSIONE INGRESSI E RISULTATO ATTESO------------------------------------
 /*TEST*/printf ("Operando X:\n");
 /*TEST*/for (i = 0; i < max; i++) {
@@ -204,12 +215,12 @@ int main (int argc, char **argv)
 	printf("\n");
 //----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
-	fprintf(fp, "\n.control\nrun\nplot ");
-/*TEST*/for(i=0; i<max*2; i++)
-/*TEST*/{
-/*TEST*/	fprintf(fp, "zz%d ", i);
-/*TEST*/}
-	fprintf(fp, "\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
+	fprintf(fp, "\n.control\nrun\nlet k= length(time)-1\nprint ");
+	for(i=0; i<max*2; i++)
+	{
+		fprintf(fp, " zz%d[k]", i);
+	}
+	fprintf(fp, ">outputValue.txt\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
 	fclose(fp);
 	return 0;
