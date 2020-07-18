@@ -13,7 +13,7 @@ Per eliminare il prodotto delle compilazioni
 ```
     make clean
 ```
-Per eseguire il programma è necessario utilizzare lo script contenuto in ogni sottocartella chiamato "script.sh", il quale deve essere lanciato con nomeNetlist.net e num_bit. Possibile definire la tenzione di alimentazione del circuito attraverso il parametro opzionale **alim**
+Per eseguire il programma è necessario utilizzare lo script contenuto in ogni sottocartella chiamato "script.sh", il quale deve essere lanciato con nomeNetlist.net e num_bit. L'alimentazione ha come valore di default 1V e, nel caso in cui si volesse usare tale valore, non è necessario inserirla. E' possibile definire un nuovo valore della tensione di alimentazione del circuito attraverso il parametro opzionale **alim**, inseribile come parametro aggiuntivo da riga di comando.
 
 ```
 Sintassi:

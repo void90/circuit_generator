@@ -28,7 +28,7 @@ int main (int argc, char **argv)
 	{	alim=atof(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "MOLTIPLICATORE PARALLELO\n\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM ALIM=%fs\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ", alim);
+	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ", alim);
 //DICHIARAZIONE SOTTOCIRCUITO .subckt PART_SUB (and)
 	a=0;
 	for(i=0; i<max; i++)
