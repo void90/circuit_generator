@@ -6,10 +6,11 @@
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
+	float alim=1;
 	//variabili di loop
 	short int i, j, count, count2;
 	//variabili di parametri
-	int a, max, max_var, max_var2, alim=1;
+	int a, max, max_var, max_var2;
 	char *str[10]={"out", "xin", "sum", "ain", "bin", "z", "xin_", "yin_", "s", "c"};
 	char fileInput[50]={"netlist/"};
 	strcat(fileInput, argv[1]);
@@ -24,10 +25,10 @@ int main (int argc, char **argv)
 	max = atoi(argv[2]);
 	//Inserimento eventuale dell'alimentazione
 	if(argc==6)
-	{	alim=atoi(argv[5]);	}
+	{	alim=atof(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "MOLTIPLICATORE PARALLELO\n\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM ALIM=%d\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ", alim);
+	fprintf(fp, ".PARAM ALIM=%fs\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ", alim);
 //DICHIARAZIONE SOTTOCIRCUITO .subckt PART_SUB (and)
 	a=0;
 	for(i=0; i<max; i++)

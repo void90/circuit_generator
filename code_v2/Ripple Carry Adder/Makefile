@@ -3,8 +3,9 @@ CC=gcc
 CC_OPTS=-Wall
 .phony:	clean all
 
-all: src/rca.c  
-	$(CC) $(CC_OPTS) -o bin/rca.out $< 
+all: src/rca.c src/confronta.c
+	$(CC) src/rca.c $(CC_OPTS) -o bin/rca.out 
+	$(CC) src/confronta.c $(CC_OPTS) -o bin/confronta.out 
 clean:
 	rm -rf bin/*.o bin/*.out
 	

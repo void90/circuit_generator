@@ -1,7 +1,7 @@
 (verificare se compilare con eventuali ottimizzazioni -O3 tipo)
 2-generatorenet.c
-	-parametro alimentazione nello script
-*FATTO-parametro alimentazione nella scrittura della netlist
+*FATTO-parametro alimentazione nello script
+*FATTO-parametro alimentazione nella scrittura della netlist con float alim
 *FATTO-togliere loop del plot
 *FATTO-modificare netlist produzione file con un valore per ogni tensione
 3-confronta.c
@@ -10,9 +10,10 @@
 Il file del seguente punto si trova in code_v2/Ripple Carry Adder/src, si chiama confronta.c e legge per provare il file output.txt, che contiene i risultati di una simulazione
 Il file va lanciato con: ./confronta.out (per te chicco senza ./)
 *FATTO-warning se valore indefinito
-	-(chicco) programma conversione da binario a decimale
-	-confronto con il valore atteso che corrisponde a $stringa[2+i]
-	-decidere come mostrare risultato simulazione e del confronto
+*FATTO-programma conversione da binario a decimale
+*FATTO-confronto con il valore atteso che corrisponde a $stringa[2+i]
+*FATTO-decidere come mostrare risultato simulazione e del confronto
+*FATTO-modificare script per lanciare ./confronta.out valoreAtteso [eventualmente alim]
 
 4-Inserire i controlli
-
+(utilizzare gli stream di errore/uscita/ingresso)

@@ -3,9 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main (int argc, char **argv) {
+int main (int argc, char **argv)
+{
+	float alim=1;
 //Inizializzazione variabili
-	int n = atoi(argv[2]), alim=1;
+	int n = atoi(argv[2]);
 	short int i, j, out_idx = 0, y_idx = 2;
 	char *param[3] = {"out", "x", "y"};
 	char *param2[5] = {"sum", "Cout", "Cin", "a", "b"};
@@ -24,10 +26,10 @@ strcat(fileInput, argv[1]);
 	//Inserimento eventuale dell'alimentazione
 	if(argc==6)
 	{	
-		alim=atoi(argv[5]);	}
+		alim=atof(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM ALIM=%d\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
+	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
 //Codice generazione netlist cartella code
 //DICHIARAZIONE SOTTOCIRCUITO AND_ARRAY_SUB: [n x AND2_SUB]	
 	fprintf (fp, ".subckt AND_ARRAY_SUB\t0 Vdd ");

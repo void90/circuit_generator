@@ -6,7 +6,8 @@
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
-	int n = atoi(argv[2]), alim=1;
+	float alim=1;
+	int n = atoi(argv[2]);
 	short int i, j;
 	char *param[4]={"sum", " cout", " ain", " bin"};
 	char *param2[4] = {"S", " Cout", " A", " B"};
@@ -23,10 +24,10 @@ int main (int argc, char **argv)
 	}
 //Inserimento eventuale dell'alimentazione
 	if(argc==6)
-	{	alim=atoi(argv[5]);	}
+	{	alim=atof(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM ALIM=%d\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
+	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
 //Codice generazione netlist cartella code
 	//DICHIARAZIONE SOTTOCIRCUITO
 	fprintf (fp, ".subckt RCA_SUB 0 Vdd ");	

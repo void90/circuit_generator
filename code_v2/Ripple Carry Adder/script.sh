@@ -1,11 +1,26 @@
 #!/bin/bash
+#variabili di loop
 i=0
 j=0	
-file="inputFile.txt" 
+#file contenente i valori da simulare e il valore atteso
+file="inputFile.txt"
+fileout="outputFile.txt" 
+#Variabili di ingresso
 netName=$1
 numBit=$2
+if [ $# -eq 3 ]
+then
+	alim=$3
+fi
+#cancellazione file outputFile.txt
+if [ -e $fileout ]
+then
+	rm $fileout
+fi
+#controllo esistenza del file
 if [ -e $file ] && [ -r $file ]
 then
+	#lettura del file
 	for word in $(<$file)
 	do
 		stringa[i]=$word
@@ -16,15 +31,19 @@ then
 		fi
 	done
 	i=0
+	#inizio del loop per simulazione
 	while [ $i -lt $j ]
 	do
-		echo "bin/rca.out $netName $numBit ${stringa[i]} ${stringa[i+1]}"
-		bin/rca.out $netName $numBit ${stringa[i]} ${stringa[i+1]} 
-		(( i= i+3 ))		
+		#programma di scrittura netlist (nomeNetlist numeroBit operando1 operando2)
+		echo "bin/rca.out $netName $numBit ${stringa[i]} ${stringa[i+1]} $alim"
+		bin/rca.out $netName $numBit ${stringa[i]} ${stringa[i+1]} $alim
+		#avvio simulazione con ngspice		
 		echo "ngspice $netName"
 		cd netlist
 		ngspice $netName
 		cd ..
+		bin/confronta.out ${stringa[i+2]} $alim
+		(( i= i+3 ))
 	done
 else
 	echo "$file doesen't exist"
