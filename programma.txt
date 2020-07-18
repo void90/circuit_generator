@@ -5,11 +5,11 @@
 *FATTO-togliere loop del plot
 *FATTO-modificare netlist produzione file con un valore per ogni tensione
 3-confronta.c
-	-prelevamento valori da file e conversione in binario (prove con cast) e costruzione array
+*FATTO-prelevamento valori da file e conversione in binario (prove con cast) e costruzione array
 (non è concesso il cast da char a float)
 Il file del seguente punto si trova in code_v2/Ripple Carry Adder/src, si chiama confronta.c e legge per provare il file output.txt, che contiene i risultati di una simulazione
 Il file va lanciato con: ./confronta.out (per te chicco senza ./)
-	-warning se valore indefinito
+*FATTO-warning se valore indefinito
 	-(chicco) programma conversione da binario a decimale
 	-confronto con il valore atteso che corrisponde a $stringa[2+i]
 	-decidere come mostrare risultato simulazione e del confronto
