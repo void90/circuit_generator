@@ -23,7 +23,9 @@ e.g.
 Gli operandi d'ingresso vengono automaticamente prelevati dallo script dal file **inputFile.txt**, all'interno del quale sono inseriti nel formato: 
 
 OPERANDO_A OPERANDO_B RISULTATO
+
 OPERANDO_A OPERANDO_B RISULTATO
+
 ...
     
 Per ogni riga vengono predi i primi 2 operandi e viene generata una netlist, con la quale viene avviata una simulazione automatica. Nel caso di inbutFile composto da piu righe, ogni netlist prodotta viene sovrascritta con la generazione della successiva.
