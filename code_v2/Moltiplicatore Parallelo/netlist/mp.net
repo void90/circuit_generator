@@ -3,7 +3,7 @@ MOLTIPLICATORE PARALLELO
 .option filetype=ascii
 .INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
 .INCLUDE ../lib/16nm_HP.pm
-.PARAM ALIM=1.100000
+.PARAM ALIM=1.000000
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1

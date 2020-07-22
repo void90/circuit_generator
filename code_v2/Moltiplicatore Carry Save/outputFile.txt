@@ -1,3 +1,0 @@
-Risultato atteso: 16384	Risultato ottenuto: 16384	Matched
-Risultato atteso: 128	Risultato ottenuto: 124	Not matched
-Risultato atteso: 256	Risultato ottenuto: 256	Matched

@@ -43,7 +43,7 @@ int main (int argc, char **argv)
 		}
 	}
 	fprintf(fp, "XX=1");
-	fprintf(fp, "\nxfa0 0 Vdd sum0 cout0 cin0 ain0 bin0 FA_SUB XX=XXX \n");
+	fprintf(fp, "\nxfa0 0 Vdd sum0 cout0 0 ain0 bin0 FA_SUB XX=XXX \n");
 	for (i = 1; i < n; i++)
 	{
 		fprintf(fp, "xfa%d 0 Vdd sum%d cout%d cout%d  ain%d  bin%d FA_SUB XX=XXX \n",i, i, i, i-1, i, i);

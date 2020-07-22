@@ -2,23 +2,35 @@
 .option filetype=ascii
 .INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
 .INCLUDE ../lib/16nm_HP.pm
-.PARAM ALIM=1.100000
+.PARAM ALIM=1.000000
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
 .TRAN 0.1p 820p
-.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3  cout3 cin0  ain0  ain1  ain2  ain3  bin0  bin1  bin2  bin3 XX=1
-xfa0 0 Vdd sum0 cout0 cin0 ain0 bin0 FA_SUB XX=XXX 
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7  cout7 cin0  ain0  ain1  ain2  ain3  ain4  ain5  ain6  ain7  bin0  bin1  bin2  bin3  bin4  bin5  bin6  bin7 XX=1
+xfa0 0 Vdd sum0 cout0 0 ain0 bin0 FA_SUB XX=XXX 
 xfa1 0 Vdd sum1 cout1 cout0  ain1  bin1 FA_SUB XX=XXX 
 xfa2 0 Vdd sum2 cout2 cout1  ain2  bin2 FA_SUB XX=XXX 
 xfa3 0 Vdd sum3 cout3 cout2  ain3  bin3 FA_SUB XX=XXX 
+xfa4 0 Vdd sum4 cout4 cout3  ain4  bin4 FA_SUB XX=XXX 
+xfa5 0 Vdd sum5 cout5 cout4  ain5  bin5 FA_SUB XX=XXX 
+xfa6 0 Vdd sum6 cout6 cout5  ain6  bin6 FA_SUB XX=XXX 
+xfa7 0 Vdd sum7 cout7 cout6  ain7  bin7 FA_SUB XX=XXX 
 .ends 
-xrca 0 Vcc S0 S1 S2 S3  Cout3 Cin  A0  A1  A2  A3  B0  B1  B2  B3 RCA_SUB XX=XXX
-VinA3 A3 0 ALIM
+xrca 0 Vcc S0 S1 S2 S3 S4 S5 S6 S7  Cout7 Cin  A0  A1  A2  A3  A4  A5  A6  A7  B0  B1  B2  B3  B4  B5  B6  B7 RCA_SUB XX=XXX
+VinA7 A7 0 0
+VinA6 A6 0 ALIM
+VinA5 A5 0 ALIM
+VinA4 A4 0 0
+VinA3 A3 0 0
 VinA2 A2 0 ALIM
 VinA1 A1 0 0
 VinA0 A0 0 0
-VinB3 B3 0 0
+VinB7 B7 0 ALIM
+VinB6 B6 0 0
+VinB5 B5 0 0
+VinB4 B4 0 ALIM
+VinB3 B3 0 ALIM
 VinB2 B2 0 0
 VinB1 B1 0 ALIM
 VinB0 B0 0 ALIM
@@ -27,7 +39,7 @@ V_dd Vcc 0 ALIM
 .control
 run
 let k= length(time)-1
-print s0[k] s1[k] s2[k] s3[k]>outputValue.txt
+print s0[k] s1[k] s2[k] s3[k] s4[k] s5[k] s6[k] s7[k]>outputValue.txt
 quit
 .endc
 .end
