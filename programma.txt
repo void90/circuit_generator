@@ -1,9 +1,19 @@
-1-Scrivere Help e aggiungere meccanismo di lettura se non si attivano gli ingressi
-2-Valore di default dell'alimentazione nello script
-3-Ottimizzare simulazione in base al numero dei bit
-4-Aggiustare Moltiplicatore Carry Save (per numbit>4)
-5-Risimulare tutti gli altri circuiti (RCA, CSA)
-6-Decidere come trattare il carry out
-FATTO-Modificare file uscita in modo che inA inB outatteso outsimul
-8-SIMULAZIONI FINALI
+(verificare se compilare con eventuali ottimizzazioni -O3 tipo)
+2-generatorenet.c
+*FATTO-parametro alimentazione nello script
+*FATTO-parametro alimentazione nella scrittura della netlist con float alim
+*FATTO-togliere loop del plot
+*FATTO-modificare netlist produzione file con un valore per ogni tensione
+3-confronta.c
+*FATTO-prelevamento valori da file e conversione in binario (prove con cast) e costruzione array
+(non è concesso il cast da char a float)
+Il file del seguente punto si trova in code_v2/Ripple Carry Adder/src, si chiama confronta.c e legge per provare il file output.txt, che contiene i risultati di una simulazione
+Il file va lanciato con: ./confronta.out (per te chicco senza ./)
+*FATTO-warning se valore indefinito
+*FATTO-programma conversione da binario a decimale
+*FATTO-confronto con il valore atteso che corrisponde a $stringa[2+i]
+*FATTO-decidere come mostrare risultato simulazione e del confronto
+*FATTO-modificare script per lanciare ./confronta.out valoreAtteso [eventualmente alim]
 
+4-Inserire i controlli
+(utilizzare gli stream di errore/uscita/ingresso)
