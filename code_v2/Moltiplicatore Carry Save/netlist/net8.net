@@ -1,0 +1,75 @@
+*MOLTIPLICATORE CARRY SAVE
+.option filetype=ascii
+.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
+.INCLUDE ../lib/16nm_HP.pm
+.PARAM ALIM=1.000000
+.PARAM Lmin=16n
+.PARAM Wmin=16n
+.PARAM XXX=1
+.TRAN 0.1p 820p
+.subckt AND_ARRAY_SUB	0 Vdd out0 out1 out2 out3 out4 out5 out6 out7 x0 x1 x2 x3 x4 x5 x6 x7 y	XX=1
+xand0	0 Vdd out0 x0 y	AND2_SUB XX=XXX
+xand1	0 Vdd out1 x1 y	AND2_SUB XX=XXX
+xand2	0 Vdd out2 x2 y	AND2_SUB XX=XXX
+xand3	0 Vdd out3 x3 y	AND2_SUB XX=XXX
+xand4	0 Vdd out4 x4 y	AND2_SUB XX=XXX
+xand5	0 Vdd out5 x5 y	AND2_SUB XX=XXX
+xand6	0 Vdd out6 x6 y	AND2_SUB XX=XXX
+xand7	0 Vdd out7 x7 y	AND2_SUB XX=XXX
+.ends 
+
+.subckt ADD_ARRAY_SUB	0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 Cout0 Cout1 Cout2 Cout3 Cout4 Cout5 Cout6 Cin0 Cin1 Cin2 Cin3 Cin4 Cin5 Cin6 a0 a1 a2 a3 a4 a5 a6 b0 b1 b2 b3 b4 b5 b6 	XX=1
+	xadd0 0 Vdd sum0 cout0 cin0 a0 b0  FA_SUB XX = XXX
+	xadd1 0 Vdd sum1 cout1 cin1 a1 b1  FA_SUB XX = XXX
+	xadd2 0 Vdd sum2 cout2 cin2 a2 b2  FA_SUB XX = XXX
+	xadd3 0 Vdd sum3 cout3 cin3 a3 b3  FA_SUB XX = XXX
+	xadd4 0 Vdd sum4 cout4 cin4 a4 b4  FA_SUB XX = XXX
+	xadd5 0 Vdd sum5 cout5 cin5 a5 b5  FA_SUB XX = XXX
+	xadd6 0 Vdd sum6 cout6 cin6 a6 b6  FA_SUB XX = XXX
+.ends 
+
+.subckt MCS_SUB	0 Vdd	z0 z1 z2 z3 z4 z5 z6 z7 z8 z9 z10 z11 z12 z13 z14 z15 x0 x1 x2 x3 x4 x5 x6 x7 y0 y1 y2 y3 y4 y5 y6 y7 	XX=1
+xand_Level0	 0 vdd	z0    0out1 0out2 0out3 0out4 0out5 0out6 0out7 x0 x1 x2 x3 x4 x5 x6 x7 y0	AND_ARRAY_SUB XX = XXX
+xand_Level1	 0 vdd	1out0 1out1 1out2 1out3 1out4 1out5 1out6 1out7 x0 x1 x2 x3 x4 x5 x6 x7 y1	AND_ARRAY_SUB XX = XXX
+xADD_Level2	 0 vdd	z1 2sum1 2sum2 2sum3 2sum4 2sum5 2sum6 2cout0 2cout1 2cout2 2cout3 2cout4 2cout5 2cout6 0     0     0     0     0     0     0     1out0 1out1 1out2 1out3 1out4 1out5 1out6 0out1 0out2 0out3 0out4 0out5 0out6 0out7 	ADD_ARRAY_SUB XX = XXX
+xand_Level3	 0 vdd	3out0 3out1 3out2 3out3 3out4 3out5 3out6 3out7 	x0 x1 x2 x3 x4 x5 x6 x7 	y2	AND_ARRAY_SUB XX = XXX
+xADD_Level4	 0 vdd	z2 4sum1 4sum2 4sum3 4sum4 4sum5 4sum6 4cout0 4cout1 4cout2 4cout3 4cout4 4cout5 4cout6 2cout0 2cout1 2cout2 2cout3 2cout4 2cout5 2cout6 3out0 3out1 3out2 3out3 3out4 3out5 3out6 2sum1 2sum2 2sum3 2sum4 2sum5 2sum6 1out7 	ADD_ARRAY_SUB XX = XXX
+xand_Level5	 0 vdd	5out0 5out1 5out2 5out3 5out4 5out5 5out6 5out7 	x0 x1 x2 x3 x4 x5 x6 x7 	y3	AND_ARRAY_SUB XX = XXX
+xADD_Level6	 0 vdd	z3 6sum1 6sum2 6sum3 6sum4 6sum5 6sum6 6cout0 6cout1 6cout2 6cout3 6cout4 6cout5 6cout6 4cout0 4cout1 4cout2 4cout3 4cout4 4cout5 4cout6 5out0 5out1 5out2 5out3 5out4 5out5 5out6 4sum1 4sum2 4sum3 4sum4 4sum5 4sum6 3out7 	ADD_ARRAY_SUB XX = XXX
+xand_Level7	 0 vdd	7out0 7out1 7out2 7out3 7out4 7out5 7out6 7out7 	x0 x1 x2 x3 x4 x5 x6 x7 	y4	AND_ARRAY_SUB XX = XXX
+xADD_Level8	 0 vdd	z4 8sum1 8sum2 8sum3 8sum4 8sum5 8sum6 8cout0 8cout1 8cout2 8cout3 8cout4 8cout5 8cout6 6cout0 6cout1 6cout2 6cout3 6cout4 6cout5 6cout6 7out0 7out1 7out2 7out3 7out4 7out5 7out6 6sum1 6sum2 6sum3 6sum4 6sum5 6sum6 5out7 	ADD_ARRAY_SUB XX = XXX
+xand_Level9	 0 vdd	9out0 9out1 9out2 9out3 9out4 9out5 9out6 9out7 	x0 x1 x2 x3 x4 x5 x6 x7 	y5	AND_ARRAY_SUB XX = XXX
+xADD_Level10	 0 vdd	z5 10sum1 10sum2 10sum3 10sum4 10sum5 10sum6 10cout0 10cout1 10cout2 10cout3 10cout4 10cout5 10cout6 8cout0 8cout1 8cout2 8cout3 8cout4 8cout5 8cout6 9out0 9out1 9out2 9out3 9out4 9out5 9out6 8sum1 8sum2 8sum3 8sum4 8sum5 8sum6 7out7 	ADD_ARRAY_SUB XX = XXX
+xand_Level11	 0 vdd	11out0 11out1 11out2 11out3 11out4 11out5 11out6 11out7 	x0 x1 x2 x3 x4 x5 x6 x7 	y6	AND_ARRAY_SUB XX = XXX
+xADD_Level12	 0 vdd	z6 12sum1 12sum2 12sum3 12sum4 12sum5 12sum6 12cout0 12cout1 12cout2 12cout3 12cout4 12cout5 12cout6 10cout0 10cout1 10cout2 10cout3 10cout4 10cout5 10cout6 11out0 11out1 11out2 11out3 11out4 11out5 11out6 10sum1 10sum2 10sum3 10sum4 10sum5 10sum6 9out7 	ADD_ARRAY_SUB XX = XXX
+xand_Level13	 0 vdd	13out0 13out1 13out2 13out3 13out4 13out5 13out6 13out7 	x0 x1 x2 x3 x4 x5 x6 x7 	y7	AND_ARRAY_SUB XX = XXX
+xADD_Level14	 0 vdd	z7 14sum1 14sum2 14sum3 14sum4 14sum5 14sum6 14cout0 14cout1 14cout2 14cout3 14cout4 14cout5 14cout6 12cout0 12cout1 12cout2 12cout3 12cout4 12cout5 12cout6 13out0 13out1 13out2 13out3 13out4 13out5 13out6 12sum1 12sum2 12sum3 12sum4 12sum5 12sum6 11out7 	ADD_ARRAY_SUB XX = XXX
+xADD_Level15	 0 vdd	z8 z9   z10   z11   z12   z13   z14   15cout0 15cout1 15cout2 15cout3 15cout4 15cout5 z15    	0     15cout0 15cout1 15cout2 15cout3 15cout4 15cout5 	14cout0 14cout1 14cout2 14cout3 14cout4 14cout5 14cout6 	14sum1 14sum2 14sum3 14sum4 14sum5 14sum6 13out7 	ADD_ARRAY_SUB XX = XXX
+	.ends 
+
+xmcs8 0 Vcc xout0 xout1 xout2 xout3 xout4 xout5 xout6 xout7 xout8 xout9 xout10 xout11 xout12 xout13 xout14 xout15 xx0 xx1 xx2 xx3 xx4 xx5 xx6 xx7 xy0 xy1 xy2 xy3 xy4 xy5 xy6 xy7 MCS_SUB XX = XXX
+VinA7 xx7 0 ALIM
+VinA6 xx6 0 0
+VinA5 xx5 0 0
+VinA4 xx4 0 0
+VinA3 xx3 0 0
+VinA2 xx2 0 0
+VinA1 xx1 0 0
+VinA0 xx0 0 0
+VinB7 xy7 0 0
+VinB6 xy6 0 0
+VinB5 xy5 0 0
+VinB4 xy4 0 0
+VinB3 xy3 0 0
+VinB2 xy2 0 0
+VinB1 xy1 0 ALIM
+VinB0 xy0 0 0
+V_dd Vcc 0 ALIM
+
+.control
+run
+let k=length(time)-1
+print xout0[k] xout1[k] xout2[k] xout3[k] xout4[k] xout5[k] xout6[k] xout7[k] xout8[k] xout9[k] xout10[k] xout11[k] xout12[k] xout13[k] xout14[k] xout15[k]>outputValue.txt
+quit
+.endc
+.end

@@ -67,18 +67,17 @@ strcat(fileInput, argv[1]);
 //DICHIARAZIONE MCS_SUB
 	fprintf (fp, ".subckt MCS_SUB\t0 Vdd\t");
 	for( j = 0; j < num_level; j++)
-			{
-				fprintf(fp, "z%d ", j);
-//				fprintf(fp, "%s%d ", param3[i], j);
-			}
-	fprintf(fp, "\t");
+	{
+		fprintf(fp, "z%d ", j);
+	}
+//	fprintf(fp, "\t");
 	for( i = 1; i < 3; i++ ) 
 	{
 		for( j = 0; j < n; j++)
 		{
 			fprintf(fp, "%s%d ", param3[i], j);
 		}
-		fprintf(fp, "\t");
+//		fprintf(fp, "\t");
 	}
 	fprintf(fp, "\tXX=1\n");
 	
@@ -88,12 +87,11 @@ strcat(fileInput, argv[1]);
 	{
 		fprintf (fp,"0out%d ", j+1);
 	} 
-	fprintf (fp,"\t");
 	for ( j = 0; j < n; j++)
 	{
 		fprintf (fp,"x%d ", j);
 	} 
-	fprintf (fp,"\ty0\tAND_ARRAY_SUB XX = XXX\n");
+	fprintf (fp,"y0\tAND_ARRAY_SUB XX = XXX\n");
 	
 	//seconda AND 1
 	fprintf (fp,"xand_Level1\t 0 vdd\t");		
@@ -101,29 +99,29 @@ strcat(fileInput, argv[1]);
 	{
 		fprintf (fp,"1out%d ", j);
 	} 
-	fprintf (fp,"\t");
 	for ( j = 0; j < n; j++)
 	{
 		fprintf (fp,"x%d ", j);
 	} 
-	fprintf (fp,"\ty1\tAND_ARRAY_SUB XX = XXX\n");
-		
+	fprintf (fp,"y1\tAND_ARRAY_SUB XX = XXX\n");
+
+
 	for ( i = 2; i < num_level; i++)	//Il num totale di livelli AND+ADD è pari al doppio dei bit (num_level)
 	{
 		// Ogni Array di somatori è composto da (Num_bit_fattore - 1) FA_SUB
 		if ( i%2 == 0 )		//Livelli intermedi di ADDIZIONE, tranne l'ultimo
 		{			
-			fprintf (fp,"xadd_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
+			fprintf (fp,"xADD_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
 			for ( j = 0; j < (n-2); j++)					// n-2 perchè il primo termine di somma è sempre Zi
 			{
 				fprintf (fp,"%dsum%d ", i, j+1);
 			} 
-			fprintf (fp,"\t");
+//			fprintf (fp,"\t");
 			for ( j = 0; j < (n-1); j++)
 			{
 				fprintf (fp,"%dcout%d ", i, j);
 			}
-			fprintf (fp,"\t");
+//			fprintf (fp,"\t");
 			// Connessione Cin: livello 2 sono sempre tutti HA (Cin = 0)
 			if ( i == 2 )
 			{
@@ -138,12 +136,12 @@ strcat(fileInput, argv[1]);
 					fprintf (fp,"%dcout%d ", i-2, j );
 				}
 			}
-			fprintf (fp,"\t");
+//			fprintf (fp,"\t");
 			for ( j = 0; j < (n-1); j++)			
 			{
 				fprintf (fp,"%dout%d ", i-1, j);
 			}
-			fprintf (fp,"\t");
+//			fprintf (fp,"\t");
 			if ( i == 2 )					
 			{
 				for ( j = 0; j < (n-1); j++)		
@@ -158,8 +156,10 @@ strcat(fileInput, argv[1]);
 				}
 				fprintf (fp,"%dout%d ", i-3, n-1 );
 			}
-			fprintf (fp,"\t");				
+//			fprintf (fp,"\t");				
 			fprintf (fp,"\tADD_ARRAY_SUB XX = XXX\n");
+			
+			
 		} else if ( (i%2 == 1) && (i < (num_level - 1)) )		//Livelli intermedi di AND
 		{
 			fprintf (fp,"xand_Level%d\t 0 vdd\t", i);		
@@ -174,20 +174,20 @@ strcat(fileInput, argv[1]);
 			} 
 			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", y_idx++);
 
-		} else if ( (i > 1) && (i >= (num_level - 1)) )			//Ultimo livello finali di ADDIZIONE
-		{
-			fprintf (fp,"xadd_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
+		} else if ( (i > 1) && (i >= (num_level - 1)) )			//Ultimo livello finale di ADDIZIONE
+		{		
+			fprintf (fp,"xADD_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
 			for ( j = 0; j < (n-2); j++)
 			{
-				out_idx += j;
-				fprintf (fp,"z%d    ", out_idx);
+				fprintf (fp,"z%d   ", out_idx);
+				out_idx++;
 			} 
-			fprintf (fp,"\t");
+	//		fprintf (fp,"***\t");
 			for ( j = 0; j < (n-2); j++)
 			{
 				fprintf (fp,"%dcout%d ", i, j);
 			}
-			fprintf (fp,"z%d    \t", ++out_idx);				//pre incremento
+			fprintf (fp,"z%d    \t", out_idx);
 			// Connessione Cin: livello 2 sono sempre tutti HA
 					fprintf (fp,"0     ");
 			{
@@ -197,6 +197,8 @@ strcat(fileInput, argv[1]);
 				}
 			}
 			fprintf (fp,"\t");
+			
+			
 			// Connessione Ingressi Ai e Bi
 			for ( j = 0; j < (n-1); j++)		
 			{
