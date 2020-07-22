@@ -56,9 +56,9 @@ int main (int argc, char **argv)
 			fprintf(fp, "sum%d ", sum);
 			sum++;
 		}
-		fprintf(fp, "cout%d cin0 cin1 ", sum-1);
+		fprintf(fp, "cout%d 0 cin1 ", sum-1);
 		if(i==0)
-		{	fprintf(fp, "cin ");	}
+		{	fprintf(fp, "0 ");	}
 		else
 		{	fprintf(fp, "cout%d ", sum-5);}
 		for(j=2; j<4; j++)
@@ -124,7 +124,7 @@ int main (int argc, char **argv)
 		else
 		{	fprintf(fp, "0\n");}		
 	}
-	fprintf(fp, "***Tensioni Fisse\nV_C0 C0 0 0\nV_C1 C1 0 ALIM\nV_dd Vcc 0 ALIM\nV_Ci Ci 0 0\n");//ALIMENTAZIONE
+	fprintf(fp, "***Tensioni Fisse\nV_C1 C1 0 ALIM\nV_dd Vcc 0 ALIM\n");//ALIMENTAZIONE
 //--------------STAMPA PER VERIFICA CONVERSIONE INGRESSI E RISULTATO ATTESO------------------------------------
 /*TEST*/printf ("Operando A:\n");
 /*TEST*/for (i = 0; i < max; i++) {

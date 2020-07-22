@@ -16,6 +16,8 @@ fi
 if [ -e $fileout ]
 then
 	rm $fileout
+	touch $fileout
+	echo -e "inA\tinB\tout atteso\tout simul" >$fileout
 fi
 #controllo esistenza del file
 if [ -e $file ] && [ -r $file ]
@@ -42,7 +44,7 @@ then
 		cd netlist
 		ngspice $netName
 		cd ..
-		bin/confronta.out ${stringa[i+2]} $alim
+		bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim
 		(( i= i+3 ))
 	done
 else
