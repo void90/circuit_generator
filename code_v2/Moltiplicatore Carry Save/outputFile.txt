@@ -1,2 +1,0 @@
-Risultato atteso: 6	Risultato ottenuto: 6	Matched
-Risultato atteso: 8	Risultato ottenuto: 8	Matched
