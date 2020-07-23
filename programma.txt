@@ -17,3 +17,4 @@ Il file va lanciato con: ./confronta.out (per te chicco senza ./)
 
 4-Inserire i controlli
 (utilizzare gli stream di errore/uscita/ingresso)
+
