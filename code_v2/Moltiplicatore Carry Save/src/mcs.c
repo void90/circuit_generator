@@ -31,13 +31,6 @@ int main (int argc, char **argv)
 	fprintf(fp, "*MOLTIPLICATORE CARRY SAVE\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
 	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
 //Codice generazione netlist cartella code
-
-
-
-
-
-
-
 //DICHIARAZIONE SOTTOCIRCUITO AND_ARRAY_SUB: [n x AND2_SUB]	
 	fprintf (fp, ".subckt AND_ARRAY_SUB\t0 Vdd ");
 	for( i = 0; i < 2; i++ ) 	// i < 2 e non i < 3 perchè y la stampo a parte!
@@ -53,14 +46,6 @@ int main (int argc, char **argv)
 		fprintf (fp,"xand%d\t0 Vdd %s%d %s%d y\tAND2_SUB XX=XXX\n", i, param[0], i, param[1], i);
 	}
 	fprintf(fp, ".ends \n\n");
-
-
-
-
-
-
-
-
 //DICHIARAZIONE SOTTOCIRCUITO ADD_ARRAY_SUB: [(n-1) x FA_SUB]
 	fprintf (fp, ".subckt ADD_ARRAY_SUB\t0 Vdd ");
 	for( i = 0; i < 5; i++ ) 
@@ -74,33 +59,20 @@ int main (int argc, char **argv)
 	for ( i = 0; i < n-1 ; i++)
 	{
 		fprintf(fp, "\txadd%d 0 Vdd sum%d cout%d cin%d a%d b%d  FA_SUB XX = XXX\n", i, i, i, i, i, i);
-//		fprintf (fp,"xadd%d\t 0 vdd %s%d %s%d %s%d %s%d %s%d\t FA_SUB XX=XXX\n", i, param2[0], i, param2[1], i, param[2], i, param[3], i, param[4], i);
 	}
 	fprintf(fp, ".ends \n\n");
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 //DICHIARAZIONE MCS_SUB
 	fprintf (fp, ".subckt MCS_SUB\t0 Vdd\t");
 	for( j = 0; j < num_level; j++)
 	{
 		fprintf(fp, "z%d ", j);
 	}
-//	fprintf(fp, "\t");
 	for( i = 1; i < 3; i++ ) 
 	{
 		for( j = 0; j < n; j++)
 		{
 			fprintf(fp, "%s%d ", param3[i], j);
 		}
-//		fprintf(fp, "\t");
 	}
 	fprintf(fp, "\tXX=1\n");
 	
@@ -139,12 +111,10 @@ int main (int argc, char **argv)
 			{
 				fprintf (fp,"%dsum%d ", i, j+1);
 			} 
-//			fprintf (fp,"\t");
 			for ( j = 0; j < (n-1); j++)
 			{
 				fprintf (fp,"%dcout%d ", i, j);
 			}
-//			fprintf (fp,"\t");
 			// Connessione Cin: livello 2 sono sempre tutti HA (Cin = 0)
 			if ( i == 2 )
 			{
@@ -159,12 +129,10 @@ int main (int argc, char **argv)
 					fprintf (fp,"%dcout%d ", i-2, j );
 				}
 			}
-//			fprintf (fp,"\t");
 			for ( j = 0; j < (n-1); j++)			
 			{
 				fprintf (fp,"%dout%d ", i-1, j);
 			}
-//			fprintf (fp,"\t");
 			if ( i == 2 )					
 			{
 				for ( j = 0; j < (n-1); j++)		
@@ -179,10 +147,7 @@ int main (int argc, char **argv)
 				}
 				fprintf (fp,"%dout%d ", i-3, n-1 );
 			}
-//			fprintf (fp,"\t");				
 			fprintf (fp,"\tADD_ARRAY_SUB XX = XXX\n");
-			
-			
 		} else if ( (i%2 == 1) && (i < (num_level - 1)) )		//Livelli intermedi di AND
 		{
 			fprintf (fp,"xand_Level%d\t 0 vdd\t", i);		
@@ -190,13 +155,11 @@ int main (int argc, char **argv)
 			{
 				fprintf (fp,"%dout%d ", i, j);
 			} 
-			fprintf (fp,"\t");
 			for ( j = 0; j < n; j++)
 			{
 				fprintf (fp,"x%d ", j);
 			} 
 			fprintf (fp,"\ty%d\tAND_ARRAY_SUB XX = XXX\n", y_idx++);
-
 		} else if ( (i > 1) && (i >= (num_level - 1)) )			//Ultimo livello finale di ADDIZIONE
 		{		
 			fprintf (fp,"xADD_Level%d\t 0 vdd\tz%d ", i, out_idx++);	//out_idx con post increment		
@@ -205,7 +168,6 @@ int main (int argc, char **argv)
 				fprintf (fp,"z%d   ", out_idx);
 				out_idx++;
 			} 
-	//		fprintf (fp,"***\t");
 			for ( j = 0; j < (n-2); j++)
 			{
 				fprintf (fp,"%dcout%d ", i, j);
@@ -219,15 +181,11 @@ int main (int argc, char **argv)
 					fprintf (fp,"%dcout%d ", i, j-1 );
 				}
 			}
-			fprintf (fp,"\t");
-			
-			
 			// Connessione Ingressi Ai e Bi
 			for ( j = 0; j < (n-1); j++)		
 			{
 				fprintf (fp,"%dcout%d ", i-1, j);
 			}
-			fprintf (fp,"\t");
 			
 			for ( j = 0; j < (n-2); j++)
 				{
@@ -241,33 +199,6 @@ int main (int argc, char **argv)
 	}
 	fprintf(fp, ".ends \n\n");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
 //Dichiarazione del componente 
 	fprintf(fp, "xmcs%d 0 Vcc ",n );
 	for ( i = 0; i<num_level; i++)
