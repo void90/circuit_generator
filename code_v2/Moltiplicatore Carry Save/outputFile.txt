@@ -1,4 +1,1 @@
-inA	inB	out atteso	out simul
-128	128	16384		16384	Matched
-62	2	124		124	Matched
-128	2	256		256	Matched
+Risultato atteso: 1	Risultato ottenuto: 0	Not matched
