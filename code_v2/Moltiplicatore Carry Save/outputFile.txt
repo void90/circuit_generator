@@ -1,0 +1,2 @@
+inA	inB	out atteso	out simul
+0	1	1		0	Not matched

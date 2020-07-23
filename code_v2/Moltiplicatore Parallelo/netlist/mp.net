@@ -3,56 +3,79 @@ MOLTIPLICATORE PARALLELO
 .option filetype=ascii
 .INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
 .INCLUDE ../lib/16nm_HP.pm
-.PARAM ALIM=1.100000
+.PARAM ALIM=1.000000
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
 .TRAN 0.1p 500p
 
-.subckt PART_SUB 0 Vdd out0 out1 out2 out3 xin0 xin1 xin2 xin3 y XX=1
+.subckt PART_SUB 0 Vdd out0 out1 out2 out3 out4 out5 out6 out7 xin0 xin1 xin2 xin3 xin4 xin5 xin6 xin7 y XX=1
 	xand0 0 Vdd out0 xin0 y AND2_SUB XX=XXX
 	xand1 0 Vdd out1 xin1 y AND2_SUB XX=XXX
 	xand2 0 Vdd out2 xin2 y AND2_SUB XX=XXX
 	xand3 0 Vdd out3 xin3 y AND2_SUB XX=XXX
+	xand4 0 Vdd out4 xin4 y AND2_SUB XX=XXX
+	xand5 0 Vdd out5 xin5 y AND2_SUB XX=XXX
+	xand6 0 Vdd out6 xin6 y AND2_SUB XX=XXX
+	xand7 0 Vdd out7 xin7 y AND2_SUB XX=XXX
 .ends
 
-.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cout-1 ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1
-	xfa0 0 Vdd sum0 cout0 cout-1 ain0 bin0 FA_SUB XX=XXX
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7 cout7 cin ain0 ain1 ain2 ain3 ain4 ain5 ain6 ain7 bin0 bin1 bin2 bin3 bin4 bin5 bin6 bin7 XX=1
+	xfa0 0 Vdd sum0 cout0 0 ain0 bin0 FA_SUB XX=XXX
 	xfa1 0 Vdd sum1 cout1 cout0 ain1 bin1 FA_SUB XX=XXX
 	xfa2 0 Vdd sum2 cout2 cout1 ain2 bin2 FA_SUB XX=XXX
 	xfa3 0 Vdd sum3 cout3 cout2 ain3 bin3 FA_SUB XX=XXX
+	xfa4 0 Vdd sum4 cout4 cout3 ain4 bin4 FA_SUB XX=XXX
+	xfa5 0 Vdd sum5 cout5 cout4 ain5 bin5 FA_SUB XX=XXX
+	xfa6 0 Vdd sum6 cout6 cout5 ain6 bin6 FA_SUB XX=XXX
+	xfa7 0 Vdd sum7 cout7 cout6 ain7 bin7 FA_SUB XX=XXX
 .ends
 
 ***numeroOut=uscita porte and
 ***snumero znumero=uscita sommatori
-.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 c0 xin_0 xin_1 xin_2 xin_3 yin_0 yin_1 yin_2 yin_3 XX=1
-	xpart0 0 Vdd z0 0out1 0out2 0out3 xin_0 xin_1 xin_2 xin_3 yin_0 PART_SUB XX=XXX
-	xpart1 0 Vdd 1out0 1out1 1out2 1out3 xin_0 xin_1 xin_2 xin_3 yin_1 PART_SUB XX=XXX
-	xadd0 0 Vdd z1 s1 s2 s3 c3 c0 0out1 0out2 0out3 0 1out0 1out1 1out2 1out3 RCA_SUB XX=XXX
-	xpart2 0 Vdd 2out0 2out1 2out2 2out3 xin_0 xin_1 xin_2 xin_3 yin_2 PART_SUB XX=XXX
-	xadd1 0 Vdd z2 s4 s5 s6 c6 c0 s1 s2 s3 c3 2out0 2out1 2out2 2out3 RCA_SUB XX=XXX
-	xpart3 0 Vdd 3out0 3out1 3out2 3out3 xin_0 xin_1 xin_2 xin_3 yin_3 PART_SUB XX=XXX
-	xadd2 0 Vdd z3 z4 z5 z6 z7 c0 s4 s5 s6 c6 3out0 3out1 3out2 3out3 RCA_SUB XX=XXX
+.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 z8 z9 z10 z11 z12 z13 z14 z15 c0 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_0 yin_1 yin_2 yin_3 yin_4 yin_5 yin_6 yin_7 XX=1
+	xpart0 0 Vdd z0 0out1 0out2 0out3 0out4 0out5 0out6 0out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_0 PART_SUB XX=XXX
+	xpart1 0 Vdd 1out0 1out1 1out2 1out3 1out4 1out5 1out6 1out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_1 PART_SUB XX=XXX
+	xadd0 0 Vdd z1 s1 s2 s3 s4 s5 s6 s7 c7 c0 0out1 0out2 0out3 0out4 0out5 0out6 0out7 0 1out0 1out1 1out2 1out3 1out4 1out5 1out6 1out7 RCA_SUB XX=XXX
+	xpart2 0 Vdd 2out0 2out1 2out2 2out3 2out4 2out5 2out6 2out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_2 PART_SUB XX=XXX
+	xadd1 0 Vdd z2 s8 s9 s10 s11 s12 s13 s14 c14 c0 s1 s2 s3 s4 s5 s6 s7 c7 2out0 2out1 2out2 2out3 2out4 2out5 2out6 2out7 RCA_SUB XX=XXX
+	xpart3 0 Vdd 3out0 3out1 3out2 3out3 3out4 3out5 3out6 3out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_3 PART_SUB XX=XXX
+	xadd2 0 Vdd z3 s15 s16 s17 s18 s19 s20 s21 c21 c0 s8 s9 s10 s11 s12 s13 s14 c14 3out0 3out1 3out2 3out3 3out4 3out5 3out6 3out7 RCA_SUB XX=XXX
+	xpart4 0 Vdd 4out0 4out1 4out2 4out3 4out4 4out5 4out6 4out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_4 PART_SUB XX=XXX
+	xadd3 0 Vdd z4 s22 s23 s24 s25 s26 s27 s28 c28 c0 s15 s16 s17 s18 s19 s20 s21 c21 4out0 4out1 4out2 4out3 4out4 4out5 4out6 4out7 RCA_SUB XX=XXX
+	xpart5 0 Vdd 5out0 5out1 5out2 5out3 5out4 5out5 5out6 5out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_5 PART_SUB XX=XXX
+	xadd4 0 Vdd z5 s29 s30 s31 s32 s33 s34 s35 c35 c0 s22 s23 s24 s25 s26 s27 s28 c28 5out0 5out1 5out2 5out3 5out4 5out5 5out6 5out7 RCA_SUB XX=XXX
+	xpart6 0 Vdd 6out0 6out1 6out2 6out3 6out4 6out5 6out6 6out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_6 PART_SUB XX=XXX
+	xadd5 0 Vdd z6 s36 s37 s38 s39 s40 s41 s42 c42 c0 s29 s30 s31 s32 s33 s34 s35 c35 6out0 6out1 6out2 6out3 6out4 6out5 6out6 6out7 RCA_SUB XX=XXX
+	xpart7 0 Vdd 7out0 7out1 7out2 7out3 7out4 7out5 7out6 7out7 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 yin_7 PART_SUB XX=XXX
+	xadd6 0 Vdd z7 z8 z9 z10 z11 z12 z13 z14 z15 c0 s36 s37 s38 s39 s40 s41 s42 c42 7out0 7out1 7out2 7out3 7out4 7out5 7out6 7out7 RCA_SUB XX=XXX
 .ends
 
-xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zc0 x0 x1 x2 x3 y0 y1 y2 y3 MP_SUB XX=XXX
+xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zz8 zz9 zz10 zz11 zz12 zz13 zz14 zz15 zc0 x0 x1 x2 x3 x4 x5 x6 x7 y0 y1 y2 y3 y4 y5 y6 y7 MP_SUB XX=XXX
 
-VinX3 X3 0 0
-VinX2 X2 0 0
+VinX7 X7 0 0
+VinX6 X6 0 0
+VinX5 X5 0 0
+VinX4 X4 0 0
+VinX3 X3 0 ALIM
+VinX2 X2 0 ALIM
 VinX1 X1 0 ALIM
-VinX0 X0 0 0
+VinX0 X0 0 ALIM
+VinY7 Y7 0 0
+VinY6 Y6 0 0
+VinY5 Y5 0 0
+VinY4 Y4 0 ALIM
 VinY3 Y3 0 0
-VinY2 Y2 0 ALIM
+VinY2 Y2 0 0
 VinY1 Y1 0 0
 VinY0 Y0 0 0
 
-V_c0 zc0 0 0
 V_dd Vcc 0 ALIM
 
 .control
 run
 let k= length(time)-1
-print  zz0[k] zz1[k] zz2[k] zz3[k] zz4[k] zz5[k] zz6[k] zz7[k]>outputValue.txt
+print  zz0[k] zz1[k] zz2[k] zz3[k] zz4[k] zz5[k] zz6[k] zz7[k] zz8[k] zz9[k] zz10[k] zz11[k] zz12[k] zz13[k] zz14[k] zz15[k]>outputValue.txt
 quit
 .endc
 .end

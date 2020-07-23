@@ -49,12 +49,13 @@ int main (int argc, char **argv)
 		fprintf(fp, "%s%d ", str[a], i);
 		if(i==max-1 && a!=4)
 		{
-			if(a==2){	fprintf(fp, "cout%d cout-1 ", max-1);	}
+			if(a==2){	fprintf(fp, "cout%d cin ", max-1);	}
 			i=-1; a++;
 		}
 	}
 	fprintf(fp, "XX=1\n");
-	for(i=0; i<max; i++)
+	fprintf(fp, "\txfa0 0 Vdd sum0 cout0 0 ain0 bin0 FA_SUB XX=XXX\n");
+	for(i=1; i<max; i++)
 	{
 		fprintf(fp, "\txfa%d 0 Vdd sum%d cout%d cout%d ain%d bin%d FA_SUB XX=XXX\n", i, i, i, i-1, i, i);
 	}
@@ -199,7 +200,7 @@ int main (int argc, char **argv)
 		else
 		{	fprintf(fp, "0\n");}
 	}
-	fprintf(fp, "\nV_c0 zc0 0 0\nV_dd Vcc 0 ALIM\n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
+	fprintf(fp, "\nV_dd Vcc 0 ALIM\n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
 //--------------STAMPA PER VERIFICA CONVERSIONE INGRESSI E RISULTATO ATTESO------------------------------------
 /*TEST*/printf ("Operando X:\n");
 /*TEST*/for (i = 0; i < max; i++) {

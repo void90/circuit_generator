@@ -24,8 +24,8 @@ int main(int argc, char **argv)
 		printf("File \"outputValue.txt\" doesen't exist.\n");
 		return-1;
 	}
-	if(argc==3)
-	{	alim=atof(argv[2]);}
+	if(argc==5)
+	{	alim=atof(argv[4]);}
 	up=0.7*alim;
 	down=0.3*alim;
 	while(	fscanf(outVal, "%s", val)!= EOF )
@@ -41,7 +41,7 @@ int main(int argc, char **argv)
 			else
 			{
 				printf("WARNING: param [%d] is between %f and %f\n", rows, down, up);
-				fprintf(outputFile, "WARNING: param [%d] of %s is between %f and %f\n", rows, argv[1], down, up);
+				fprintf(outputFile, "WARNING: param [%d] of %s is between %f and %f\n", rows, argv[3], down, up);
 				if( valF>=0.50*alim)
 				{
 					bin |= (1 <<rows) ;
@@ -55,9 +55,10 @@ int main(int argc, char **argv)
 			rows++;
 		}
 	}
-	printf("Risultato atteso: %s\tRisultato ottenuto: %llu\t", argv[1], bin);
-	fprintf(outputFile, "Risultato atteso: %s\tRisultato ottenuto: %llu\t", argv[1], bin);
-	if( bin == atoi(argv[1]))
+	printf("inA\tinB\tout atteso\tout simul\n");
+	printf("%s\t%s\t%s\t\t%llu\n", argv[1], argv[2], argv[3], bin);
+	fprintf(outputFile, "%s\t%s\t%s\t\t%llu\t", argv[1], argv[2], argv[3], bin);
+	if( bin == atoi(argv[3]))
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
 		fprintf(outputFile, "Matched\n");

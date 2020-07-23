@@ -1,2 +1,4 @@
-Risultato atteso: 1	Risultato ottenuto: 1	Matched
-Risultato atteso: 15	Risultato ottenuto: 15	Matched
+inA	inB	out atteso	out simul
+12	3	15		15	Matched
+50	50	100		100	Matched
+155	100	255		255	Matched
