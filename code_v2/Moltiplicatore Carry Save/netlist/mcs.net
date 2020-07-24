@@ -2,7 +2,7 @@
 .option filetype=ascii
 .INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net 
 .INCLUDE ../lib/16nm_HP.pm
-.PARAM ALIM=1.000000
+.PARAM ALIM=1.300000
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
@@ -34,7 +34,7 @@ xADD_Level7	 0 vdd	z4 z5   z6   7cout0 7cout1 z7    	0     7cout0 7cout1 	6cout0
 xmcs4 0 Vcc xout0 xout1 xout2 xout3 xout4 xout5 xout6 xout7 xx0 xx1 xx2 xx3 xy0 xy1 xy2 xy3 MCS_SUB XX = XXX
 VinA3 xx3 0 0
 VinA2 xx2 0 0
-VinA1 xx1 0 0
+VinA1 xx1 0 ALIM
 VinA0 xx0 0 0
 VinB3 xy3 0 0
 VinB2 xy2 0 0

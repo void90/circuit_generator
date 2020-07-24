@@ -1,4 +1,2 @@
 inA	inB	out atteso	out simul
-255	255	65025		65025	Matched
-100	10	1000		1000	Matched
-15	16	240		240	Matched
+10	10	100		100	Matched

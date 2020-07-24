@@ -2,6 +2,7 @@
 #variabili di loop
 i=0
 j=0	
+numberInputMax=3
 #file contenente i valori da simulare e il valore atteso
 file="inputFile.txt"
 fileout="outputFile.txt" 
@@ -26,44 +27,46 @@ display_help() {
 #se non si passano parametri stmpare usage:
 
 paramSimulation() {
+	echo "****************************"
 	echo "Netlist Name = $netName"
 	echo "Num bits = $numBit"
-	echo "Power Supply = $alim"
+	echo "Power Supply = $alim V"
 	echo "Input File = $file"
 	echo "Output File = $fileout"
+	echo "****************************"
 }
 
 if [ $# -lt 2 ]
 then
 	echo "Few arguments. Please read the help File:"
-	display_help
-elif [ $# -gt  2 ]
+	display_help	
+elif [ $# -ge  2 ] && [ $# -le $numberInputMax ]
 then
+#controllo sul numero bit netlist
+	if [ $numBit -ne 4 ] && [ $numBit -ne 8 ] && [ $numBit -ne 16 ] && [ $numBit -ne 32 ]
+	then
+		display_help
+	fi
+#controllo su Option_Param
 	while [ $# -gt  0 ]
 	do
 		case $1 in
 		-h | --help)
 			display_help
-			#shift
 			;;
 		-a | --ALIM)
-#si potrebbe aggiungere un controllo se $2 è nullo
 			alim=$2
-#			echo "--->$1"
-#			echo "Simulazione con alimentazione V_dd = $alim"
-			#shift 
 			;;	
-		*)
-			echo "parametri non corretti."
-			display_help
 		esac
 		shift
 	done
+else
+	display_help
 fi
 
 paramSimulation
 
-#exit 1
+#cancellazione file outputFile.txt
 if [ -e $fileout ]
 then
 	rm $fileout
