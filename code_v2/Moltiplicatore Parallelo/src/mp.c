@@ -6,7 +6,7 @@
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
-	float alim=1;
+	float alim=atof(argv[5]);;
 	//variabili di loop
 	short int i, j, count, count2;
 	//variabili di parametri
@@ -23,9 +23,6 @@ int main (int argc, char **argv)
 		return-1;
 	}
 	max = atoi(argv[2]);
-	//Inserimento eventuale dell'alimentazione
-	if(argc==6)
-	{	alim=atof(argv[5]);	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "MOLTIPLICATORE PARALLELO\n\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
 	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 500p\n\n.subckt PART_SUB 0 Vdd ", alim);
@@ -201,21 +198,6 @@ int main (int argc, char **argv)
 		{	fprintf(fp, "0\n");}
 	}
 	fprintf(fp, "\nV_dd Vcc 0 ALIM\n");	//ALIMENTAZIONE E TERMINAZIONE NETLIST
-//--------------STAMPA PER VERIFICA CONVERSIONE INGRESSI E RISULTATO ATTESO------------------------------------
-/*TEST*/printf ("Operando X:\n");
-/*TEST*/for (i = 0; i < max; i++) {
-/*TEST*/	printf ("%d ", X_binary[i]);
-/*TEST*/}
-/*TEST*/printf ("\nOperando Y:\n");
-/*TEST*/for (i = 0; i < max; i++) {
-/*TEST*/	printf ("%d ", Y_binary[i]);
-/*TEST*/}
-///*TEST*/printf ("\nRisultato atteso:\n");
-///*TEST*/for (i = 0; i < 2*max; i++) {
-///*TEST*/	printf ("%d ", P_binary[i]);
-///*TEST*/}
-	printf("\n");
-//----------------------------------------------------------------------------------
 //Scrittura parametri control nella netlist
 	fprintf(fp, "\n.control\nrun\nlet k= length(time)-1\nprint ");
 	for(i=0; i<max*2; i++)
