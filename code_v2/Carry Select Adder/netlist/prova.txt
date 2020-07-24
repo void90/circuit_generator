@@ -1,0 +1,545 @@
+******
+** ngspice-32 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Wed May 27 14:15:43 UTC 2020
+******
+
+Circuit: carry select adder
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less thaNote: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Warning: Further gmin increment
+Trying gmin =   1.7154E-05 Note: One successful gmin step
+Trying gmin =   1.0554E-05 Warning: Further gmin increment
+Trying gmin =   1.5193E-05 Note: One successful gmin step
+Trying gmin =   1.2663E-05 Note: One successful gmin step
+Trying gmin =   9.6358E-06 Note: One successful gmin step
+Trying gmin =   6.3960E-06 Note: One successful gmin step
+Trying gmin =   3.4589E-06 Note: One successful gmin step
+Trying gmin =   1.3756E-06 Note: One successful gmin step
+Trying gmin =   3.4499E-07 Note: One successful gmin step
+Trying gmin =   4.3331E-08 Note: One successful gmin step
+Trying gmin =   4.3331E-09 Note: One successful gmin step
+Trying gmin =   4.3331E-10 Note: One successful gmin step
+Trying gmin =   4.3331E-11 Note: One successful gmin step
+Trying gmin =   4.3331E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
+n 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+Warning: Ngate = 1e+17 is less than 1.E18cm^-3.
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xcsa.xcsa4_0.xsetup0.xp.node5n        0.998751
+b0                                           0
+vcc                                          1
+xcsa.xcsa4_0.xsetup0.xp.node4n      0.00368198
+a0                                           1
+xcsa.xcsa4_0.p0                       0.998175
+xcsa.xcsa4_0.xsetup0.xp.int4          0.999117
+xcsa.xcsa4_0.xsetup0.xp.int1          0.999089
+xcsa.xcsa4_0.xsetup0.xp.6           0.00085095
+xcsa.xcsa4_0.xsetup0.xp.int3          0.722011
+xcsa.xcsa4_0.xsetup0.xg.6          0.000850626
+xcsa.xcsa4_0.xsetup0.xg.7             0.998128
+xcsa.xcsa4_0.g0                     0.00382935
+xcsa.xcsa4_0.xsetup1.xp.node5n        0.998751
+b1                                           0
+xcsa.xcsa4_0.xsetup1.xp.node4n      0.00368198
+a1                                           1
+xcsa.xcsa4_0.p1                       0.998175
+xcsa.xcsa4_0.xsetup1.xp.int4          0.999117
+xcsa.xcsa4_0.xsetup1.xp.int1          0.999089
+xcsa.xcsa4_0.xsetup1.xp.6           0.00085095
+xcsa.xcsa4_0.xsetup1.xp.int3          0.722011
+xcsa.xcsa4_0.xsetup1.xg.6          0.000850626
+xcsa.xcsa4_0.xsetup1.xg.7             0.998128
+xcsa.xcsa4_0.g1                     0.00382935
+xcsa.xcsa4_0.xsetup2.xp.node5n      0.00368214
+b2                                           1
+xcsa.xcsa4_0.xsetup2.xp.node4n        0.998748
+a2                                           0
+xcsa.xcsa4_0.p2                       0.998049
+xcsa.xcsa4_0.xsetup2.xp.int4          0.999024
+xcsa.xcsa4_0.xsetup2.xp.int1          0.999025
+xcsa.xcsa4_0.xsetup2.xp.6             0.724648
+xcsa.xcsa4_0.xsetup2.xp.int3       0.000922855
+xcsa.xcsa4_0.xsetup2.xg.6             0.724947
+xcsa.xcsa4_0.xsetup2.xg.7             0.999806
+xcsa.xcsa4_0.g2                     0.00369815
+xcsa.xcsa4_0.xsetup3.xp.node5n        0.998751
+b3                                           0
+xcsa.xcsa4_0.xsetup3.xp.node4n      0.00368198
+a3                                           1
+xcsa.xcsa4_0.p3                       0.998175
+xcsa.xcsa4_0.xsetup3.xp.int4          0.999117
+xcsa.xcsa4_0.xsetup3.xp.int1          0.999089
+xcsa.xcsa4_0.xsetup3.xp.6           0.00085095
+xcsa.xcsa4_0.xsetup3.xp.int3          0.722011
+xcsa.xcsa4_0.xsetup3.xg.6          0.000850626
+xcsa.xcsa4_0.xsetup3.xg.7             0.998128
+xcsa.xcsa4_0.g3                     0.00382935
+xcsa.xcsa4_0.xadd0.xsum0.node5n        0.998751
+xcsa.xcsa4_0.xadd0.xsum0.node4n      0.00382438
+xcsa.xcsa4_0.sum00                    0.994699
+xcsa.xcsa4_0.xadd0.xsum0.int4         0.997443
+xcsa.xcsa4_0.xadd0.xsum0.int1         0.997357
+xcsa.xcsa4_0.xadd0.xsum0.6         0.000827381
+xcsa.xcsa4_0.xadd0.xsum0.int3         0.721345
+xcsa.xcsa4_0.xadd0.xcout0.xand.6     0.000851142
+xcsa.xcsa4_0.xadd0.xcout0.xand.7        0.998128
+xcsa.xcsa4_0.xadd0.xcout0.node      0.00382806
+xcsa.xcsa4_0.xadd0.xcout0.coutnot        0.997637
+xcsa.xcsa4_0.xadd0.xcout0.xnor.6        0.998819
+xcsa.xcsa4_0.xadd0.cout0            0.00386865
+xcsa.xcsa4_0.xadd0.xsum1.node5n        0.998633
+xcsa.xcsa4_0.xadd0.xsum1.node4n      0.00382438
+xcsa.xcsa4_0.sum01                    0.994563
+xcsa.xcsa4_0.xadd0.xsum1.int4         0.997385
+xcsa.xcsa4_0.xadd0.xsum1.int1         0.997285
+xcsa.xcsa4_0.xadd0.xsum1.6         0.000900702
+xcsa.xcsa4_0.xadd0.xsum1.int3         0.721255
+xcsa.xcsa4_0.xadd0.xcout1.xand.6     0.000926149
+xcsa.xcsa4_0.xadd0.xcout1.xand.7        0.997957
+xcsa.xcsa4_0.xadd0.xcout1.node      0.00384168
+xcsa.xcsa4_0.xadd0.xcout1.coutnot        0.997637
+xcsa.xcsa4_0.xadd0.xcout1.xnor.6        0.998819
+xcsa.xcsa4_0.xadd0.cout1            0.00386868
+xcsa.xcsa4_0.xadd0.xsum2.node5n        0.998633
+xcsa.xcsa4_0.xadd0.xsum2.node4n      0.00383435
+xcsa.xcsa4_0.sum02                    0.994564
+xcsa.xcsa4_0.xadd0.xsum2.int4         0.997381
+xcsa.xcsa4_0.xadd0.xsum2.int1         0.997286
+xcsa.xcsa4_0.xadd0.xsum2.6         0.000900747
+xcsa.xcsa4_0.xadd0.xsum2.int3          0.72125
+xcsa.xcsa4_0.xadd0.xcout2.xand.6     0.000926188
+xcsa.xcsa4_0.xadd0.xcout2.xand.7        0.997957
+xcsa.xcsa4_0.xadd0.xcout2.node      0.00384168
+xcsa.xcsa4_0.xadd0.xcout2.coutnot        0.997641
+xcsa.xcsa4_0.xadd0.xcout2.xnor.6        0.998821
+xcsa.xcsa4_0.xadd0.cout2            0.00386839
+xcsa.xcsa4_0.xadd0.xsum3.node5n        0.998633
+xcsa.xcsa4_0.xadd0.xsum3.node4n      0.00382438
+xcsa.xcsa4_0.sum03                    0.994563
+xcsa.xcsa4_0.xadd0.xsum3.int4         0.997385
+xcsa.xcsa4_0.xadd0.xsum3.int1         0.997285
+xcsa.xcsa4_0.xadd0.xsum3.6         0.000900697
+xcsa.xcsa4_0.xadd0.xsum3.int3         0.721255
+xcsa.xcsa4_0.xadd0.xcout3.xand.6     0.000926143
+xcsa.xcsa4_0.xadd0.xcout3.xand.7        0.997957
+xcsa.xcsa4_0.xadd0.xcout3.node      0.00384168
+xcsa.xcsa4_0.xadd0.xcout3.coutnot        0.997637
+xcsa.xcsa4_0.xadd0.xcout3.xnor.6        0.998819
+xcsa.xcsa4_0.cout03                 0.00765197
+xcsa.xcsa4_0.xadd1.xsum0.node5n      0.00368196
+c1                                           1
+xcsa.xcsa4_0.xadd1.xsum0.node4n      0.00382312
+xcsa.xcsa4_0.sum10                   0.0122678
+xcsa.xcsa4_0.xadd1.xsum0.int4         0.996143
+xcsa.xcsa4_0.xadd1.xsum0.int1         0.282592
+xcsa.xcsa4_0.xadd1.xsum0.6          0.00612636
+xcsa.xcsa4_0.xadd1.xsum0.int3       0.00554726
+xcsa.xcsa4_0.xadd1.xcout0.xand.6      0.00387517
+xcsa.xcsa4_0.xadd1.xcout0.xand.7      0.00775474
+xcsa.xcsa4_0.xadd1.xcout0.node        0.998503
+xcsa.xcsa4_0.xadd1.xcout0.coutnot      0.00774873
+xcsa.xcsa4_0.xadd1.xcout0.xnor.6        0.995997
+xcsa.xcsa4_0.xadd1.cout0              0.998498
+xcsa.xcsa4_0.xadd1.xsum1.node5n      0.00379882
+xcsa.xcsa4_0.xadd1.xsum1.node4n      0.00382312
+xcsa.xcsa4_0.sum11                   0.0122726
+xcsa.xcsa4_0.xadd1.xsum1.int4         0.996143
+xcsa.xcsa4_0.xadd1.xsum1.int1         0.283367
+xcsa.xcsa4_0.xadd1.xsum1.6          0.00612709
+xcsa.xcsa4_0.xadd1.xsum1.int3       0.00555785
+xcsa.xcsa4_0.xadd1.xcout1.xand.6      0.00393229
+xcsa.xcsa4_0.xadd1.xcout1.xand.7      0.00787127
+xcsa.xcsa4_0.xadd1.xcout1.node        0.998499
+xcsa.xcsa4_0.xadd1.xcout1.coutnot      0.00774929
+xcsa.xcsa4_0.xadd1.xcout1.xnor.6        0.995997
+xcsa.xcsa4_0.xadd1.cout1              0.998498
+xcsa.xcsa4_0.xadd1.xsum2.node5n      0.00379883
+xcsa.xcsa4_0.xadd1.xsum2.node4n      0.00383309
+xcsa.xcsa4_0.sum12                   0.0122898
+xcsa.xcsa4_0.xadd1.xsum2.int4         0.996135
+xcsa.xcsa4_0.xadd1.xsum2.int1         0.283376
+xcsa.xcsa4_0.xadd1.xsum2.6          0.00613578
+xcsa.xcsa4_0.xadd1.xsum2.int3       0.00556415
+xcsa.xcsa4_0.xadd1.xcout2.xand.6      0.00393733
+xcsa.xcsa4_0.xadd1.xcout2.xand.7      0.00788121
+xcsa.xcsa4_0.xadd1.xcout2.node        0.998499
+xcsa.xcsa4_0.xadd1.xcout2.coutnot      0.00774943
+xcsa.xcsa4_0.xadd1.xcout2.xnor.6        0.995997
+xcsa.xcsa4_0.xadd1.cout2              0.998498
+xcsa.xcsa4_0.xadd1.xsum3.node5n      0.00379883
+xcsa.xcsa4_0.xadd1.xsum3.node4n      0.00382312
+xcsa.xcsa4_0.sum13                   0.0122726
+xcsa.xcsa4_0.xadd1.xsum3.int4         0.996143
+xcsa.xcsa4_0.xadd1.xsum3.int1         0.283367
+xcsa.xcsa4_0.xadd1.xsum3.6          0.00612709
+xcsa.xcsa4_0.xadd1.xsum3.int3       0.00555785
+xcsa.xcsa4_0.xadd1.xcout3.xand.6      0.00393229
+xcsa.xcsa4_0.xadd1.xcout3.xand.7      0.00787127
+xcsa.xcsa4_0.xadd1.xcout3.node        0.998499
+xcsa.xcsa4_0.xadd1.xcout3.coutnot       0.0077493
+xcsa.xcsa4_0.xadd1.xcout3.xnor.6        0.995997
+xcsa.xcsa4_0.cout13                   0.993879
+xcsa.xcsa4_0.xmuxcout.nodecn          0.998748
+xcsa.xcsa4_0.xmuxcout.nodeu         0.00977515
+ccout                               0.00380279
+xcsa.xcsa4_0.xmuxcout.nodeun          0.998431
+xcsa.xcsa4_0.xmuxs0.nodecn            0.998751
+xcsa.xcsa4_0.xmuxs0.nodeu             0.990634
+s0                                    0.998614
+xcsa.xcsa4_0.xmuxs0.nodeun          0.00446429
+xcsa.xcsa4_0.xumxs1.nodecn            0.998751
+xcsa.xcsa4_0.xumxs1.nodeu             0.990512
+s1                                    0.998614
+xcsa.xcsa4_0.xumxs1.nodeun          0.00447537
+xcsa.xcsa4_0.xmuxs2.nodecn            0.998751
+xcsa.xcsa4_0.xmuxs2.nodeu             0.990514
+s2                                    0.998614
+xcsa.xcsa4_0.xmuxs2.nodeun          0.00447519
+xcsa.xcsa4_0.xmuxs3.nodecn            0.998751
+xcsa.xcsa4_0.xmuxs3.nodeu             0.990512
+s3                                    0.998614
+xcsa.xcsa4_0.xmuxs3.nodeun          0.00447537
+v_dd#branch                       -2.46438e-05
+v_c1#branch                        -4.4383e-10
+vinb0#branch                       2.42244e-10
+vinb1#branch                       2.42244e-10
+vinb2#branch                      -5.77485e-11
+vinb3#branch                       2.42244e-10
+vina0#branch                      -4.56138e-10
+vina1#branch                      -4.56138e-10
+vina2#branch                        2.1659e-10
+vina3#branch                      -4.56138e-10
+
+ Reference value :  0.00000e+00 Reference value :  5.62800e-12 Reference value :  1.27280e-11 Reference value :  1.99280e-11 Reference value :  2.71280e-11 Reference value :  3.44280e-11 Reference value :  4.17280e-11 Reference value :  4.89280e-11 Reference value :  5.62280e-11 Reference value :  6.31280e-11 Reference value :  7.05280e-11 Reference value :  7.76280e-11 Reference value :  8.49280e-11 Reference value :  9.22280e-11 Reference value :  9.95280e-11 Reference value :  1.06728e-10 Reference value :  1.13628e-10 Reference value :  1.20928e-10 Reference value :  1.28128e-10 Reference value :  1.35328e-10 Reference value :  1.42628e-10 Reference value :  1.49928e-10 Reference value :  1.57328e-10 Reference value :  1.64028e-10 Reference value :  1.70728e-10 Reference value :  1.77828e-10 Reference value :  1.84328e-10 Reference value :  1.90028e-10 Reference value :  1.96328e-10 Reference value :  2.01528e-10 Reference value :  2.07028e-10 Reference value :  2.13328e-10 Reference value :  2.20128e-10 Reference value :  2.27028e-10 Reference value :  2.33028e-10 Reference value :  2.39828e-10 Reference value :  2.45928e-10 Reference value :  2.51328e-10 Reference value :  2.57128e-10 Reference value :  2.63528e-10 Reference value :  2.70228e-10 Reference value :  2.77128e-10 Reference value :  2.83628e-10 Reference value :  2.90628e-10 Reference value :  2.97728e-10 Reference value :  3.04828e-10 Reference value :  3.11028e-10 Reference value :  3.17928e-10 Reference value :  3.24828e-10 Reference value :  3.31428e-10 Reference value :  3.38428e-10 Reference value :  3.45728e-10 Reference value :  3.52728e-10 Reference value :  3.59828e-10 Reference value :  3.67028e-10 Reference value :  3.73828e-10 Reference value :  3.80828e-10 Reference value :  3.88128e-10 Reference value :  3.94628e-10 Reference value :  4.01428e-10 Reference value :  4.08328e-10 Reference value :  4.15528e-10 Reference value :  4.22728e-10 Reference value :  4.28928e-10 Reference value :  4.34728e-10 Reference value :  4.40228e-10 Reference value :  4.46028e-10 Reference value :  4.52328e-10 Reference value :  4.59028e-10 Reference value :  4.66028e-10 Reference value :  4.72928e-10 Reference value :  4.80028e-10 Reference value :  4.87228e-10 Reference value :  4.94428e-10 Reference value :  5.01428e-10 Reference value :  5.08528e-10 Reference value :  5.15828e-10 Reference value :  5.23028e-10 Reference value :  5.30228e-10 Reference value :  5.37228e-10 Reference value :  5.44628e-10 Reference value :  5.51828e-10 Reference value :  5.59128e-10 Reference value :  5.66128e-10 Reference value :  5.73128e-10 Reference value :  5.80128e-10 Reference value :  5.87128e-10 Reference value :  5.94128e-10 Reference value :  6.01028e-10 Reference value :  6.08128e-10 Reference value :  6.14928e-10 Reference value :  6.21628e-10 Reference value :  6.28428e-10 Reference value :  6.35628e-10 Reference value :  6.42828e-10 Reference value :  6.49828e-10 Reference value :  6.56928e-10 Reference value :  6.63328e-10 Reference value :  6.69528e-10 Reference value :  6.76828e-10 Reference value :  6.83828e-10 Reference value :  6.90728e-10 Reference value :  6.97928e-10 Reference value :  7.04928e-10 Reference value :  7.12128e-10 Reference value :  7.19328e-10 Reference value :  7.26328e-10 Reference value :  7.33428e-10 Reference value :  7.40628e-10 Reference value :  7.47928e-10 Reference value :  7.55228e-10 Reference value :  7.62428e-10 Reference value :  7.69428e-10 Reference value :  7.76828e-10 Reference value :  7.84128e-10 Reference value :  7.91228e-10 Reference value :  7.98228e-10 Reference value :  8.05028e-10 Reference value :  8.12228e-10 Reference value :  8.19228e-10
+No. of Data Rows : 8208
+ngspice-32 done

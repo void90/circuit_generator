@@ -5,4 +5,5 @@ FATTO-Aggiustare Moltiplicatore Carry Save (per numbit>4)
 FATTO-Risimulare tutti gli altri circuiti mettendo cin a massa (RCA, CSA, MP)
 6-Decidere come trattare il carry out
 FATTO-Modificare file uscita in modo che inA inB outatteso outsimul
+------ Reindirizzamento dell'output NGspice ---> ngspice $netName 1>&prova.txt
 8-SIMULAZIONI FINALI

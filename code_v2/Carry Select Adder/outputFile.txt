@@ -1,4 +1,4 @@
 inA	inB	out atteso	out simul
 12	3	15		15	Matched
-50	50	100		15	Not matched
+50	50	100		4	Not matched
 155	100	255		15	Not matched
