@@ -13,12 +13,12 @@ alim=1
 display_help() {
 	scriptName=$0
 	echo "Usage: $scriptName netlistName.net bitNumber [Option]"
-	echo "Produce una netlist ad N bit e lancia la simulazione NGspice prendendo come operandi d'ingresso i valori nel file inputFile.txt"
-	echo -e "\n\t-h, --help\t Stampa questo l'help testuale"
-	echo -e "\n\t-a, --ALIM\t Definisce valore di alimentazione in base alla tecnologia. (Default 1V). Accetta valori decimali."
+	echo "Produce una netlist a 4/8/16/32 bit e avvia la simulazione NGspice, prendendo come operandi d'ingresso i valori nel file inputFile.txt"
+	echo -e "\n\t-h, --help\t Stampa questo file, l'help testuale"
+	echo -e "\n\t-a, --ALIM\t Definisce il valore di alimentazione in base alla tecnologia. (Default 1V). Accetta valori decimali."
 	echo -e "\te.g:\vUsage: $scriptName adderExample.net 4"
 	echo -e "\t           $scriptName adderExample.net 4 -a 3.3"
-	echo -e "I valori dei segnali d'ingresso alla netlist sono riportati nelle prime 2 colonne del file inputFile.txt, la terza colonna contiene il risultato atteso dall'operazione"
+	echo -e "I valori dei segnali d'ingresso la netlist sono riportati nelle prime 2 colonne del file inputFile.txt, la terza colonna contiene il risultato atteso dall'operazione"
 	echo -e "Al termine delle simulazioni viene prodotto un file outputFile.txt contenente per ogni riga: \nOperandoA\tOperandoB\tOut_Atteso\tOut_simulato\tMatch|NotMatch\n"
 	echo
 	exit 1

@@ -31,9 +31,4 @@ Per ogni riga vengono predi i primi 2 operandi e viene generata una netlist, con
 
 Al termine di tutte le simulazioni viene effettuato il confronto tra il valore calcolato dal simulatore con il valore atteso, prelevato dalla terza colonna del file **inputFile.txt**. L'esito di tale confronto, lanciato in automatico dallo script, produce delle stampe sul terminale di colore verde o rosso e genera un file **outputFile.txt** contenente:
 
-Risultato atteso: XX	Risultato ottenuto: XX	    Matched 
-
-oppure
-
-Risultato atteso: XX	Risultato ottenuto: XX	    NOT Matched 
-
+OperandoA	OperandoB	Out_Atteso	Out_simulato	Match|NotMatch
