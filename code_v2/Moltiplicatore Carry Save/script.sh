@@ -18,7 +18,8 @@ display_help() {
 	echo -e "\n\t-a, --ALIM\t Definisce il valore di alimentazione in base alla tecnologia. (Default 1V). Accetta valori decimali."
 	echo -e "\te.g:\vUsage: $scriptName adderExample.net 4"
 	echo -e "\t           $scriptName adderExample.net 4 -a 3.3"
-	echo -e "I valori dei segnali d'ingresso la netlist sono riportati nelle prime 2 colonne del file inputFile.txt, la terza colonna contiene il risultato atteso dall'operazione"
+	echo -e "I valori dei segnali d'ingresso della netlist sono riportati nelle prime 2 colonne del file inputFile.txt, la terza colonna contiene il risultato atteso dall'operazione\nIl file viene letto automaticamente dal programma.\n Il valore massimo degli operandi di ingresso è pari a (2^n)-1.\nInserendo un ingresso non rappresentabile con n bit viene prodotto un Error e la simulazione di tali valori non viene effettuata"
+	echo  "Le stampe di ngspice sono reindirizzate in netlist/displayNG.txt"
 	echo -e "Al termine delle simulazioni viene prodotto un file outputFile.txt contenente per ogni riga: \nOperandoA\tOperandoB\tOut_Atteso\tOut_simulato\tMatch|NotMatch\n"
 	echo
 	exit 1
@@ -91,11 +92,16 @@ then
 		echo "bin/mcs.out $netName $numBit ${stringa[i]} ${stringa[i+1]} $alim"
 		bin/mcs.out $netName $numBit ${stringa[i]} ${stringa[i+1]} $alim
 		#avvio simulazione con ngspice		
-		echo "ngspice $netName"
-		cd netlist
-		ngspice $netName
-		cd ..
-		bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim
+		control=$?
+		if [ $control -eq 0 ]
+		then
+			echo "ngspice $netName"
+			echo "running $netName"
+			cd netlist
+			ngspice $netName 1>&displayNG.txt
+			cd ..
+			bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim
+		fi
 		(( i= i+3 ))
 	done
 else

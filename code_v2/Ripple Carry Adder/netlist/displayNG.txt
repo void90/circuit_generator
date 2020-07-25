@@ -1,0 +1,98 @@
+******
+** ngspice-32 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon May 25 13:18:12 UTC 2020
+******
+
+Circuit: *ripple carry adder
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xrca.xfa0.nodecon                     0.998196
+b0                                           1
+xrca.xfa0.node4                       0.724654
+xrca.xfa0.1                           0.999099
+vcc                                          1
+a0                                           0
+xrca.xfa0.5                        0.000850928
+xrca.xfa0.4                           0.999099
+xrca.xfa0.2                           0.997778
+xrca.xfa0.3                         0.00464552
+xrca.xfa0.nodeson                   0.00930496
+xrca.xfa0.9                           0.329602
+xrca.xfa0.7                         4.2073e-07
+xrca.xfa0.8                           0.264941
+xrca.xfa0.6                         0.00431468
+xrca.cout0                          0.00501106
+s0                                    0.998946
+xrca.xfa1.nodecon                     0.999995
+b1                                           0
+xrca.xfa1.node4                       0.167897
+xrca.xfa1.1                           0.999998
+a1                                           0
+xrca.xfa1.5                           0.156492
+xrca.xfa1.4                           0.999996
+xrca.xfa1.2                           0.999928
+xrca.xfa1.3                           0.699707
+xrca.xfa1.nodeson                     0.999511
+xrca.xfa1.9                           0.999789
+xrca.xfa1.7                          0.0371657
+xrca.xfa1.8                            0.99965
+xrca.xfa1.6                            0.20018
+xrca.cout1                          0.00482905
+s1                                  0.00487423
+xrca.xfa2.nodecon                     0.999995
+b2                                           0
+xrca.xfa2.node4                       0.167897
+xrca.xfa2.1                           0.999998
+a2                                           0
+xrca.xfa2.5                           0.156394
+xrca.xfa2.4                           0.999996
+xrca.xfa2.2                           0.999928
+xrca.xfa2.3                           0.699744
+xrca.xfa2.nodeson                     0.999511
+xrca.xfa2.9                           0.999789
+xrca.xfa2.7                          0.0371512
+xrca.xfa2.8                           0.999651
+xrca.xfa2.6                           0.200071
+xrca.cout2                          0.00482905
+s2                                  0.00487417
+xrca.xfa3.nodecon                     0.999995
+b3                                           0
+xrca.xfa3.node4                       0.167897
+xrca.xfa3.1                           0.999998
+a3                                           0
+xrca.xfa3.5                           0.156394
+xrca.xfa3.4                           0.999996
+xrca.xfa3.2                           0.999928
+xrca.xfa3.3                           0.699744
+xrca.xfa3.nodeson                     0.999511
+xrca.xfa3.9                           0.999789
+xrca.xfa3.7                          0.0371512
+xrca.xfa3.8                           0.999651
+xrca.xfa3.6                           0.200071
+cout3                               0.00482583
+s3                                  0.00487417
+v_dd#branch                       -6.27155e-06
+vinb0#branch                      -5.06611e-10
+vinb1#branch                       5.75493e-10
+vinb2#branch                       5.75495e-10
+vinb3#branch                       5.75495e-10
+vina0#branch                       3.51352e-10
+vina1#branch                       5.29724e-10
+vina2#branch                       5.29725e-10
+vina3#branch                       5.29725e-10
+
+ Reference value :  3.28000e-13 Reference value :  1.08280e-11 Reference value :  2.72280e-11 Reference value :  4.57280e-11 Reference value :  6.34280e-11 Reference value :  7.12280e-11 Reference value :  7.84280e-11 Reference value :  9.69280e-11 Reference value :  1.11628e-10 Reference value :  1.26828e-10 Reference value :  1.34428e-10 Reference value :  1.39028e-10 Reference value :  1.51028e-10 Reference value :  1.68228e-10 Reference value :  1.86428e-10 Reference value :  2.01428e-10 Reference value :  2.04128e-10 Reference value :  2.06228e-10 Reference value :  2.21028e-10 Reference value :  2.39028e-10 Reference value :  2.53528e-10 Reference value :  2.67928e-10 Reference value :  2.70828e-10 Reference value :  2.84628e-10 Reference value :  2.99428e-10 Reference value :  3.15628e-10 Reference value :  3.32228e-10 Reference value :  3.38528e-10 Reference value :  3.45328e-10 Reference value :  3.62528e-10 Reference value :  3.81128e-10 Reference value :  3.97628e-10 Reference value :  4.12428e-10 Reference value :  4.15528e-10 Reference value :  4.32228e-10 Reference value :  4.49728e-10 Reference value :  4.68128e-10 Reference value :  4.86628e-10 Reference value :  4.90928e-10 Reference value :  4.96728e-10 Reference value :  5.13528e-10 Reference value :  5.28628e-10 Reference value :  5.44428e-10 Reference value :  5.53828e-10 Reference value :  5.57228e-10 Reference value :  5.71628e-10 Reference value :  5.88528e-10 Reference value :  6.05728e-10 Reference value :  6.22628e-10 Reference value :  6.28928e-10 Reference value :  6.38428e-10 Reference value :  6.53928e-10 Reference value :  6.64028e-10 Reference value :  6.80828e-10 Reference value :  6.89028e-10 Reference value :  6.94028e-10 Reference value :  7.10928e-10 Reference value :  7.27128e-10 Reference value :  7.39228e-10 Reference value :  7.51328e-10 Reference value :  7.57528e-10 Reference value :  7.73928e-10 Reference value :  7.90228e-10 Reference value :  8.07628e-10
+No. of Data Rows : 8208
+ngspice-32 done

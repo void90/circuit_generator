@@ -165,6 +165,12 @@ int main (int argc, char **argv)
 /*TEST*/int p;
 	x=atoi(argv[3]);
 	y=atoi(argv[4]);
+//Controllo ingressi
+	if( (x> (pow(2, max)-1)) || (y> (pow(2, max)-1)))
+	{
+		printf("ERROR: inserted number aren't representable with %d bit\n", n);
+		return -1;
+	}
 	int X_binary[max];
 	int Y_binary[max];
 ///*TEST*/int P_binary[max*2];

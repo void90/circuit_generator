@@ -1,6 +1,6 @@
 #make -f Makefile
 CC=gcc
-CC_OPTS=-Wall
+CC_OPTS=-Wall -lm
 .phony:	clean all
 
 all: src/mp.c src/confronta.c

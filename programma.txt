@@ -1,9 +1,13 @@
-FATTO-1-Scrivere Help e aggiungere meccanismo di lettura se non si attivano gli ingressi
-FATTO-2-Valore di default dell'alimentazione nello script
+FATTO-Scrivere Help e aggiungere meccanismo di lettura se non si attivano gli ingressi
+FATTO-Valore di default dell'alimentazione nello script
+
 3-Ottimizzare simulazione in base al numero dei bit
+
 FATTO-Aggiustare Moltiplicatore Carry Save (per numbit>4)
 FATTO-Risimulare tutti gli altri circuiti mettendo cin a massa (RCA, CSA, MP)
-6-Decidere come trattare il carry out
+FATTO-Decidere come trattare il carry out
+FATTO-Modificare help per spiegare come inserire valori
+FATTO-Inserire controlli che permettono comunque di simulare
 FATTO-Modificare file uscita in modo che inA inB outatteso outsimul
------- Reindirizzamento dell'output NGspice ---> ngspice $netName 1>&prova.txt
 8-SIMULAZIONI FINALI
+

@@ -218,6 +218,12 @@ int main (int argc, char **argv)
 /*TEST*/int s;
 	a = atoi (argv[3]);
 	b = atoi (argv[4]);
+//Controllo ingressi
+	if( (a> (pow(2, n)-1)) || (b> (pow(2, n)-1)))
+	{
+		printf("ERROR: inserted number aren't representable with %d bit\n", n);
+		return -1;
+	}
 	int A_binary[n], B_binary[n];
 ///*TEST*/int S_binary[n+1];		//comprende anche il bit di carry
 /*TEST*/for (i = n; i >= 0; i--)

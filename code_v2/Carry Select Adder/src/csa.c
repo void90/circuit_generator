@@ -88,6 +88,12 @@ int main (int argc, char **argv)
 //Conversione operandi di ingresso
 	int a=atoi(argv[3]);
 	int b=atoi(argv[4]);
+//Controllo ingressi
+	if( (a> (pow(2, n)-1)) || (b> (pow(2, n)-1)))
+	{
+		printf("ERROR: inserted number aren't representable with %d bit\n", n);
+		return -1;
+	}
 	int A_binary[max], B_binary[max];
 ///*TEST*/int S_binary[max];
 /*TEST*/int s = a+b;
@@ -127,7 +133,7 @@ int main (int argc, char **argv)
 	{
 		fprintf(fp, " s%d[k]", i);
 	}
-	fprintf(fp, ">outputValue.txt\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
+	fprintf(fp, " Ccout[k]>outputValue.txt\nquit\n.endc\n.end");	//TERMINAZIONE NETLIST
 //Chiusura file
 	fclose(fp);
 	return 0;
