@@ -1,0 +1,22 @@
+* and delay netlist
+.INCLUDE 16nm_HP.pm
+.INCLUDE ST65LIKE_cell_library_v2020_1.net
+.TRAN 0.1p 800p
+.PARAM Lmin = 16n
+.PARAM Wmin = 16n
+
+xandD 0 Vdd out a b AND2_SUB XX=1
+
+VA a 0 PWL (0 0 600p 0 601p 1 700p 1 701p 0 1800p 0)
+VB b 0 PWL (0 0 600p 0 601p 1 1200p 1 1201p 0 1800p 0)
+V_DD Vdd 0 1
+
+.control
+run
+meas tran delayANDoneA trig v(a) val = 0.5 rise = 1 targ v(out) val = 0.5 rise = 1 
+meas tran delayANDzeroA trig v(a) val = 0.5 fall = 1 targ v(out) val = 0.5 fall = 1 
+meas tran delayANDzoneB trig v(a) val = 0.5 rise = 1 targ v(out) val = 0.5 rise = 1 
+meas tran delayANDzeroB trig v(a) val = 0.5 fall = 1 targ v(out) val = 0.5 fall = 1 
+
+.endc
+.end
