@@ -89,9 +89,9 @@ int main (int argc, char **argv)
 	int a=atoi(argv[3]);
 	int b=atoi(argv[4]);
 //Controllo ingressi
-	if( (a> (pow(2, n)-1)) || (b> (pow(2, n)-1)))
+	if( (a> (pow(2, max)-1)) || (b> (pow(2, max)-1)))
 	{
-		printf("ERROR: inserted number aren't representable with %d bit\n", n);
+		printf("ERROR: inserted number aren't representable with %d bit\n", max);
 		return -1;
 	}
 	int A_binary[max], B_binary[max];
