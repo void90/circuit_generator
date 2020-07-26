@@ -1,3 +1,18 @@
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Note: One successful gmin step
+Trying gmin =   9.3057E-07 Note: One successful gmin step
+Trying gmin =   9.3057E-08 Note: One successful gmin step
+Trying gmin =   9.3057E-09 Note: One successful gmin step
+Trying gmin =   9.3057E-10 Note: One successful gmin step
+Trying gmin =   9.3057E-11 Note: One successful gmin step
+Trying gmin =   9.3057E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
 ******
 ** ngspice-32 : Circuit level simulation program
 ** The U. C. Berkeley CAD Group
@@ -18,81 +33,153 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xrca.xfa0.nodecon                     0.998196
-b0                                           1
-xrca.xfa0.node4                       0.724654
-xrca.xfa0.1                           0.999099
+xrca.xfa0.nodecon                     0.996768
+b0                                           0
+xrca.xfa0.node4                    0.000840966
+xrca.xfa0.1                           0.998386
 vcc                                          1
-a0                                           0
-xrca.xfa0.5                        0.000850928
-xrca.xfa0.4                           0.999099
-xrca.xfa0.2                           0.997778
-xrca.xfa0.3                         0.00464552
-xrca.xfa0.nodeson                   0.00930496
-xrca.xfa0.9                           0.329602
-xrca.xfa0.7                         4.2073e-07
-xrca.xfa0.8                           0.264941
-xrca.xfa0.6                         0.00431468
-xrca.cout0                          0.00501106
-s0                                    0.998946
+a0                                           1
+xrca.xfa0.5                        0.000840957
+xrca.xfa0.4                           0.996768
+xrca.xfa0.2                           0.997661
+xrca.xfa0.3                         0.00489164
+xrca.xfa0.nodeson                   0.00980115
+xrca.xfa0.9                           0.997419
+xrca.xfa0.7                          0.0395019
+xrca.xfa0.8                           0.277969
+xrca.xfa0.6                           0.039502
+xrca.cout0                          0.00515977
+s0                                    0.998934
 xrca.xfa1.nodecon                     0.999995
 b1                                           0
 xrca.xfa1.node4                       0.167897
 xrca.xfa1.1                           0.999998
 a1                                           0
-xrca.xfa1.5                           0.156492
+xrca.xfa1.5                           0.156571
 xrca.xfa1.4                           0.999996
 xrca.xfa1.2                           0.999928
-xrca.xfa1.3                           0.699707
-xrca.xfa1.nodeson                     0.999511
+xrca.xfa1.3                           0.699678
+xrca.xfa1.nodeson                      0.99951
 xrca.xfa1.9                           0.999789
-xrca.xfa1.7                          0.0371657
+xrca.xfa1.7                          0.0371776
 xrca.xfa1.8                            0.99965
-xrca.xfa1.6                            0.20018
-xrca.cout1                          0.00482905
-s1                                  0.00487423
-xrca.xfa2.nodecon                     0.999995
-b2                                           0
-xrca.xfa2.node4                       0.167897
-xrca.xfa2.1                           0.999998
-a2                                           0
-xrca.xfa2.5                           0.156394
-xrca.xfa2.4                           0.999996
-xrca.xfa2.2                           0.999928
-xrca.xfa2.3                           0.699744
-xrca.xfa2.nodeson                     0.999511
-xrca.xfa2.9                           0.999789
-xrca.xfa2.7                          0.0371512
-xrca.xfa2.8                           0.999651
-xrca.xfa2.6                           0.200071
-xrca.cout2                          0.00482905
-s2                                  0.00487417
-xrca.xfa3.nodecon                     0.999995
+xrca.xfa1.6                           0.200269
+xrca.cout1                          0.00482794
+s1                                  0.00487429
+xrca.xfa2.nodecon                  0.000916417
+b2                                           1
+xrca.xfa2.node4                    0.000458486
+xrca.xfa2.1                           0.295771
+a2                                           1
+xrca.xfa2.5                        3.38261e-07
+xrca.xfa2.4                           0.673635
+xrca.xfa2.2                           0.997688
+xrca.xfa2.3                        0.000430811
+xrca.xfa2.nodeson                     0.995378
+xrca.xfa2.9                           0.996557
+xrca.xfa2.7                        0.000983464
+xrca.xfa2.8                           0.995378
+xrca.xfa2.6                         0.00196666
+xrca.cout2                            0.999131
+s2                                  0.00530506
+xrca.xfa3.nodecon                     0.999622
 b3                                           0
-xrca.xfa3.node4                       0.167897
-xrca.xfa3.1                           0.999998
+xrca.xfa3.node4                       0.167828
+xrca.xfa3.1                           0.999924
 a3                                           0
-xrca.xfa3.5                           0.156394
-xrca.xfa3.4                           0.999996
-xrca.xfa3.2                           0.999928
-xrca.xfa3.3                           0.699744
-xrca.xfa3.nodeson                     0.999511
-xrca.xfa3.9                           0.999789
-xrca.xfa3.7                          0.0371512
-xrca.xfa3.8                           0.999651
-xrca.xfa3.6                           0.200071
-cout3                               0.00482583
-s3                                  0.00487417
-v_dd#branch                       -6.27155e-06
-vinb0#branch                      -5.06611e-10
-vinb1#branch                       5.75493e-10
-vinb2#branch                       5.75495e-10
-vinb3#branch                       5.75495e-10
-vina0#branch                       3.51352e-10
-vina1#branch                       5.29724e-10
-vina2#branch                       5.29725e-10
-vina3#branch                       5.29725e-10
+xrca.xfa3.5                           0.709227
+xrca.xfa3.4                           0.999773
+xrca.xfa3.2                           0.995963
+xrca.xfa3.3                         0.00845641
+xrca.xfa3.nodeson                    0.0169496
+xrca.xfa3.9                           0.993028
+xrca.xfa3.7                         0.00739882
+xrca.xfa3.8                           0.990085
+xrca.xfa3.6                          0.0169499
+xrca.cout3                          0.00486626
+s3                                    0.998742
+xrca.xfa4.nodecon                     0.999995
+b4                                           0
+xrca.xfa4.node4                       0.167897
+xrca.xfa4.1                           0.999998
+a4                                           0
+xrca.xfa4.5                           0.156414
+xrca.xfa4.4                           0.999996
+xrca.xfa4.2                           0.999928
+xrca.xfa4.3                           0.699736
+xrca.xfa4.nodeson                     0.999511
+xrca.xfa4.9                           0.999789
+xrca.xfa4.7                          0.0371541
+xrca.xfa4.8                            0.99965
+xrca.xfa4.6                           0.200093
+xrca.cout4                          0.00482905
+s4                                  0.00487418
+xrca.xfa5.nodecon                     0.999995
+b5                                           0
+xrca.xfa5.node4                       0.167897
+xrca.xfa5.1                           0.999998
+a5                                           0
+xrca.xfa5.5                           0.156394
+xrca.xfa5.4                           0.999996
+xrca.xfa5.2                           0.999928
+xrca.xfa5.3                           0.699744
+xrca.xfa5.nodeson                     0.999511
+xrca.xfa5.9                           0.999789
+xrca.xfa5.7                          0.0371512
+xrca.xfa5.8                           0.999651
+xrca.xfa5.6                           0.200071
+xrca.cout5                          0.00482905
+s5                                  0.00487417
+xrca.xfa6.nodecon                     0.999995
+b6                                           0
+xrca.xfa6.node4                       0.167897
+xrca.xfa6.1                           0.999998
+a6                                           0
+xrca.xfa6.5                           0.156394
+xrca.xfa6.4                           0.999996
+xrca.xfa6.2                           0.999928
+xrca.xfa6.3                           0.699744
+xrca.xfa6.nodeson                     0.999511
+xrca.xfa6.9                           0.999789
+xrca.xfa6.7                          0.0371512
+xrca.xfa6.8                           0.999651
+xrca.xfa6.6                           0.200071
+xrca.cout6                          0.00482905
+s6                                  0.00487417
+xrca.xfa7.nodecon                     0.999995
+b7                                           0
+xrca.xfa7.node4                       0.167897
+xrca.xfa7.1                           0.999998
+a7                                           0
+xrca.xfa7.5                           0.156394
+xrca.xfa7.4                           0.999996
+xrca.xfa7.2                           0.999928
+xrca.xfa7.3                           0.699744
+xrca.xfa7.nodeson                     0.999511
+xrca.xfa7.9                           0.999789
+xrca.xfa7.7                          0.0371512
+xrca.xfa7.8                           0.999651
+xrca.xfa7.6                           0.200071
+cout7                               0.00482583
+s7                                  0.00487417
+v_dd#branch                       -1.30493e-05
+vinb0#branch                       5.50617e-10
+vinb1#branch                       5.75492e-10
+vinb2#branch                      -6.41495e-10
+vinb3#branch                       5.68756e-10
+vinb4#branch                       5.75495e-10
+vinb5#branch                       5.75495e-10
+vinb6#branch                       5.75495e-10
+vinb7#branch                       5.75495e-10
+vina0#branch                      -5.85701e-10
+vina1#branch                       5.29723e-10
+vina2#branch                      -6.40252e-10
+vina3#branch                        5.1519e-10
+vina4#branch                       5.29724e-10
+vina5#branch                       5.29725e-10
+vina6#branch                       5.29725e-10
+vina7#branch                       5.29725e-10
 
- Reference value :  0.00000e+00 Reference value :  1.18280e-11 Reference value :  2.60280e-11 Reference value :  3.32280e-11 Reference value :  3.82280e-11 Reference value :  4.83280e-11 Reference value :  5.66280e-11 Reference value :  6.10280e-11 Reference value :  6.79280e-11 Reference value :  7.76280e-11 Reference value :  9.06280e-11 Reference value :  1.03328e-10 Reference value :  1.03628e-10 Reference value :  1.07628e-10 Reference value :  1.17428e-10 Reference value :  1.27428e-10 Reference value :  1.36228e-10 Reference value :  1.38028e-10 Reference value :  1.44228e-10 Reference value :  1.53328e-10 Reference value :  1.68228e-10 Reference value :  1.76628e-10 Reference value :  1.81628e-10 Reference value :  1.88528e-10 Reference value :  1.91628e-10 Reference value :  1.95728e-10 Reference value :  2.02928e-10 Reference value :  2.10528e-10 Reference value :  2.15528e-10 Reference value :  2.22628e-10 Reference value :  2.26928e-10 Reference value :  2.29028e-10 Reference value :  2.39628e-10 Reference value :  2.52228e-10 Reference value :  2.67228e-10 Reference value :  2.79828e-10 Reference value :  2.82228e-10 Reference value :  2.88828e-10 Reference value :  3.04328e-10 Reference value :  3.20428e-10 Reference value :  3.37128e-10 Reference value :  3.49128e-10 Reference value :  3.50628e-10 Reference value :  3.59328e-10 Reference value :  3.70728e-10 Reference value :  3.82428e-10 Reference value :  3.94028e-10 Reference value :  3.95428e-10 Reference value :  3.98628e-10 Reference value :  4.05428e-10 Reference value :  4.12528e-10 Reference value :  4.18028e-10 Reference value :  4.19528e-10 Reference value :  4.26128e-10 Reference value :  4.36028e-10 Reference value :  4.49228e-10 Reference value :  4.64728e-10 Reference value :  4.69128e-10 Reference value :  4.77028e-10 Reference value :  4.93128e-10 Reference value :  5.09128e-10 Reference value :  5.24228e-10 Reference value :  5.32628e-10 Reference value :  5.34928e-10 Reference value :  5.43428e-10 Reference value :  5.55228e-10 Reference value :  5.66928e-10 Reference value :  5.68728e-10 Reference value :  5.72428e-10 Reference value :  5.83628e-10 Reference value :  5.96928e-10 Reference value :  6.08728e-10 Reference value :  6.11428e-10 Reference value :  6.13728e-10 Reference value :  6.25328e-10 Reference value :  6.36828e-10 Reference value :  6.47428e-10 Reference value :  6.54028e-10 Reference value :  6.58728e-10 Reference value :  6.70228e-10 Reference value :  6.81228e-10 Reference value :  6.89528e-10 Reference value :  6.90628e-10 Reference value :  6.95528e-10 Reference value :  7.05428e-10 Reference value :  7.17928e-10 Reference value :  7.29128e-10 Reference value :  7.30928e-10 Reference value :  7.37428e-10 Reference value :  7.49628e-10 Reference value :  7.62428e-10 Reference value :  7.75328e-10 Reference value :  7.81628e-10 Reference value :  7.84928e-10 Reference value :  7.92928e-10 Reference value :  7.99628e-10 Reference value :  8.05828e-10 Reference value :  8.07928e-10 Reference value :  8.16228e-10
+ Reference value :  0.00000e+00 Reference value :  6.42800e-12 Reference value :  1.47280e-11 Reference value :  2.21280e-11 Reference value :  3.13280e-11 Reference value :  3.96280e-11 Reference value :  4.79280e-11 Reference value :  5.53280e-11 Reference value :  6.31280e-11 Reference value :  7.19280e-11 Reference value :  7.78280e-11 Reference value :  8.53280e-11 Reference value :  9.33280e-11 Reference value :  1.02228e-10 Reference value :  1.08528e-10 Reference value :  1.17228e-10 Reference value :  1.24228e-10 Reference value :  1.33328e-10 Reference value :  1.41728e-10 Reference value :  1.47828e-10 Reference value :  1.56028e-10 Reference value :  1.64928e-10 Reference value :  1.73828e-10 Reference value :  1.80928e-10 Reference value :  1.89228e-10 Reference value :  1.97128e-10 Reference value :  2.05928e-10 Reference value :  2.13728e-10 Reference value :  2.21428e-10 Reference value :  2.28328e-10 Reference value :  2.35228e-10 Reference value :  2.43028e-10 Reference value :  2.49028e-10 Reference value :  2.56728e-10 Reference value :  2.66228e-10 Reference value :  2.72928e-10 Reference value :  2.80828e-10 Reference value :  2.88428e-10 Reference value :  2.97528e-10 Reference value :  3.06128e-10 Reference value :  3.14228e-10 Reference value :  3.19928e-10 Reference value :  3.28228e-10 Reference value :  3.37428e-10 Reference value :  3.46428e-10 Reference value :  3.53928e-10 Reference value :  3.61928e-10 Reference value :  3.69328e-10 Reference value :  3.77628e-10 Reference value :  3.87228e-10 Reference value :  3.93428e-10 Reference value :  4.01128e-10 Reference value :  4.09928e-10 Reference value :  4.17328e-10 Reference value :  4.23028e-10 Reference value :  4.32328e-10 Reference value :  4.41628e-10 Reference value :  4.51628e-10 Reference value :  4.58528e-10 Reference value :  4.63828e-10 Reference value :  4.72728e-10 Reference value :  4.79028e-10 Reference value :  4.87128e-10 Reference value :  4.91828e-10 Reference value :  5.01728e-10 Reference value :  5.09628e-10 Reference value :  5.17328e-10 Reference value :  5.23228e-10 Reference value :  5.31528e-10 Reference value :  5.39428e-10 Reference value :  5.46528e-10 Reference value :  5.54328e-10 Reference value :  5.58928e-10 Reference value :  5.67028e-10 Reference value :  5.75128e-10 Reference value :  5.82928e-10 Reference value :  5.90328e-10 Reference value :  5.98028e-10 Reference value :  6.07228e-10 Reference value :  6.15928e-10 Reference value :  6.24328e-10 Reference value :  6.28628e-10 Reference value :  6.35828e-10 Reference value :  6.44428e-10 Reference value :  6.53028e-10 Reference value :  6.60828e-10 Reference value :  6.65928e-10 Reference value :  6.75328e-10 Reference value :  6.85128e-10 Reference value :  6.94728e-10 Reference value :  7.00728e-10 Reference value :  7.08328e-10 Reference value :  7.18328e-10 Reference value :  7.27828e-10 Reference value :  7.37628e-10 Reference value :  7.42928e-10 Reference value :  7.52028e-10 Reference value :  7.61728e-10 Reference value :  7.71228e-10 Reference value :  7.79528e-10 Reference value :  7.86428e-10 Reference value :  7.93928e-10 Reference value :  8.00628e-10 Reference value :  8.07428e-10 Reference value :  8.12228e-10 Reference value :  8.18628e-10
 No. of Data Rows : 8208
 ngspice-32 done

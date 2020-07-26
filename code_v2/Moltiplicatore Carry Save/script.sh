@@ -13,16 +13,16 @@ alim=1
 display_help() {
 	scriptName=$0
 	echo "Usage: $scriptName netlistName.net bitNumber [Option]"
-	echo "Produce una netlist a 4/8/16/32 bit e avvia la simulazione NGspice, prendendo come operandi d'ingresso i valori nel file inputFile.txt"
-	echo -e "\n\t-h, --help\t Stampa questo file, l'help testuale"
-	echo -e "\n\t-a, --ALIM\t Definisce il valore di alimentazione in base alla tecnologia. (Default 1V). Accetta valori decimali."
+	echo "generates a 4/8/16/32 bit netlist and starts running the NGspice simulation; input numbers from the inputFile.txt are taken"
+	echo -e "\n\t-h, --help\t print this help"
+	echo -e "\n\t-a, --ALIM\t to define the chosen power supply - (default 1V) - decimal values are accepted"
 	echo -e "\te.g:\vUsage: $scriptName adderExample.net 4"
 	echo -e "\t           $scriptName adderExample.net 4 -a 3.3"
-	echo -e "I valori dei segnali d'ingresso della netlist sono riportati nelle prime 2 colonne del file inputFile.txt, la terza colonna contiene il risultato atteso dall'operazione\nIl file viene letto automaticamente dal programma.\n Il valore massimo degli operandi di ingresso è pari a (2^n)-1.\nInserendo un ingresso non rappresentabile con n bit viene prodotto un Error e la simulazione di tali valori non viene effettuata"
-	echo  "Le stampe di ngspice sono reindirizzate in netlist/displayNG.txt"
-	echo -e "Al termine delle simulazioni viene prodotto un file outputFile.txt contenente per ogni riga: \nOperandoA\tOperandoB\tOut_Atteso\tOut_simulato\tMatch|NotMatch\n"
+	echo -e "input test numbers are shown in the first two columns of the inputFile.txt, the third one is the expected result\nthis file is automatically read\n maximum input value is (2^n)-1 (n is the number of the bit)\nsimulation will not start and a Error message is shown, if inputs value are out of the representation interval"
+	echo  "NGspice prints are redirected to netlist/displayNG.txt"
+	echo -e "at the end of simulation the outputFile.txt is generated; every line shows: \nOperandoA\tOperandoB\tOut_Atteso\tOut_simulato\tMatch|NotMatch\n"
 	echo
-	exit 1
+		exit 1
 }
 #se non si passano parametri stmpare usage:
 
@@ -38,7 +38,7 @@ paramSimulation() {
 
 if [ $# -lt 2 ]
 then
-	echo "Few arguments. Please read the help File:"
+	echo "Too few arguments. Please read the help File:"
 	display_help	
 elif [ $# -ge  2 ] && [ $# -le $numberInputMax ]
 then
