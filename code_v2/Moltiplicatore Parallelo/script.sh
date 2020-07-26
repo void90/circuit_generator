@@ -2,6 +2,7 @@
 #variabili di loop
 i=0
 j=0	
+numberInputMax=3
 #file contenente i valori da simulare e il valore atteso
 file="inputFile.txt"
 fileout="outputFile.txt" 
@@ -22,7 +23,6 @@ display_help() {
 	echo  "NGspice prints are redirected to netlist/displayNG.txt"
 	echo -e "at the end of simulation the outputFile.txt is generated; every line shows: \nOperandoA\tOperandoB\tOut_Atteso\tOut_simulato\tMatch|NotMatch\n"
 	echo
-	
 	exit 1
 }
 #se non si passano parametri stmpare usage:
@@ -61,6 +61,8 @@ then
 		esac
 		shift
 	done
+else
+	display_help
 fi
 
 paramSimulation
@@ -102,7 +104,7 @@ then
 			ngspice $netName 1>&displayNG.txt
 			cd ..
 			bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim
-		fi	
+		fi
 		(( i= i+3 ))
 	done
 else

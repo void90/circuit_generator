@@ -1,0 +1,258 @@
+******
+** ngspice-32 : Circuit level simulation program
+** The U. C. Berkeley CAD Group
+** Copyright 1985-1994, Regents of the University of California.
+** Copyright 2001-2020, The ngspice team.
+** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
+** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
+** Creation Date: Mon May 25 13:18:12 UTC 2020
+******
+
+Circuit: *moltiplicatore carry save
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+
+Initial Transient Solution
+--------------------------
+
+Node                                   Voltage
+----                                   -------
+xmcs4.xand_level0.xand0.6             0.724927
+xx0                                          0
+xmcs4.xand_level0.xand0.7             0.999806
+xy0                                          1
+vcc                                          1
+xout0                               0.00369563
+xmcs4.xand_level0.xand1.6           0.00380259
+xx1                                          1
+xmcs4.xand_level0.xand1.7           0.00761216
+xmcs4.0out1                           0.998501
+xmcs4.xand_level0.xand2.6             0.724927
+xx2                                          0
+xmcs4.xand_level0.xand2.7             0.999806
+xmcs4.0out2                         0.00370206
+xmcs4.xand_level0.xand3.6             0.724927
+xx3                                          0
+xmcs4.xand_level0.xand3.7             0.999806
+xmcs4.0out3                         0.00370206
+xmcs4.xand_level1.xand0.6             0.167897
+xmcs4.xand_level1.xand0.7             0.999998
+xy1                                          0
+xmcs4.1out0                         0.00368481
+xmcs4.xand_level1.xand1.6          0.000850461
+xmcs4.xand_level1.xand1.7             0.998128
+xmcs4.1out1                         0.00383274
+xmcs4.xand_level1.xand2.6             0.167897
+xmcs4.xand_level1.xand2.7             0.999998
+xmcs4.1out2                         0.00368679
+xmcs4.xand_level1.xand3.6             0.167897
+xmcs4.xand_level1.xand3.7             0.999998
+xmcs4.1out3                         0.00368733
+xmcs4.xadd_level2.xadd0.nodecon        0.998182
+xmcs4.xadd_level2.xadd0.node4         0.721852
+xmcs4.xadd_level2.xadd0.1              0.99909
+xmcs4.xadd_level2.xadd0.5          0.000851254
+xmcs4.xadd_level2.xadd0.4              0.99909
+xmcs4.xadd_level2.xadd0.2             0.997773
+xmcs4.xadd_level2.xadd0.3           0.00465092
+xmcs4.xadd_level2.xadd0.nodeson      0.00931338
+xmcs4.xadd_level2.xadd0.9             0.332242
+xmcs4.xadd_level2.xadd0.7          4.21158e-07
+xmcs4.xadd_level2.xadd0.8             0.265243
+xmcs4.xadd_level2.xadd0.6           0.00411184
+xmcs4.2cout0                        0.00501249
+xout1                                 0.998946
+xmcs4.xadd_level2.xadd1.nodecon        0.999994
+xmcs4.xadd_level2.xadd1.node4         0.167904
+xmcs4.xadd_level2.xadd1.1             0.999998
+xmcs4.xadd_level2.xadd1.5             0.151868
+xmcs4.xadd_level2.xadd1.4             0.999996
+xmcs4.xadd_level2.xadd1.2             0.999927
+xmcs4.xadd_level2.xadd1.3             0.699259
+xmcs4.xadd_level2.xadd1.nodeson        0.999502
+xmcs4.xadd_level2.xadd1.9             0.999785
+xmcs4.xadd_level2.xadd1.7            0.0365645
+xmcs4.xadd_level2.xadd1.8             0.999644
+xmcs4.xadd_level2.xadd1.6             0.195081
+xmcs4.2cout1                        0.00482907
+xmcs4.2sum1                         0.00487844
+xmcs4.xadd_level2.xadd2.nodecon        0.999994
+xmcs4.xadd_level2.xadd2.node4         0.167979
+xmcs4.xadd_level2.xadd2.1             0.999998
+xmcs4.xadd_level2.xadd2.5             0.151905
+xmcs4.xadd_level2.xadd2.4             0.999996
+xmcs4.xadd_level2.xadd2.2             0.999927
+xmcs4.xadd_level2.xadd2.3             0.699287
+xmcs4.xadd_level2.xadd2.nodeson        0.999503
+xmcs4.xadd_level2.xadd2.9             0.999785
+xmcs4.xadd_level2.xadd2.7            0.0365051
+xmcs4.xadd_level2.xadd2.8             0.999644
+xmcs4.xadd_level2.xadd2.6             0.195108
+xmcs4.2cout2                        0.00482907
+xmcs4.2sum2                         0.00487839
+xmcs4.xand_level3.xand0.6             0.167897
+xmcs4.xand_level3.xand0.7             0.999998
+xy2                                          0
+xmcs4.3out0                         0.00368679
+xmcs4.xand_level3.xand1.6          0.000850461
+xmcs4.xand_level3.xand1.7             0.998128
+xmcs4.3out1                         0.00383274
+xmcs4.xand_level3.xand2.6             0.167897
+xmcs4.xand_level3.xand2.7             0.999998
+xmcs4.3out2                         0.00368679
+xmcs4.xand_level3.xand3.6             0.167897
+xmcs4.xand_level3.xand3.7             0.999998
+xmcs4.3out3                         0.00368733
+xmcs4.xadd_level4.xadd0.nodecon        0.999994
+xmcs4.xadd_level4.xadd0.node4         0.168609
+xmcs4.xadd_level4.xadd0.1             0.999998
+xmcs4.xadd_level4.xadd0.5             0.154274
+xmcs4.xadd_level4.xadd0.4             0.999996
+xmcs4.xadd_level4.xadd0.2             0.999923
+xmcs4.xadd_level4.xadd0.3             0.698164
+xmcs4.xadd_level4.xadd0.nodeson        0.999482
+xmcs4.xadd_level4.xadd0.9             0.999776
+xmcs4.xadd_level4.xadd0.7             0.036343
+xmcs4.xadd_level4.xadd0.8             0.999629
+xmcs4.xadd_level4.xadd0.6             0.197667
+xmcs4.4cout0                        0.00482908
+xout2                               0.00487716
+xmcs4.xadd_level4.xadd1.nodecon        0.999994
+xmcs4.xadd_level4.xadd1.node4         0.168534
+xmcs4.xadd_level4.xadd1.1             0.999998
+xmcs4.xadd_level4.xadd1.5             0.154139
+xmcs4.xadd_level4.xadd1.4             0.999996
+xmcs4.xadd_level4.xadd1.2             0.999924
+xmcs4.xadd_level4.xadd1.3             0.698172
+xmcs4.xadd_level4.xadd1.nodeson        0.999482
+xmcs4.xadd_level4.xadd1.9             0.999776
+xmcs4.xadd_level4.xadd1.7            0.0363878
+xmcs4.xadd_level4.xadd1.8             0.999629
+xmcs4.xadd_level4.xadd1.6              0.19753
+xmcs4.4cout1                        0.00482908
+xmcs4.4sum1                         0.00488051
+xmcs4.xadd_level4.xadd2.nodecon        0.999994
+xmcs4.xadd_level4.xadd2.node4         0.167972
+xmcs4.xadd_level4.xadd2.1             0.999998
+xmcs4.xadd_level4.xadd2.5             0.154487
+xmcs4.xadd_level4.xadd2.4             0.999996
+xmcs4.xadd_level4.xadd2.2             0.999924
+xmcs4.xadd_level4.xadd2.3             0.698418
+xmcs4.xadd_level4.xadd2.nodeson        0.999487
+xmcs4.xadd_level4.xadd2.9             0.999778
+xmcs4.xadd_level4.xadd2.7            0.0368961
+xmcs4.xadd_level4.xadd2.8             0.999633
+xmcs4.xadd_level4.xadd2.6             0.198007
+xmcs4.4cout2                        0.00482908
+xmcs4.4sum2                         0.00488003
+xmcs4.xand_level5.xand0.6             0.167897
+xmcs4.xand_level5.xand0.7             0.999998
+xy3                                          0
+xmcs4.5out0                         0.00368679
+xmcs4.xand_level5.xand1.6          0.000850461
+xmcs4.xand_level5.xand1.7             0.998128
+xmcs4.5out1                         0.00383274
+xmcs4.xand_level5.xand2.6             0.167897
+xmcs4.xand_level5.xand2.7             0.999998
+xmcs4.5out2                         0.00368679
+xmcs4.xand_level5.xand3.6             0.167897
+xmcs4.xand_level5.xand3.7             0.999998
+xmcs4.5out3                         0.00368733
+xmcs4.xadd_level6.xadd0.nodecon        0.999994
+xmcs4.xadd_level6.xadd0.node4          0.16861
+xmcs4.xadd_level6.xadd0.1             0.999998
+xmcs4.xadd_level6.xadd0.5             0.154176
+xmcs4.xadd_level6.xadd0.4             0.999996
+xmcs4.xadd_level6.xadd0.2             0.999924
+xmcs4.xadd_level6.xadd0.3             0.698198
+xmcs4.xadd_level6.xadd0.nodeson        0.999482
+xmcs4.xadd_level6.xadd0.9             0.999776
+xmcs4.xadd_level6.xadd0.7            0.0363275
+xmcs4.xadd_level6.xadd0.8             0.999629
+xmcs4.xadd_level6.xadd0.6             0.197556
+xmcs4.6cout0                        0.00482895
+xout3                               0.00487709
+xmcs4.xadd_level6.xadd1.nodecon        0.999994
+xmcs4.xadd_level6.xadd1.node4         0.168535
+xmcs4.xadd_level6.xadd1.1             0.999998
+xmcs4.xadd_level6.xadd1.5             0.154139
+xmcs4.xadd_level6.xadd1.4             0.999996
+xmcs4.xadd_level6.xadd1.2             0.999924
+xmcs4.xadd_level6.xadd1.3             0.698172
+xmcs4.xadd_level6.xadd1.nodeson        0.999482
+xmcs4.xadd_level6.xadd1.9             0.999776
+xmcs4.xadd_level6.xadd1.7             0.036387
+xmcs4.xadd_level6.xadd1.8             0.999629
+xmcs4.xadd_level6.xadd1.6              0.19753
+xmcs4.6cout1                        0.00482895
+xmcs4.6sum1                         0.00488051
+xmcs4.xadd_level6.xadd2.nodecon        0.999994
+xmcs4.xadd_level6.xadd2.node4         0.167972
+xmcs4.xadd_level6.xadd2.1             0.999998
+xmcs4.xadd_level6.xadd2.5             0.154487
+xmcs4.xadd_level6.xadd2.4             0.999996
+xmcs4.xadd_level6.xadd2.2             0.999924
+xmcs4.xadd_level6.xadd2.3             0.698418
+xmcs4.xadd_level6.xadd2.nodeson        0.999487
+xmcs4.xadd_level6.xadd2.9             0.999778
+xmcs4.xadd_level6.xadd2.7            0.0368961
+xmcs4.xadd_level6.xadd2.8             0.999633
+xmcs4.xadd_level6.xadd2.6             0.198007
+xmcs4.6cout2                        0.00482895
+xmcs4.6sum2                         0.00488003
+xmcs4.xadd_level7.xadd0.nodecon        0.999994
+xmcs4.xadd_level7.xadd0.node4         0.168022
+xmcs4.xadd_level7.xadd0.1             0.999998
+xmcs4.xadd_level7.xadd0.5             0.151305
+xmcs4.xadd_level7.xadd0.4             0.999996
+xmcs4.xadd_level7.xadd0.2             0.999925
+xmcs4.xadd_level7.xadd0.3             0.698845
+xmcs4.xadd_level7.xadd0.nodeson        0.999495
+xmcs4.xadd_level7.xadd0.9             0.999782
+xmcs4.xadd_level7.xadd0.7            0.0364088
+xmcs4.xadd_level7.xadd0.8             0.999638
+xmcs4.xadd_level7.xadd0.6             0.194454
+xmcs4.7cout0                        0.00482908
+xout4                               0.00487585
+xmcs4.xadd_level7.xadd1.nodecon        0.999994
+xmcs4.xadd_level7.xadd1.node4         0.168021
+xmcs4.xadd_level7.xadd1.1             0.999998
+xmcs4.xadd_level7.xadd1.5             0.153883
+xmcs4.xadd_level7.xadd1.4             0.999996
+xmcs4.xadd_level7.xadd1.2             0.999923
+xmcs4.xadd_level7.xadd1.3             0.697989
+xmcs4.xadd_level7.xadd1.nodeson        0.999478
+xmcs4.xadd_level7.xadd1.9             0.999775
+xmcs4.xadd_level7.xadd1.7            0.0367925
+xmcs4.xadd_level7.xadd1.8             0.999627
+xmcs4.xadd_level7.xadd1.6             0.197346
+xmcs4.7cout1                        0.00482909
+xout5                                0.0048775
+xmcs4.xadd_level7.xadd2.nodecon        0.999994
+xmcs4.xadd_level7.xadd2.node4         0.167383
+xmcs4.xadd_level7.xadd2.1             0.999998
+xmcs4.xadd_level7.xadd2.5             0.154189
+xmcs4.xadd_level7.xadd2.4             0.999996
+xmcs4.xadd_level7.xadd2.2             0.999924
+xmcs4.xadd_level7.xadd2.3             0.698207
+xmcs4.xadd_level7.xadd2.nodeson        0.999482
+xmcs4.xadd_level7.xadd2.9             0.999777
+xmcs4.xadd_level7.xadd2.7            0.0373644
+xmcs4.xadd_level7.xadd2.8              0.99963
+xmcs4.xadd_level7.xadd2.6               0.1978
+xout7                               0.00482587
+xout6                               0.00487707
+v_dd#branch                       -2.39541e-05
+vinb0#branch                      -1.32931e-10
+vinb1#branch                       3.70199e-10
+vinb2#branch                       3.70199e-10
+vinb3#branch                       3.70199e-10
+vina0#branch                       1.99533e-10
+vina1#branch                      -5.43495e-10
+vina2#branch                       1.99533e-10
+vina3#branch                       1.99533e-10
+
+ Reference value :  0.00000e+00 Reference value :  2.02800e-12 Reference value :  5.62800e-12 Reference value :  9.42800e-12 Reference value :  1.34280e-11 Reference value :  1.69280e-11 Reference value :  1.90280e-11 Reference value :  2.21280e-11 Reference value :  2.51280e-11 Reference value :  2.89280e-11 Reference value :  3.28280e-11 Reference value :  3.57280e-11 Reference value :  3.85280e-11 Reference value :  4.09280e-11 Reference value :  4.48280e-11 Reference value :  4.83280e-11 Reference value :  5.02280e-11 Reference value :  5.29280e-11 Reference value :  5.57280e-11 Reference value :  5.87280e-11 Reference value :  6.18280e-11 Reference value :  6.51280e-11 Reference value :  6.91280e-11 Reference value :  7.29280e-11 Reference value :  7.74280e-11 Reference value :  8.01280e-11 Reference value :  8.38280e-11 Reference value :  8.70280e-11 Reference value :  9.11280e-11 Reference value :  9.52280e-11 Reference value :  9.83280e-11 Reference value :  1.01228e-10 Reference value :  1.04928e-10 Reference value :  1.09928e-10 Reference value :  1.14828e-10 Reference value :  1.17828e-10 Reference value :  1.22228e-10 Reference value :  1.26428e-10 Reference value :  1.31728e-10 Reference value :  1.35828e-10 Reference value :  1.39528e-10 Reference value :  1.43828e-10 Reference value :  1.48528e-10 Reference value :  1.53228e-10 Reference value :  1.57128e-10 Reference value :  1.61128e-10 Reference value :  1.65228e-10 Reference value :  1.70228e-10 Reference value :  1.74828e-10 Reference value :  1.78428e-10 Reference value :  1.82828e-10 Reference value :  1.86028e-10 Reference value :  1.91028e-10 Reference value :  1.94728e-10 Reference value :  1.99128e-10 Reference value :  2.03228e-10 Reference value :  2.08028e-10 Reference value :  2.12228e-10 Reference value :  2.15028e-10 Reference value :  2.17828e-10 Reference value :  2.19328e-10 Reference value :  2.23028e-10 Reference value :  2.27128e-10 Reference value :  2.29828e-10 Reference value :  2.33128e-10 Reference value :  2.37228e-10 Reference value :  2.42328e-10 Reference value :  2.47428e-10 Reference value :  2.50728e-10 Reference value :  2.54728e-10 Reference value :  2.59128e-10 Reference value :  2.64228e-10 Reference value :  2.69228e-10 Reference value :  2.72728e-10 Reference value :  2.76328e-10 Reference value :  2.81128e-10 Reference value :  2.85828e-10 Reference value :  2.90228e-10 Reference value :  2.93128e-10 Reference value :  2.97128e-10 Reference value :  3.01928e-10 Reference value :  3.06728e-10 Reference value :  3.10928e-10 Reference value :  3.13728e-10 Reference value :  3.17528e-10 Reference value :  3.22228e-10 Reference value :  3.26928e-10 Reference value :  3.31028e-10 Reference value :  3.33528e-10 Reference value :  3.37928e-10 Reference value :  3.41928e-10 Reference value :  3.46828e-10 Reference value :  3.51028e-10 Reference value :  3.53928e-10 Reference value :  3.58228e-10 Reference value :  3.63028e-10 Reference value :  3.67828e-10 Reference value :  3.71528e-10 Reference value :  3.74228e-10 Reference value :  3.78828e-10 Reference value :  3.83528e-10 Reference value :  3.88128e-10 Reference value :  3.91328e-10 Reference value :  3.94528e-10 Reference value :  3.99728e-10 Reference value :  4.04528e-10 Reference value :  4.09128e-10 Reference value :  4.13028e-10 Reference value :  4.16228e-10 Reference value :  4.20628e-10 Reference value :  4.25428e-10 Reference value :  4.28628e-10 Reference value :  4.31628e-10 Reference value :  4.34828e-10 Reference value :  4.38728e-10 Reference value :  4.41828e-10 Reference value :  4.45028e-10 Reference value :  4.49428e-10 Reference value :  4.53628e-10 Reference value :  4.56428e-10 Reference value :  4.60028e-10 Reference value :  4.65028e-10 Reference value :  4.70228e-10 Reference value :  4.74628e-10 Reference value :  4.78028e-10 Reference value :  4.82028e-10 Reference value :  4.86328e-10 Reference value :  4.89928e-10 Reference value :  4.93528e-10 Reference value :  4.96028e-10 Reference value :  4.99928e-10 Reference value :  5.04228e-10 Reference value :  5.07128e-10 Reference value :  5.10628e-10 Reference value :  5.13728e-10 Reference value :  5.18028e-10 Reference value :  5.22928e-10 Reference value :  5.25528e-10 Reference value :  5.28128e-10 Reference value :  5.31628e-10 Reference value :  5.35528e-10 Reference value :  5.39228e-10 Reference value :  5.41728e-10 Reference value :  5.45328e-10 Reference value :  5.50228e-10 Reference value :  5.55328e-10 Reference value :  5.60228e-10 Reference value :  5.64228e-10 Reference value :  5.68228e-10 Reference value :  5.73328e-10 Reference value :  5.78528e-10 Reference value :  5.83128e-10 Reference value :  5.86628e-10 Reference value :  5.91228e-10 Reference value :  5.96328e-10 Reference value :  6.01328e-10 Reference value :  6.05328e-10 Reference value :  6.08828e-10 Reference value :  6.13628e-10 Reference value :  6.18928e-10 Reference value :  6.23928e-10 Reference value :  6.28028e-10 Reference value :  6.31328e-10 Reference value :  6.36428e-10 Reference value :  6.41628e-10 Reference value :  6.45328e-10 Reference value :  6.49428e-10 Reference value :  6.53328e-10 Reference value :  6.58128e-10 Reference value :  6.61628e-10 Reference value :  6.63728e-10 Reference value :  6.67128e-10 Reference value :  6.71428e-10 Reference value :  6.76528e-10 Reference value :  6.81728e-10 Reference value :  6.86028e-10 Reference value :  6.89328e-10 Reference value :  6.93728e-10 Reference value :  6.98928e-10 Reference value :  7.03128e-10 Reference value :  7.06028e-10 Reference value :  7.08028e-10 Reference value :  7.11428e-10 Reference value :  7.16528e-10 Reference value :  7.21028e-10 Reference value :  7.25728e-10 Reference value :  7.29228e-10 Reference value :  7.34428e-10 Reference value :  7.39528e-10 Reference value :  7.43528e-10 Reference value :  7.48328e-10 Reference value :  7.51828e-10 Reference value :  7.56728e-10 Reference value :  7.62028e-10 Reference value :  7.66728e-10 Reference value :  7.71428e-10 Reference value :  7.74128e-10 Reference value :  7.79328e-10 Reference value :  7.84228e-10 Reference value :  7.89328e-10 Reference value :  7.93728e-10 Reference value :  7.96228e-10 Reference value :  8.01628e-10 Reference value :  8.06028e-10 Reference value :  8.09828e-10 Reference value :  8.10428e-10 Reference value :  8.11228e-10 Reference value :  8.13628e-10 Reference value :  8.14928e-10 Reference value :  8.17628e-10
+No. of Data Rows : 8208
+ngspice-32 done

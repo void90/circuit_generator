@@ -2,6 +2,7 @@
 #variabili di loop
 i=0
 j=0	
+numberInputMax=3
 #file contenente i valori da simulare e il valore atteso
 file="inputFile.txt"
 fileout="outputFile.txt" 
@@ -22,7 +23,7 @@ display_help() {
 	echo  "NGspice prints are redirected to netlist/displayNG.txt"
 	echo -e "at the end of simulation the outputFile.txt is generated; every line shows: \nOperandoA\tOperandoB\tOut_Atteso\tOut_simulato\tMatch|NotMatch\n"
 	echo
-		exit 1
+	exit 1
 }
 #se non si passano parametri stmpare usage:
 
@@ -60,6 +61,8 @@ then
 		esac
 		shift
 	done
+else
+	display_help
 fi
 
 paramSimulation
