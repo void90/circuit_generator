@@ -168,7 +168,7 @@ int main (int argc, char **argv)
 //Controllo ingressi
 	if( (x> (pow(2, max)-1)) || (y> (pow(2, max)-1)))
 	{
-		printf("ERROR: inserted number aren't representable with %d bit\n", n);
+		printf("ERROR: inserted number aren't representable with %d bit\n", max);
 		return -1;
 	}
 	int X_binary[max];
