@@ -11,3 +11,10 @@ FATTO-Inserire controlli che permettono comunque di simulare
 FATTO-Modificare file uscita in modo che inA inB outatteso outsimul
 8-SIMULAZIONI FINALI
 
+Simulazioni da 4 a 32 bit per verificare che ogni uscita vada ad 1, eccetto la 32 bit (fermi a 2^16)
+LUCA
+-Ripple Carry Adder
+-Moltiplicatori Carry Save
+DILETTA
+-Carry select Adder
+-Moltiplicatore Parallelo
