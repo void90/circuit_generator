@@ -86,8 +86,7 @@ int main (int argc, char **argv)
 //Fine codice generazione netlist
 
 //Conversione operandi di ingresso
-	int a=atoi(argv[3]);
-	int b=atoi(argv[4]);
+	unsigned long long int a=atof(argv[3]), b=atoi(argv[4]);
 //Controllo ingressi
 	if( (a> (pow(2, max)-1)) || (b> (pow(2, max)-1)))
 	{
@@ -96,8 +95,7 @@ int main (int argc, char **argv)
 	}
 	int A_binary[max], B_binary[max];
 ///*TEST*/int S_binary[max];
-/*TEST*/int s = a+b;
-/*TEST*/printf ("Risultato atteso: %d\n", s);	//risultato decimale atteso
+/*TEST*/unsigned long long int s = a+b;
 /*TEST*/for (i = max-1; i >= 0; i--) {		//risultato binario atteso
 ///*TEST*/	S_binary[i] = s%2;
 /*TEST*/	s = s/2;

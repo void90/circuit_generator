@@ -7,7 +7,7 @@
 int main(int argc, char **argv)
 {
 	FILE *outVal, *outputFile;
-	float valF=0, up, down, alim=1;
+	double valF=0, up, down, alim=1;
 	unsigned long long int bin=0;
 	char count=0, rows=0;
 	char val[100];
@@ -24,8 +24,7 @@ int main(int argc, char **argv)
 		printf("File \"outputValue.txt\" doesen't exist.\n");
 		return-1;
 	}
-	if(argc==5)
-	{	alim=atof(argv[4]);}
+	alim=atof(argv[4]);
 	up=0.7*alim;
 	down=0.3*alim;
 	while(	fscanf(outVal, "%s", val)!= EOF )

@@ -161,10 +161,10 @@ int main (int argc, char **argv)
 	//FINE DICHIARAZIONE COMPONENTE
 	//Fine codice generazione netlist
 //Conversione operandi di ingresso
-	int x, y;
-/*TEST*/int p;
-	x=atoi(argv[3]);
-	y=atoi(argv[4]);
+	unsigned long long int x, y;
+/*TEST*/unsigned long long int p;
+	x=atof(argv[3]);
+	y=atof(argv[4]);
 //Controllo ingressi
 	if( (x> (pow(2, max)-1)) || (y> (pow(2, max)-1)))
 	{

@@ -214,10 +214,10 @@ int main (int argc, char **argv)
 
 //Fine codice generazione netlist
 //Conversione operandi di ingresso
-	int a, b;
-/*TEST*/int s;
-	a = atoi (argv[3]);
-	b = atoi (argv[4]);
+	unsigned long long int a, b;
+/*TEST*/unsigned long long int s;
+	a = atof (argv[3]);
+	b = atof (argv[4]);
 //Controllo ingressi
 	if( (a> (pow(2, n)-1)) || (b> (pow(2, n)-1)))
 	{
