@@ -1,0 +1,20 @@
+inA	inB	out atteso	out simul
+0	0	0		0	Matched
+0	1	1		1	Matched
+1	1	2		2	Matched
+3	1	4		4	Matched
+5	3	8		8	Matched
+15	1	16		16	Matched
+25	7	32		32	Matched
+60	4	64		64	Matched
+100	28	128		128	Matched
+255	1	256		256	Matched
+255	257	512		512	Matched
+1023	1	1024		1024	Matched
+2000	48	2048		2048	Matched
+4000	96	4096		4096	Matched
+8000	192	8192		8192	Matched
+16000	384	16384		16384	Matched
+32000	768	32768		32768	Matched
+65535	1	65536		65536	Matched
+65535	65535	131070		131070	Matched

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #define COLOR_OFF "\e[0m"
 #define RED(text) "\e[0;31m"
 #define GREEN(text) "\e[0;32m"
@@ -34,22 +35,25 @@ int main(int argc, char **argv)
 		{
 			valF=atof(val);
 			if(valF >= up)
-			{	bin |= (1 <<rows) ;	}
+			{	bin+=pow(2, rows);}
+/*			{	bin |= (1 <<rows) ;	}
 			else if (valF<= down)
 			{	bin &=~ (1 <<rows);	}
 			else
+*/
+			if(valF<up && valF>down)
 			{
 				printf("WARNING: param [%d] is between %f and %f\n", rows, down, up);
 				fprintf(outputFile, "WARNING: param [%d] of %s is between %f and %f\n", rows, argv[3], down, up);
 				if( valF>=0.50*alim)
-				{
-					bin |= (1 <<rows) ;
+				{	bin+=pow(2, rows);}
+/*					bin |= (1 <<rows) ;
 				}
 				else
 				{
 					bin &=~ (1 <<rows);
 				}
-			}
+*/			}
 			count=0;
 			rows++;
 		}
@@ -57,7 +61,7 @@ int main(int argc, char **argv)
 	printf("inA\tinB\tout atteso\tout simul\n");
 	printf("%s\t%s\t%s\t\t%llu\n", argv[1], argv[2], argv[3], bin);
 	fprintf(outputFile, "%s\t%s\t%s\t\t%llu\t", argv[1], argv[2], argv[3], bin);
-	if( bin == atoi(argv[3]))
+	if( bin == atof(argv[3]))
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
 		fprintf(outputFile, "Matched\n");

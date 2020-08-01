@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 	printf("inA\tinB\tout atteso\tout simul\n");
 	printf("%s\t%s\t%s\t\t%llu\n", argv[1], argv[2], argv[3], bin);
 	fprintf(outputFile, "%s\t%s\t%s\t\t%llu\t", argv[1], argv[2], argv[3], bin);
-	if( bin == atoi(argv[3]))
+	if( bin == atof(argv[3]))
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
 		fprintf(outputFile, "Matched\n");

@@ -24,7 +24,15 @@ int main (int argc, char **argv)
 	}
 //Stampe netlist iniziali fisse
 	fprintf(fp, "*RIPPLE CARRY ADDER\n.option filetype=ascii\n.INCLUDE ../lib/ST65LIKE_cell_library_v2020_1.net \n.INCLUDE ../lib/16nm_HP.pm\n");
-	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN 0.1p 820p\n", alim);	
+	fprintf(fp, ".PARAM ALIM=%f\n.PARAM Lmin=16n\n.PARAM Wmin=16n\n.PARAM XXX=1\n.TRAN ", alim);
+	if(n==4 || n==8)
+	{
+		fprintf(fp, "0.1p 820p\n\n");
+	}
+	else
+	{
+		fprintf(fp, "1p 2000p\n\n");
+	}	
 //Codice generazione netlist cartella code
 	//DICHIARAZIONE SOTTOCIRCUITO
 	fprintf (fp, ".subckt RCA_SUB 0 Vdd ");	
