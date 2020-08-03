@@ -1,277 +1,0 @@
-Note: Starting true gmin stepping
-Trying gmin =   1.0000E-03 Note: One successful gmin step
-Trying gmin =   1.0000E-04 Note: One successful gmin step
-Trying gmin =   1.0000E-05 Warning: Further gmin increment
-Trying gmin =   5.6234E-05 Note: One successful gmin step
-Trying gmin =   2.3714E-05 Note: One successful gmin step
-Trying gmin =   6.4938E-06 Warning: Further gmin increment
-Trying gmin =   1.7154E-05 Note: One successful gmin step
-Trying gmin =   1.0554E-05 Note: One successful gmin step
-Trying gmin =   5.0937E-06 Note: One successful gmin step
-Trying gmin =   1.7077E-06 Note: One successful gmin step
-Trying gmin =   3.3152E-07 Note: One successful gmin step
-Trying gmin =   3.3152E-08 Note: One successful gmin step
-Trying gmin =   3.3152E-09 Note: One successful gmin step
-Trying gmin =   3.3152E-10 Note: One successful gmin step
-Trying gmin =   3.3152E-11 Note: One successful gmin step
-Trying gmin =   3.3152E-12 Note: One successful gmin step
-Trying gmin =   1.0000E-12 Note: One successful gmin step
-Note: True gmin stepping completed
-******
-** ngspice-32 : Circuit level simulation program
-** The U. C. Berkeley CAD Group
-** Copyright 1985-1994, Regents of the University of California.
-** Copyright 2001-2020, The ngspice team.
-** Please get your ngspice manual from http://ngspice.sourceforge.net/docs.html
-** Please file your bug-reports at http://ngspice.sourceforge.net/bugrep.html
-** Creation Date: Mon May 25 13:18:12 UTC 2020
-******
-
-Circuit: moltiplicatore parallelo
-
-Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
-
-
-Initial Transient Solution
---------------------------
-
-Node                                   Voltage
-----                                   -------
-xmp.xpart0.xand0.6                    0.167897
-x0                                           0
-xmp.xpart0.xand0.7                    0.999998
-y0                                           0
-vcc                                          1
-zz0                                  0.0036809
-xmp.xpart0.xand1.6                 0.000850461
-x1                                           1
-xmp.xpart0.xand1.7                    0.998128
-xmp.0out1                           0.00383274
-xmp.xpart0.xand2.6                    0.167897
-x2                                           0
-xmp.xpart0.xand2.7                    0.999998
-xmp.0out2                           0.00368481
-xmp.xpart0.xand3.6                 0.000850461
-x3                                           1
-xmp.xpart0.xand3.7                    0.998128
-xmp.0out3                           0.00383274
-xmp.xpart1.xand0.6                    0.724927
-xmp.xpart1.xand0.7                    0.999806
-y1                                           1
-xmp.1out0                           0.00370206
-xmp.xpart1.xand1.6                  0.00380259
-xmp.xpart1.xand1.7                  0.00761216
-xmp.1out1                             0.998501
-xmp.xpart1.xand2.6                    0.724927
-xmp.xpart1.xand2.7                    0.999806
-xmp.1out2                           0.00370206
-xmp.xpart1.xand3.6                  0.00380259
-xmp.xpart1.xand3.7                  0.00761216
-xmp.1out3                             0.998501
-xmp.xadd0.xfa0.nodecon                0.999994
-xmp.xadd0.xfa0.node4                  0.167904
-xmp.xadd0.xfa0.1                      0.999998
-xmp.xadd0.xfa0.5                      0.151868
-xmp.xadd0.xfa0.4                      0.999996
-xmp.xadd0.xfa0.2                      0.999927
-xmp.xadd0.xfa0.3                      0.699259
-xmp.xadd0.xfa0.nodeson                0.999502
-xmp.xadd0.xfa0.9                      0.999785
-xmp.xadd0.xfa0.7                     0.0365645
-xmp.xadd0.xfa0.8                      0.999644
-xmp.xadd0.xfa0.6                      0.195081
-xmp.xadd0.cout0                     0.00482745
-zz1                                 0.00487507
-xmp.xadd0.xfa1.nodecon                0.997997
-xmp.xadd0.xfa1.node4                  0.721821
-xmp.xadd0.xfa1.1                      0.998999
-xmp.xadd0.xfa1.5                   0.000946014
-xmp.xadd0.xfa1.4                      0.998999
-xmp.xadd0.xfa1.2                      0.997763
-xmp.xadd0.xfa1.3                     0.0046638
-xmp.xadd0.xfa1.nodeson              0.00933951
-xmp.xadd0.xfa1.9                      0.332979
-xmp.xadd0.xfa1.7                   4.25022e-07
-xmp.xadd0.xfa1.8                      0.268285
-xmp.xadd0.xfa1.6                    0.00439767
-xmp.xadd0.cout1                     0.00503161
-xmp.s1                                0.998941
-xmp.xadd0.xfa2.nodecon                0.999994
-xmp.xadd0.xfa2.node4                  0.167904
-xmp.xadd0.xfa2.1                      0.999998
-xmp.xadd0.xfa2.5                      0.154554
-xmp.xadd0.xfa2.4                      0.999996
-xmp.xadd0.xfa2.2                      0.999924
-xmp.xadd0.xfa2.3                      0.698351
-xmp.xadd0.xfa2.nodeson                0.999485
-xmp.xadd0.xfa2.9                      0.999778
-xmp.xadd0.xfa2.7                     0.0369649
-xmp.xadd0.xfa2.8                      0.999632
-xmp.xadd0.xfa2.6                      0.198096
-xmp.xadd0.cout2                     0.00482745
-xmp.s2                              0.00487988
-xmp.xadd0.xfa3.nodecon                0.998012
-xmp.xadd0.xfa3.node4                  0.723778
-xmp.xadd0.xfa3.1                      0.999008
-xmp.xadd0.xfa3.5                   0.000946134
-xmp.xadd0.xfa3.4                      0.999008
-xmp.xadd0.xfa3.2                      0.997765
-xmp.xadd0.xfa3.3                    0.00466643
-xmp.xadd0.xfa3.nodeson              0.00934476
-xmp.xadd0.xfa3.9                      0.331266
-xmp.xadd0.xfa3.7                   4.22094e-07
-xmp.xadd0.xfa3.8                      0.268718
-xmp.xadd0.xfa3.6                    0.00460877
-xmp.c3                              0.00502989
-xmp.s3                                0.998941
-xmp.xpart2.xand0.6                    0.167897
-xmp.xpart2.xand0.7                    0.999998
-y2                                           0
-xmp.2out0                           0.00368704
-xmp.xpart2.xand1.6                 0.000850461
-xmp.xpart2.xand1.7                    0.998128
-xmp.2out1                           0.00383327
-xmp.xpart2.xand2.6                    0.167897
-xmp.xpart2.xand2.7                    0.999998
-xmp.2out2                           0.00368704
-xmp.xpart2.xand3.6                 0.000850461
-xmp.xpart2.xand3.7                    0.998128
-xmp.2out3                           0.00383327
-xmp.xadd1.xfa0.nodecon                 0.99663
-xmp.xadd1.xfa0.node4               0.000912047
-xmp.xadd1.xfa0.1                      0.998314
-xmp.xadd1.xfa0.5                   0.000840289
-xmp.xadd1.xfa0.4                       0.99663
-xmp.xadd1.xfa0.2                      0.997649
-xmp.xadd1.xfa0.3                    0.00491097
-xmp.xadd1.xfa0.nodeson              0.00983839
-xmp.xadd1.xfa0.9                      0.997402
-xmp.xadd1.xfa0.7                     0.0370468
-xmp.xadd1.xfa0.8                      0.278507
-xmp.xadd1.xfa0.6                     0.0370469
-xmp.xadd1.cout0                     0.00517441
-zz2                                   0.998933
-xmp.xadd1.xfa1.nodecon                0.999994
-xmp.xadd1.xfa1.node4                  0.167435
-xmp.xadd1.xfa1.1                      0.999998
-xmp.xadd1.xfa1.5                      0.154323
-xmp.xadd1.xfa1.4                      0.999996
-xmp.xadd1.xfa1.2                      0.999923
-xmp.xadd1.xfa1.3                      0.698107
-xmp.xadd1.xfa1.nodeson                0.999481
-xmp.xadd1.xfa1.9                      0.999776
-xmp.xadd1.xfa1.7                     0.0373428
-xmp.xadd1.xfa1.8                      0.999628
-xmp.xadd1.xfa1.6                      0.197942
-xmp.xadd1.cout1                     0.00482745
-xmp.s4                              0.00488035
-xmp.xadd1.xfa2.nodecon                0.996446
-xmp.xadd1.xfa2.node4               0.000910671
-xmp.xadd1.xfa2.1                      0.998225
-xmp.xadd1.xfa2.5                   0.000933931
-xmp.xadd1.xfa2.4                      0.996446
-xmp.xadd1.xfa2.2                      0.997642
-xmp.xadd1.xfa2.3                    0.00491701
-xmp.xadd1.xfa2.nodeson              0.00985083
-xmp.xadd1.xfa2.9                      0.997401
-xmp.xadd1.xfa2.7                     0.0354894
-xmp.xadd1.xfa2.8                      0.281067
-xmp.xadd1.xfa2.6                     0.0354895
-xmp.xadd1.cout2                     0.00519388
-xmp.s5                                0.998928
-xmp.xadd1.xfa3.nodecon                0.999994
-xmp.xadd1.xfa3.node4                  0.167357
-xmp.xadd1.xfa3.1                      0.999998
-xmp.xadd1.xfa3.5                      0.154294
-xmp.xadd1.xfa3.4                      0.999996
-xmp.xadd1.xfa3.2                      0.999923
-xmp.xadd1.xfa3.3                      0.698076
-xmp.xadd1.xfa3.nodeson                 0.99948
-xmp.xadd1.xfa3.9                      0.999776
-xmp.xadd1.xfa3.7                     0.0374061
-xmp.xadd1.xfa3.8                      0.999628
-xmp.xadd1.xfa3.6                      0.197927
-xmp.c6                              0.00482792
-xmp.s6                              0.00488033
-xmp.xpart3.xand0.6                    0.724927
-xmp.xpart3.xand0.7                    0.999806
-y3                                           1
-xmp.3out0                           0.00370206
-xmp.xpart3.xand1.6                  0.00380259
-xmp.xpart3.xand1.7                  0.00761216
-xmp.3out1                               0.9985
-xmp.xpart3.xand2.6                    0.724927
-xmp.xpart3.xand2.7                    0.999806
-xmp.3out2                           0.00370198
-xmp.xpart3.xand3.6                  0.00380259
-xmp.xpart3.xand3.7                  0.00761216
-xmp.3out3                             0.998501
-xmp.xadd2.xfa0.nodecon                0.999994
-xmp.xadd2.xfa0.node4                  0.167364
-xmp.xadd2.xfa0.1                      0.999998
-xmp.xadd2.xfa0.5                      0.151594
-xmp.xadd2.xfa0.4                      0.999996
-xmp.xadd2.xfa0.2                      0.999926
-xmp.xadd2.xfa0.3                      0.699059
-xmp.xadd2.xfa0.nodeson                0.999499
-xmp.xadd2.xfa0.9                      0.999783
-xmp.xadd2.xfa0.7                      0.036992
-xmp.xadd2.xfa0.8                      0.999641
-xmp.xadd2.xfa0.6                       0.19489
-xmp.xadd2.cout0                     0.00482798
-zz3                                 0.00487545
-xmp.xadd2.xfa1.nodecon             0.000939668
-xmp.xadd2.xfa1.node4               0.000470072
-xmp.xadd2.xfa1.1                      0.296458
-xmp.xadd2.xfa1.5                   3.36662e-07
-xmp.xadd2.xfa1.4                      0.672768
-xmp.xadd2.xfa1.2                      0.997688
-xmp.xadd2.xfa1.3                    0.00043122
-xmp.xadd2.xfa1.nodeson                0.995377
-xmp.xadd2.xfa1.9                      0.996563
-xmp.xadd2.xfa1.7                   0.000983893
-xmp.xadd2.xfa1.8                      0.995377
-xmp.xadd2.xfa1.6                    0.00196739
-xmp.xadd2.cout1                       0.999131
-zz4                                 0.00530515
-xmp.xadd2.xfa2.nodecon                0.999587
-xmp.xadd2.xfa2.node4                  0.167289
-xmp.xadd2.xfa2.1                      0.999917
-xmp.xadd2.xfa2.5                      0.706891
-xmp.xadd2.xfa2.4                      0.999752
-xmp.xadd2.xfa2.2                      0.995951
-xmp.xadd2.xfa2.3                    0.00845361
-xmp.xadd2.xfa2.nodeson               0.0169442
-xmp.xadd2.xfa2.9                      0.993011
-xmp.xadd2.xfa2.7                    0.00751768
-xmp.xadd2.xfa2.8                       0.99006
-xmp.xadd2.xfa2.6                     0.0169444
-xmp.xadd2.cout2                     0.00486814
-zz5                                   0.998743
-xmp.xadd2.xfa3.nodecon                 0.99799
-xmp.xadd2.xfa3.node4                  0.721213
-xmp.xadd2.xfa3.1                      0.998996
-xmp.xadd2.xfa3.5                   0.000946813
-xmp.xadd2.xfa3.4                      0.998996
-xmp.xadd2.xfa3.2                      0.997763
-xmp.xadd2.xfa3.3                    0.00466311
-xmp.xadd2.xfa3.nodeson              0.00933816
-xmp.xadd2.xfa3.9                      0.333519
-xmp.xadd2.xfa3.7                   4.25966e-07
-xmp.xadd2.xfa3.8                      0.268176
-xmp.xadd2.xfa3.6                    0.00433481
-zz7                                 0.00502908
-zz6                                   0.998945
-v_dd#branch                       -2.73445e-05
-viny0#branch                       3.69743e-10
-viny1#branch                      -2.65028e-10
-viny2#branch                       3.69743e-10
-viny3#branch                      -2.65028e-10
-vinx0#branch                       2.14733e-10
-vinx1#branch                      -5.43725e-10
-vinx2#branch                       2.14733e-10
-vinx3#branch                      -5.43725e-10
-
- Reference value :  0.00000e+00 Reference value :  2.22800e-12 Reference value :  5.42800e-12 Reference value :  9.12800e-12 Reference value :  1.09280e-11 Reference value :  1.48280e-11 Reference value :  1.82280e-11 Reference value :  2.16280e-11 Reference value :  2.48280e-11 Reference value :  2.69280e-11 Reference value :  3.12280e-11 Reference value :  3.48280e-11 Reference value :  3.67280e-11 Reference value :  4.02280e-11 Reference value :  4.20280e-11 Reference value :  4.53280e-11 Reference value :  4.81280e-11 Reference value :  5.23280e-11 Reference value :  5.63280e-11 Reference value :  5.83280e-11 Reference value :  6.13280e-11 Reference value :  6.42280e-11 Reference value :  6.79280e-11 Reference value :  7.16280e-11 Reference value :  7.32280e-11 Reference value :  7.67280e-11 Reference value :  8.03280e-11 Reference value :  8.48280e-11 Reference value :  8.95280e-11 Reference value :  9.28280e-11 Reference value :  9.72280e-11 Reference value :  1.01828e-10 Reference value :  1.06728e-10 Reference value :  1.10928e-10 Reference value :  1.13328e-10 Reference value :  1.16428e-10 Reference value :  1.21328e-10 Reference value :  1.26428e-10 Reference value :  1.30428e-10 Reference value :  1.33728e-10 Reference value :  1.37628e-10 Reference value :  1.42728e-10 Reference value :  1.47828e-10 Reference value :  1.51228e-10 Reference value :  1.54928e-10 Reference value :  1.59528e-10 Reference value :  1.64628e-10 Reference value :  1.69328e-10 Reference value :  1.71528e-10 Reference value :  1.74828e-10 Reference value :  1.79828e-10 Reference value :  1.84028e-10 Reference value :  1.88728e-10 Reference value :  1.91428e-10 Reference value :  1.93528e-10 Reference value :  1.97528e-10 Reference value :  2.01128e-10 Reference value :  2.04728e-10 Reference value :  2.07228e-10 Reference value :  2.08928e-10 Reference value :  2.12928e-10 Reference value :  2.18028e-10 Reference value :  2.22928e-10 Reference value :  2.26228e-10 Reference value :  2.28528e-10 Reference value :  2.32828e-10 Reference value :  2.37028e-10 Reference value :  2.39928e-10 Reference value :  2.43428e-10 Reference value :  2.46328e-10 Reference value :  2.50728e-10 Reference value :  2.54628e-10 Reference value :  2.58328e-10 Reference value :  2.61028e-10 Reference value :  2.62228e-10 Reference value :  2.65728e-10 Reference value :  2.70228e-10 Reference value :  2.74628e-10 Reference value :  2.77028e-10 Reference value :  2.78528e-10 Reference value :  2.82728e-10 Reference value :  2.86928e-10 Reference value :  2.91428e-10 Reference value :  2.94028e-10 Reference value :  2.96128e-10 Reference value :  3.01028e-10 Reference value :  3.05728e-10 Reference value :  3.10428e-10 Reference value :  3.14428e-10 Reference value :  3.17728e-10 Reference value :  3.22428e-10 Reference value :  3.27428e-10 Reference value :  3.31728e-10 Reference value :  3.35628e-10 Reference value :  3.37728e-10 Reference value :  3.42828e-10 Reference value :  3.47928e-10 Reference value :  3.52528e-10 Reference value :  3.56728e-10 Reference value :  3.59628e-10 Reference value :  3.64628e-10 Reference value :  3.69628e-10 Reference value :  3.73528e-10 Reference value :  3.77928e-10 Reference value :  3.81528e-10 Reference value :  3.86228e-10 Reference value :  3.90828e-10 Reference value :  3.95328e-10 Reference value :  3.99828e-10 Reference value :  4.03328e-10 Reference value :  4.08128e-10 Reference value :  4.12528e-10 Reference value :  4.17028e-10 Reference value :  4.20328e-10 Reference value :  4.23628e-10 Reference value :  4.28728e-10 Reference value :  4.33028e-10 Reference value :  4.36928e-10 Reference value :  4.41028e-10 Reference value :  4.44128e-10 Reference value :  4.48228e-10 Reference value :  4.51028e-10 Reference value :  4.54928e-10 Reference value :  4.57628e-10 Reference value :  4.60428e-10 Reference value :  4.63728e-10 Reference value :  4.68128e-10 Reference value :  4.72628e-10 Reference value :  4.75128e-10 Reference value :  4.78028e-10 Reference value :  4.81028e-10 Reference value :  4.85828e-10 Reference value :  4.91028e-10 Reference value :  4.94428e-10 Reference value :  4.98228e-10
-No. of Data Rows : 5008
-ngspice-32 done

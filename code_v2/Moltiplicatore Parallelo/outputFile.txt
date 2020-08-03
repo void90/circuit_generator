@@ -1,2 +1,2 @@
 inA	inB	out atteso	out simul
-10	10	100		100	Matched
+0	0	0		18446744065119617025.000000	Not matched

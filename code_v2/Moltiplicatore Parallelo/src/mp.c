@@ -32,9 +32,9 @@ int main (int argc, char **argv)
 	}
 	else
 	{
-		fprintf(fp, "1p 2000p");
+		fprintf(fp, "4p 4000p");
 	}
-	fprintf(fp, "\n\n.subckt PART_SUB 0 Vdd ", alim);
+	fprintf(fp, "\n\n.subckt PART_SUB 0 Vdd ");
 //DICHIARAZIONE SOTTOCIRCUITO .subckt PART_SUB (and)
 	a=0;
 	for(i=0; i<max; i++)
