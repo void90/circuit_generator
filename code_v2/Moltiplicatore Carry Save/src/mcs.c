@@ -32,7 +32,7 @@ int main (int argc, char **argv)
 	}
 	else
 	{
-		fprintf(fp, "1p 2000p\n\n");
+		fprintf(fp, "4p 4000p\n\n");
 	}
 //Codice generazione netlist cartella code
 //DICHIARAZIONE SOTTOCIRCUITO AND_ARRAY_SUB: [n x AND2_SUB]	

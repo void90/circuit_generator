@@ -7,219 +7,33 @@ MOLTIPLICATORE PARALLELO
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
-.TRAN 4p 4000p
+.TRAN 0.1p 820p
 
-.subckt PART_SUB 0 Vdd out0 out1 out2 out3 out4 out5 out6 out7 out8 out9 out10 out11 out12 out13 out14 out15 out16 out17 out18 out19 out20 out21 out22 out23 out24 out25 out26 out27 out28 out29 out30 out31 xin0 xin1 xin2 xin3 xin4 xin5 xin6 xin7 xin8 xin9 xin10 xin11 xin12 xin13 xin14 xin15 xin16 xin17 xin18 xin19 xin20 xin21 xin22 xin23 xin24 xin25 xin26 xin27 xin28 xin29 xin30 xin31 y XX=1
+.subckt PART_SUB 0 Vdd out0 out1 out2 out3 xin0 xin1 xin2 xin3 y XX=1
 	xand0 0 Vdd out0 xin0 y AND2_SUB XX=XXX
 	xand1 0 Vdd out1 xin1 y AND2_SUB XX=XXX
 	xand2 0 Vdd out2 xin2 y AND2_SUB XX=XXX
 	xand3 0 Vdd out3 xin3 y AND2_SUB XX=XXX
-	xand4 0 Vdd out4 xin4 y AND2_SUB XX=XXX
-	xand5 0 Vdd out5 xin5 y AND2_SUB XX=XXX
-	xand6 0 Vdd out6 xin6 y AND2_SUB XX=XXX
-	xand7 0 Vdd out7 xin7 y AND2_SUB XX=XXX
-	xand8 0 Vdd out8 xin8 y AND2_SUB XX=XXX
-	xand9 0 Vdd out9 xin9 y AND2_SUB XX=XXX
-	xand10 0 Vdd out10 xin10 y AND2_SUB XX=XXX
-	xand11 0 Vdd out11 xin11 y AND2_SUB XX=XXX
-	xand12 0 Vdd out12 xin12 y AND2_SUB XX=XXX
-	xand13 0 Vdd out13 xin13 y AND2_SUB XX=XXX
-	xand14 0 Vdd out14 xin14 y AND2_SUB XX=XXX
-	xand15 0 Vdd out15 xin15 y AND2_SUB XX=XXX
-	xand16 0 Vdd out16 xin16 y AND2_SUB XX=XXX
-	xand17 0 Vdd out17 xin17 y AND2_SUB XX=XXX
-	xand18 0 Vdd out18 xin18 y AND2_SUB XX=XXX
-	xand19 0 Vdd out19 xin19 y AND2_SUB XX=XXX
-	xand20 0 Vdd out20 xin20 y AND2_SUB XX=XXX
-	xand21 0 Vdd out21 xin21 y AND2_SUB XX=XXX
-	xand22 0 Vdd out22 xin22 y AND2_SUB XX=XXX
-	xand23 0 Vdd out23 xin23 y AND2_SUB XX=XXX
-	xand24 0 Vdd out24 xin24 y AND2_SUB XX=XXX
-	xand25 0 Vdd out25 xin25 y AND2_SUB XX=XXX
-	xand26 0 Vdd out26 xin26 y AND2_SUB XX=XXX
-	xand27 0 Vdd out27 xin27 y AND2_SUB XX=XXX
-	xand28 0 Vdd out28 xin28 y AND2_SUB XX=XXX
-	xand29 0 Vdd out29 xin29 y AND2_SUB XX=XXX
-	xand30 0 Vdd out30 xin30 y AND2_SUB XX=XXX
-	xand31 0 Vdd out31 xin31 y AND2_SUB XX=XXX
 .ends
 
-.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7 sum8 sum9 sum10 sum11 sum12 sum13 sum14 sum15 sum16 sum17 sum18 sum19 sum20 sum21 sum22 sum23 sum24 sum25 sum26 sum27 sum28 sum29 sum30 sum31 cout31 cin ain0 ain1 ain2 ain3 ain4 ain5 ain6 ain7 ain8 ain9 ain10 ain11 ain12 ain13 ain14 ain15 ain16 ain17 ain18 ain19 ain20 ain21 ain22 ain23 ain24 ain25 ain26 ain27 ain28 ain29 ain30 ain31 bin0 bin1 bin2 bin3 bin4 bin5 bin6 bin7 bin8 bin9 bin10 bin11 bin12 bin13 bin14 bin15 bin16 bin17 bin18 bin19 bin20 bin21 bin22 bin23 bin24 bin25 bin26 bin27 bin28 bin29 bin30 bin31 XX=1
+.subckt RCA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cin ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1
 	xfa0 0 Vdd sum0 cout0 0 ain0 bin0 FA_SUB XX=XXX
 	xfa1 0 Vdd sum1 cout1 cout0 ain1 bin1 FA_SUB XX=XXX
 	xfa2 0 Vdd sum2 cout2 cout1 ain2 bin2 FA_SUB XX=XXX
 	xfa3 0 Vdd sum3 cout3 cout2 ain3 bin3 FA_SUB XX=XXX
-	xfa4 0 Vdd sum4 cout4 cout3 ain4 bin4 FA_SUB XX=XXX
-	xfa5 0 Vdd sum5 cout5 cout4 ain5 bin5 FA_SUB XX=XXX
-	xfa6 0 Vdd sum6 cout6 cout5 ain6 bin6 FA_SUB XX=XXX
-	xfa7 0 Vdd sum7 cout7 cout6 ain7 bin7 FA_SUB XX=XXX
-	xfa8 0 Vdd sum8 cout8 cout7 ain8 bin8 FA_SUB XX=XXX
-	xfa9 0 Vdd sum9 cout9 cout8 ain9 bin9 FA_SUB XX=XXX
-	xfa10 0 Vdd sum10 cout10 cout9 ain10 bin10 FA_SUB XX=XXX
-	xfa11 0 Vdd sum11 cout11 cout10 ain11 bin11 FA_SUB XX=XXX
-	xfa12 0 Vdd sum12 cout12 cout11 ain12 bin12 FA_SUB XX=XXX
-	xfa13 0 Vdd sum13 cout13 cout12 ain13 bin13 FA_SUB XX=XXX
-	xfa14 0 Vdd sum14 cout14 cout13 ain14 bin14 FA_SUB XX=XXX
-	xfa15 0 Vdd sum15 cout15 cout14 ain15 bin15 FA_SUB XX=XXX
-	xfa16 0 Vdd sum16 cout16 cout15 ain16 bin16 FA_SUB XX=XXX
-	xfa17 0 Vdd sum17 cout17 cout16 ain17 bin17 FA_SUB XX=XXX
-	xfa18 0 Vdd sum18 cout18 cout17 ain18 bin18 FA_SUB XX=XXX
-	xfa19 0 Vdd sum19 cout19 cout18 ain19 bin19 FA_SUB XX=XXX
-	xfa20 0 Vdd sum20 cout20 cout19 ain20 bin20 FA_SUB XX=XXX
-	xfa21 0 Vdd sum21 cout21 cout20 ain21 bin21 FA_SUB XX=XXX
-	xfa22 0 Vdd sum22 cout22 cout21 ain22 bin22 FA_SUB XX=XXX
-	xfa23 0 Vdd sum23 cout23 cout22 ain23 bin23 FA_SUB XX=XXX
-	xfa24 0 Vdd sum24 cout24 cout23 ain24 bin24 FA_SUB XX=XXX
-	xfa25 0 Vdd sum25 cout25 cout24 ain25 bin25 FA_SUB XX=XXX
-	xfa26 0 Vdd sum26 cout26 cout25 ain26 bin26 FA_SUB XX=XXX
-	xfa27 0 Vdd sum27 cout27 cout26 ain27 bin27 FA_SUB XX=XXX
-	xfa28 0 Vdd sum28 cout28 cout27 ain28 bin28 FA_SUB XX=XXX
-	xfa29 0 Vdd sum29 cout29 cout28 ain29 bin29 FA_SUB XX=XXX
-	xfa30 0 Vdd sum30 cout30 cout29 ain30 bin30 FA_SUB XX=XXX
-	xfa31 0 Vdd sum31 cout31 cout30 ain31 bin31 FA_SUB XX=XXX
 .ends
 
 ***numeroOut=uscita porte and
 ***snumero znumero=uscita sommatori
-.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 z8 z9 z10 z11 z12 z13 z14 z15 z16 z17 z18 z19 z20 z21 z22 z23 z24 z25 z26 z27 z28 z29 z30 z31 z32 z33 z34 z35 z36 z37 z38 z39 z40 z41 z42 z43 z44 z45 z46 z47 z48 z49 z50 z51 z52 z53 z54 z55 z56 z57 z58 z59 z60 z61 z62 z63 c0 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_0 yin_1 yin_2 yin_3 yin_4 yin_5 yin_6 yin_7 yin_8 yin_9 yin_10 yin_11 yin_12 yin_13 yin_14 yin_15 yin_16 yin_17 yin_18 yin_19 yin_20 yin_21 yin_22 yin_23 yin_24 yin_25 yin_26 yin_27 yin_28 yin_29 yin_30 yin_31 XX=1
-	xpart0 0 Vdd z0 0out1 0out2 0out3 0out4 0out5 0out6 0out7 0out8 0out9 0out10 0out11 0out12 0out13 0out14 0out15 0out16 0out17 0out18 0out19 0out20 0out21 0out22 0out23 0out24 0out25 0out26 0out27 0out28 0out29 0out30 0out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_0 PART_SUB XX=XXX
-	xpart1 0 Vdd 1out0 1out1 1out2 1out3 1out4 1out5 1out6 1out7 1out8 1out9 1out10 1out11 1out12 1out13 1out14 1out15 1out16 1out17 1out18 1out19 1out20 1out21 1out22 1out23 1out24 1out25 1out26 1out27 1out28 1out29 1out30 1out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_1 PART_SUB XX=XXX
-	xadd0 0 Vdd z1 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 c31 c0 0out1 0out2 0out3 0out4 0out5 0out6 0out7 0out8 0out9 0out10 0out11 0out12 0out13 0out14 0out15 0out16 0out17 0out18 0out19 0out20 0out21 0out22 0out23 0out24 0out25 0out26 0out27 0out28 0out29 0out30 0out31 0 1out0 1out1 1out2 1out3 1out4 1out5 1out6 1out7 1out8 1out9 1out10 1out11 1out12 1out13 1out14 1out15 1out16 1out17 1out18 1out19 1out20 1out21 1out22 1out23 1out24 1out25 1out26 1out27 1out28 1out29 1out30 1out31 RCA_SUB XX=XXX
-	xpart2 0 Vdd 2out0 2out1 2out2 2out3 2out4 2out5 2out6 2out7 2out8 2out9 2out10 2out11 2out12 2out13 2out14 2out15 2out16 2out17 2out18 2out19 2out20 2out21 2out22 2out23 2out24 2out25 2out26 2out27 2out28 2out29 2out30 2out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_2 PART_SUB XX=XXX
-	xadd1 0 Vdd z2 s32 s33 s34 s35 s36 s37 s38 s39 s40 s41 s42 s43 s44 s45 s46 s47 s48 s49 s50 s51 s52 s53 s54 s55 s56 s57 s58 s59 s60 s61 s62 c62 c0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 s16 s17 s18 s19 s20 s21 s22 s23 s24 s25 s26 s27 s28 s29 s30 s31 c31 2out0 2out1 2out2 2out3 2out4 2out5 2out6 2out7 2out8 2out9 2out10 2out11 2out12 2out13 2out14 2out15 2out16 2out17 2out18 2out19 2out20 2out21 2out22 2out23 2out24 2out25 2out26 2out27 2out28 2out29 2out30 2out31 RCA_SUB XX=XXX
-	xpart3 0 Vdd 3out0 3out1 3out2 3out3 3out4 3out5 3out6 3out7 3out8 3out9 3out10 3out11 3out12 3out13 3out14 3out15 3out16 3out17 3out18 3out19 3out20 3out21 3out22 3out23 3out24 3out25 3out26 3out27 3out28 3out29 3out30 3out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_3 PART_SUB XX=XXX
-	xadd2 0 Vdd z3 s63 s64 s65 s66 s67 s68 s69 s70 s71 s72 s73 s74 s75 s76 s77 s78 s79 s80 s81 s82 s83 s84 s85 s86 s87 s88 s89 s90 s91 s92 s93 c93 c0 s32 s33 s34 s35 s36 s37 s38 s39 s40 s41 s42 s43 s44 s45 s46 s47 s48 s49 s50 s51 s52 s53 s54 s55 s56 s57 s58 s59 s60 s61 s62 c62 3out0 3out1 3out2 3out3 3out4 3out5 3out6 3out7 3out8 3out9 3out10 3out11 3out12 3out13 3out14 3out15 3out16 3out17 3out18 3out19 3out20 3out21 3out22 3out23 3out24 3out25 3out26 3out27 3out28 3out29 3out30 3out31 RCA_SUB XX=XXX
-	xpart4 0 Vdd 4out0 4out1 4out2 4out3 4out4 4out5 4out6 4out7 4out8 4out9 4out10 4out11 4out12 4out13 4out14 4out15 4out16 4out17 4out18 4out19 4out20 4out21 4out22 4out23 4out24 4out25 4out26 4out27 4out28 4out29 4out30 4out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_4 PART_SUB XX=XXX
-	xadd3 0 Vdd z4 s94 s95 s96 s97 s98 s99 s100 s101 s102 s103 s104 s105 s106 s107 s108 s109 s110 s111 s112 s113 s114 s115 s116 s117 s118 s119 s120 s121 s122 s123 s124 c124 c0 s63 s64 s65 s66 s67 s68 s69 s70 s71 s72 s73 s74 s75 s76 s77 s78 s79 s80 s81 s82 s83 s84 s85 s86 s87 s88 s89 s90 s91 s92 s93 c93 4out0 4out1 4out2 4out3 4out4 4out5 4out6 4out7 4out8 4out9 4out10 4out11 4out12 4out13 4out14 4out15 4out16 4out17 4out18 4out19 4out20 4out21 4out22 4out23 4out24 4out25 4out26 4out27 4out28 4out29 4out30 4out31 RCA_SUB XX=XXX
-	xpart5 0 Vdd 5out0 5out1 5out2 5out3 5out4 5out5 5out6 5out7 5out8 5out9 5out10 5out11 5out12 5out13 5out14 5out15 5out16 5out17 5out18 5out19 5out20 5out21 5out22 5out23 5out24 5out25 5out26 5out27 5out28 5out29 5out30 5out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_5 PART_SUB XX=XXX
-	xadd4 0 Vdd z5 s125 s126 s127 s128 s129 s130 s131 s132 s133 s134 s135 s136 s137 s138 s139 s140 s141 s142 s143 s144 s145 s146 s147 s148 s149 s150 s151 s152 s153 s154 s155 c155 c0 s94 s95 s96 s97 s98 s99 s100 s101 s102 s103 s104 s105 s106 s107 s108 s109 s110 s111 s112 s113 s114 s115 s116 s117 s118 s119 s120 s121 s122 s123 s124 c124 5out0 5out1 5out2 5out3 5out4 5out5 5out6 5out7 5out8 5out9 5out10 5out11 5out12 5out13 5out14 5out15 5out16 5out17 5out18 5out19 5out20 5out21 5out22 5out23 5out24 5out25 5out26 5out27 5out28 5out29 5out30 5out31 RCA_SUB XX=XXX
-	xpart6 0 Vdd 6out0 6out1 6out2 6out3 6out4 6out5 6out6 6out7 6out8 6out9 6out10 6out11 6out12 6out13 6out14 6out15 6out16 6out17 6out18 6out19 6out20 6out21 6out22 6out23 6out24 6out25 6out26 6out27 6out28 6out29 6out30 6out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_6 PART_SUB XX=XXX
-	xadd5 0 Vdd z6 s156 s157 s158 s159 s160 s161 s162 s163 s164 s165 s166 s167 s168 s169 s170 s171 s172 s173 s174 s175 s176 s177 s178 s179 s180 s181 s182 s183 s184 s185 s186 c186 c0 s125 s126 s127 s128 s129 s130 s131 s132 s133 s134 s135 s136 s137 s138 s139 s140 s141 s142 s143 s144 s145 s146 s147 s148 s149 s150 s151 s152 s153 s154 s155 c155 6out0 6out1 6out2 6out3 6out4 6out5 6out6 6out7 6out8 6out9 6out10 6out11 6out12 6out13 6out14 6out15 6out16 6out17 6out18 6out19 6out20 6out21 6out22 6out23 6out24 6out25 6out26 6out27 6out28 6out29 6out30 6out31 RCA_SUB XX=XXX
-	xpart7 0 Vdd 7out0 7out1 7out2 7out3 7out4 7out5 7out6 7out7 7out8 7out9 7out10 7out11 7out12 7out13 7out14 7out15 7out16 7out17 7out18 7out19 7out20 7out21 7out22 7out23 7out24 7out25 7out26 7out27 7out28 7out29 7out30 7out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_7 PART_SUB XX=XXX
-	xadd6 0 Vdd z7 s187 s188 s189 s190 s191 s192 s193 s194 s195 s196 s197 s198 s199 s200 s201 s202 s203 s204 s205 s206 s207 s208 s209 s210 s211 s212 s213 s214 s215 s216 s217 c217 c0 s156 s157 s158 s159 s160 s161 s162 s163 s164 s165 s166 s167 s168 s169 s170 s171 s172 s173 s174 s175 s176 s177 s178 s179 s180 s181 s182 s183 s184 s185 s186 c186 7out0 7out1 7out2 7out3 7out4 7out5 7out6 7out7 7out8 7out9 7out10 7out11 7out12 7out13 7out14 7out15 7out16 7out17 7out18 7out19 7out20 7out21 7out22 7out23 7out24 7out25 7out26 7out27 7out28 7out29 7out30 7out31 RCA_SUB XX=XXX
-	xpart8 0 Vdd 8out0 8out1 8out2 8out3 8out4 8out5 8out6 8out7 8out8 8out9 8out10 8out11 8out12 8out13 8out14 8out15 8out16 8out17 8out18 8out19 8out20 8out21 8out22 8out23 8out24 8out25 8out26 8out27 8out28 8out29 8out30 8out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_8 PART_SUB XX=XXX
-	xadd7 0 Vdd z8 s218 s219 s220 s221 s222 s223 s224 s225 s226 s227 s228 s229 s230 s231 s232 s233 s234 s235 s236 s237 s238 s239 s240 s241 s242 s243 s244 s245 s246 s247 s248 c248 c0 s187 s188 s189 s190 s191 s192 s193 s194 s195 s196 s197 s198 s199 s200 s201 s202 s203 s204 s205 s206 s207 s208 s209 s210 s211 s212 s213 s214 s215 s216 s217 c217 8out0 8out1 8out2 8out3 8out4 8out5 8out6 8out7 8out8 8out9 8out10 8out11 8out12 8out13 8out14 8out15 8out16 8out17 8out18 8out19 8out20 8out21 8out22 8out23 8out24 8out25 8out26 8out27 8out28 8out29 8out30 8out31 RCA_SUB XX=XXX
-	xpart9 0 Vdd 9out0 9out1 9out2 9out3 9out4 9out5 9out6 9out7 9out8 9out9 9out10 9out11 9out12 9out13 9out14 9out15 9out16 9out17 9out18 9out19 9out20 9out21 9out22 9out23 9out24 9out25 9out26 9out27 9out28 9out29 9out30 9out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_9 PART_SUB XX=XXX
-	xadd8 0 Vdd z9 s249 s250 s251 s252 s253 s254 s255 s256 s257 s258 s259 s260 s261 s262 s263 s264 s265 s266 s267 s268 s269 s270 s271 s272 s273 s274 s275 s276 s277 s278 s279 c279 c0 s218 s219 s220 s221 s222 s223 s224 s225 s226 s227 s228 s229 s230 s231 s232 s233 s234 s235 s236 s237 s238 s239 s240 s241 s242 s243 s244 s245 s246 s247 s248 c248 9out0 9out1 9out2 9out3 9out4 9out5 9out6 9out7 9out8 9out9 9out10 9out11 9out12 9out13 9out14 9out15 9out16 9out17 9out18 9out19 9out20 9out21 9out22 9out23 9out24 9out25 9out26 9out27 9out28 9out29 9out30 9out31 RCA_SUB XX=XXX
-	xpart10 0 Vdd 10out0 10out1 10out2 10out3 10out4 10out5 10out6 10out7 10out8 10out9 10out10 10out11 10out12 10out13 10out14 10out15 10out16 10out17 10out18 10out19 10out20 10out21 10out22 10out23 10out24 10out25 10out26 10out27 10out28 10out29 10out30 10out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_10 PART_SUB XX=XXX
-	xadd9 0 Vdd z10 s280 s281 s282 s283 s284 s285 s286 s287 s288 s289 s290 s291 s292 s293 s294 s295 s296 s297 s298 s299 s300 s301 s302 s303 s304 s305 s306 s307 s308 s309 s310 c310 c0 s249 s250 s251 s252 s253 s254 s255 s256 s257 s258 s259 s260 s261 s262 s263 s264 s265 s266 s267 s268 s269 s270 s271 s272 s273 s274 s275 s276 s277 s278 s279 c279 10out0 10out1 10out2 10out3 10out4 10out5 10out6 10out7 10out8 10out9 10out10 10out11 10out12 10out13 10out14 10out15 10out16 10out17 10out18 10out19 10out20 10out21 10out22 10out23 10out24 10out25 10out26 10out27 10out28 10out29 10out30 10out31 RCA_SUB XX=XXX
-	xpart11 0 Vdd 11out0 11out1 11out2 11out3 11out4 11out5 11out6 11out7 11out8 11out9 11out10 11out11 11out12 11out13 11out14 11out15 11out16 11out17 11out18 11out19 11out20 11out21 11out22 11out23 11out24 11out25 11out26 11out27 11out28 11out29 11out30 11out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_11 PART_SUB XX=XXX
-	xadd10 0 Vdd z11 s311 s312 s313 s314 s315 s316 s317 s318 s319 s320 s321 s322 s323 s324 s325 s326 s327 s328 s329 s330 s331 s332 s333 s334 s335 s336 s337 s338 s339 s340 s341 c341 c0 s280 s281 s282 s283 s284 s285 s286 s287 s288 s289 s290 s291 s292 s293 s294 s295 s296 s297 s298 s299 s300 s301 s302 s303 s304 s305 s306 s307 s308 s309 s310 c310 11out0 11out1 11out2 11out3 11out4 11out5 11out6 11out7 11out8 11out9 11out10 11out11 11out12 11out13 11out14 11out15 11out16 11out17 11out18 11out19 11out20 11out21 11out22 11out23 11out24 11out25 11out26 11out27 11out28 11out29 11out30 11out31 RCA_SUB XX=XXX
-	xpart12 0 Vdd 12out0 12out1 12out2 12out3 12out4 12out5 12out6 12out7 12out8 12out9 12out10 12out11 12out12 12out13 12out14 12out15 12out16 12out17 12out18 12out19 12out20 12out21 12out22 12out23 12out24 12out25 12out26 12out27 12out28 12out29 12out30 12out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_12 PART_SUB XX=XXX
-	xadd11 0 Vdd z12 s342 s343 s344 s345 s346 s347 s348 s349 s350 s351 s352 s353 s354 s355 s356 s357 s358 s359 s360 s361 s362 s363 s364 s365 s366 s367 s368 s369 s370 s371 s372 c372 c0 s311 s312 s313 s314 s315 s316 s317 s318 s319 s320 s321 s322 s323 s324 s325 s326 s327 s328 s329 s330 s331 s332 s333 s334 s335 s336 s337 s338 s339 s340 s341 c341 12out0 12out1 12out2 12out3 12out4 12out5 12out6 12out7 12out8 12out9 12out10 12out11 12out12 12out13 12out14 12out15 12out16 12out17 12out18 12out19 12out20 12out21 12out22 12out23 12out24 12out25 12out26 12out27 12out28 12out29 12out30 12out31 RCA_SUB XX=XXX
-	xpart13 0 Vdd 13out0 13out1 13out2 13out3 13out4 13out5 13out6 13out7 13out8 13out9 13out10 13out11 13out12 13out13 13out14 13out15 13out16 13out17 13out18 13out19 13out20 13out21 13out22 13out23 13out24 13out25 13out26 13out27 13out28 13out29 13out30 13out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_13 PART_SUB XX=XXX
-	xadd12 0 Vdd z13 s373 s374 s375 s376 s377 s378 s379 s380 s381 s382 s383 s384 s385 s386 s387 s388 s389 s390 s391 s392 s393 s394 s395 s396 s397 s398 s399 s400 s401 s402 s403 c403 c0 s342 s343 s344 s345 s346 s347 s348 s349 s350 s351 s352 s353 s354 s355 s356 s357 s358 s359 s360 s361 s362 s363 s364 s365 s366 s367 s368 s369 s370 s371 s372 c372 13out0 13out1 13out2 13out3 13out4 13out5 13out6 13out7 13out8 13out9 13out10 13out11 13out12 13out13 13out14 13out15 13out16 13out17 13out18 13out19 13out20 13out21 13out22 13out23 13out24 13out25 13out26 13out27 13out28 13out29 13out30 13out31 RCA_SUB XX=XXX
-	xpart14 0 Vdd 14out0 14out1 14out2 14out3 14out4 14out5 14out6 14out7 14out8 14out9 14out10 14out11 14out12 14out13 14out14 14out15 14out16 14out17 14out18 14out19 14out20 14out21 14out22 14out23 14out24 14out25 14out26 14out27 14out28 14out29 14out30 14out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_14 PART_SUB XX=XXX
-	xadd13 0 Vdd z14 s404 s405 s406 s407 s408 s409 s410 s411 s412 s413 s414 s415 s416 s417 s418 s419 s420 s421 s422 s423 s424 s425 s426 s427 s428 s429 s430 s431 s432 s433 s434 c434 c0 s373 s374 s375 s376 s377 s378 s379 s380 s381 s382 s383 s384 s385 s386 s387 s388 s389 s390 s391 s392 s393 s394 s395 s396 s397 s398 s399 s400 s401 s402 s403 c403 14out0 14out1 14out2 14out3 14out4 14out5 14out6 14out7 14out8 14out9 14out10 14out11 14out12 14out13 14out14 14out15 14out16 14out17 14out18 14out19 14out20 14out21 14out22 14out23 14out24 14out25 14out26 14out27 14out28 14out29 14out30 14out31 RCA_SUB XX=XXX
-	xpart15 0 Vdd 15out0 15out1 15out2 15out3 15out4 15out5 15out6 15out7 15out8 15out9 15out10 15out11 15out12 15out13 15out14 15out15 15out16 15out17 15out18 15out19 15out20 15out21 15out22 15out23 15out24 15out25 15out26 15out27 15out28 15out29 15out30 15out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_15 PART_SUB XX=XXX
-	xadd14 0 Vdd z15 s435 s436 s437 s438 s439 s440 s441 s442 s443 s444 s445 s446 s447 s448 s449 s450 s451 s452 s453 s454 s455 s456 s457 s458 s459 s460 s461 s462 s463 s464 s465 c465 c0 s404 s405 s406 s407 s408 s409 s410 s411 s412 s413 s414 s415 s416 s417 s418 s419 s420 s421 s422 s423 s424 s425 s426 s427 s428 s429 s430 s431 s432 s433 s434 c434 15out0 15out1 15out2 15out3 15out4 15out5 15out6 15out7 15out8 15out9 15out10 15out11 15out12 15out13 15out14 15out15 15out16 15out17 15out18 15out19 15out20 15out21 15out22 15out23 15out24 15out25 15out26 15out27 15out28 15out29 15out30 15out31 RCA_SUB XX=XXX
-	xpart16 0 Vdd 16out0 16out1 16out2 16out3 16out4 16out5 16out6 16out7 16out8 16out9 16out10 16out11 16out12 16out13 16out14 16out15 16out16 16out17 16out18 16out19 16out20 16out21 16out22 16out23 16out24 16out25 16out26 16out27 16out28 16out29 16out30 16out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_16 PART_SUB XX=XXX
-	xadd15 0 Vdd z16 s466 s467 s468 s469 s470 s471 s472 s473 s474 s475 s476 s477 s478 s479 s480 s481 s482 s483 s484 s485 s486 s487 s488 s489 s490 s491 s492 s493 s494 s495 s496 c496 c0 s435 s436 s437 s438 s439 s440 s441 s442 s443 s444 s445 s446 s447 s448 s449 s450 s451 s452 s453 s454 s455 s456 s457 s458 s459 s460 s461 s462 s463 s464 s465 c465 16out0 16out1 16out2 16out3 16out4 16out5 16out6 16out7 16out8 16out9 16out10 16out11 16out12 16out13 16out14 16out15 16out16 16out17 16out18 16out19 16out20 16out21 16out22 16out23 16out24 16out25 16out26 16out27 16out28 16out29 16out30 16out31 RCA_SUB XX=XXX
-	xpart17 0 Vdd 17out0 17out1 17out2 17out3 17out4 17out5 17out6 17out7 17out8 17out9 17out10 17out11 17out12 17out13 17out14 17out15 17out16 17out17 17out18 17out19 17out20 17out21 17out22 17out23 17out24 17out25 17out26 17out27 17out28 17out29 17out30 17out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_17 PART_SUB XX=XXX
-	xadd16 0 Vdd z17 s497 s498 s499 s500 s501 s502 s503 s504 s505 s506 s507 s508 s509 s510 s511 s512 s513 s514 s515 s516 s517 s518 s519 s520 s521 s522 s523 s524 s525 s526 s527 c527 c0 s466 s467 s468 s469 s470 s471 s472 s473 s474 s475 s476 s477 s478 s479 s480 s481 s482 s483 s484 s485 s486 s487 s488 s489 s490 s491 s492 s493 s494 s495 s496 c496 17out0 17out1 17out2 17out3 17out4 17out5 17out6 17out7 17out8 17out9 17out10 17out11 17out12 17out13 17out14 17out15 17out16 17out17 17out18 17out19 17out20 17out21 17out22 17out23 17out24 17out25 17out26 17out27 17out28 17out29 17out30 17out31 RCA_SUB XX=XXX
-	xpart18 0 Vdd 18out0 18out1 18out2 18out3 18out4 18out5 18out6 18out7 18out8 18out9 18out10 18out11 18out12 18out13 18out14 18out15 18out16 18out17 18out18 18out19 18out20 18out21 18out22 18out23 18out24 18out25 18out26 18out27 18out28 18out29 18out30 18out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_18 PART_SUB XX=XXX
-	xadd17 0 Vdd z18 s528 s529 s530 s531 s532 s533 s534 s535 s536 s537 s538 s539 s540 s541 s542 s543 s544 s545 s546 s547 s548 s549 s550 s551 s552 s553 s554 s555 s556 s557 s558 c558 c0 s497 s498 s499 s500 s501 s502 s503 s504 s505 s506 s507 s508 s509 s510 s511 s512 s513 s514 s515 s516 s517 s518 s519 s520 s521 s522 s523 s524 s525 s526 s527 c527 18out0 18out1 18out2 18out3 18out4 18out5 18out6 18out7 18out8 18out9 18out10 18out11 18out12 18out13 18out14 18out15 18out16 18out17 18out18 18out19 18out20 18out21 18out22 18out23 18out24 18out25 18out26 18out27 18out28 18out29 18out30 18out31 RCA_SUB XX=XXX
-	xpart19 0 Vdd 19out0 19out1 19out2 19out3 19out4 19out5 19out6 19out7 19out8 19out9 19out10 19out11 19out12 19out13 19out14 19out15 19out16 19out17 19out18 19out19 19out20 19out21 19out22 19out23 19out24 19out25 19out26 19out27 19out28 19out29 19out30 19out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_19 PART_SUB XX=XXX
-	xadd18 0 Vdd z19 s559 s560 s561 s562 s563 s564 s565 s566 s567 s568 s569 s570 s571 s572 s573 s574 s575 s576 s577 s578 s579 s580 s581 s582 s583 s584 s585 s586 s587 s588 s589 c589 c0 s528 s529 s530 s531 s532 s533 s534 s535 s536 s537 s538 s539 s540 s541 s542 s543 s544 s545 s546 s547 s548 s549 s550 s551 s552 s553 s554 s555 s556 s557 s558 c558 19out0 19out1 19out2 19out3 19out4 19out5 19out6 19out7 19out8 19out9 19out10 19out11 19out12 19out13 19out14 19out15 19out16 19out17 19out18 19out19 19out20 19out21 19out22 19out23 19out24 19out25 19out26 19out27 19out28 19out29 19out30 19out31 RCA_SUB XX=XXX
-	xpart20 0 Vdd 20out0 20out1 20out2 20out3 20out4 20out5 20out6 20out7 20out8 20out9 20out10 20out11 20out12 20out13 20out14 20out15 20out16 20out17 20out18 20out19 20out20 20out21 20out22 20out23 20out24 20out25 20out26 20out27 20out28 20out29 20out30 20out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_20 PART_SUB XX=XXX
-	xadd19 0 Vdd z20 s590 s591 s592 s593 s594 s595 s596 s597 s598 s599 s600 s601 s602 s603 s604 s605 s606 s607 s608 s609 s610 s611 s612 s613 s614 s615 s616 s617 s618 s619 s620 c620 c0 s559 s560 s561 s562 s563 s564 s565 s566 s567 s568 s569 s570 s571 s572 s573 s574 s575 s576 s577 s578 s579 s580 s581 s582 s583 s584 s585 s586 s587 s588 s589 c589 20out0 20out1 20out2 20out3 20out4 20out5 20out6 20out7 20out8 20out9 20out10 20out11 20out12 20out13 20out14 20out15 20out16 20out17 20out18 20out19 20out20 20out21 20out22 20out23 20out24 20out25 20out26 20out27 20out28 20out29 20out30 20out31 RCA_SUB XX=XXX
-	xpart21 0 Vdd 21out0 21out1 21out2 21out3 21out4 21out5 21out6 21out7 21out8 21out9 21out10 21out11 21out12 21out13 21out14 21out15 21out16 21out17 21out18 21out19 21out20 21out21 21out22 21out23 21out24 21out25 21out26 21out27 21out28 21out29 21out30 21out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_21 PART_SUB XX=XXX
-	xadd20 0 Vdd z21 s621 s622 s623 s624 s625 s626 s627 s628 s629 s630 s631 s632 s633 s634 s635 s636 s637 s638 s639 s640 s641 s642 s643 s644 s645 s646 s647 s648 s649 s650 s651 c651 c0 s590 s591 s592 s593 s594 s595 s596 s597 s598 s599 s600 s601 s602 s603 s604 s605 s606 s607 s608 s609 s610 s611 s612 s613 s614 s615 s616 s617 s618 s619 s620 c620 21out0 21out1 21out2 21out3 21out4 21out5 21out6 21out7 21out8 21out9 21out10 21out11 21out12 21out13 21out14 21out15 21out16 21out17 21out18 21out19 21out20 21out21 21out22 21out23 21out24 21out25 21out26 21out27 21out28 21out29 21out30 21out31 RCA_SUB XX=XXX
-	xpart22 0 Vdd 22out0 22out1 22out2 22out3 22out4 22out5 22out6 22out7 22out8 22out9 22out10 22out11 22out12 22out13 22out14 22out15 22out16 22out17 22out18 22out19 22out20 22out21 22out22 22out23 22out24 22out25 22out26 22out27 22out28 22out29 22out30 22out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_22 PART_SUB XX=XXX
-	xadd21 0 Vdd z22 s652 s653 s654 s655 s656 s657 s658 s659 s660 s661 s662 s663 s664 s665 s666 s667 s668 s669 s670 s671 s672 s673 s674 s675 s676 s677 s678 s679 s680 s681 s682 c682 c0 s621 s622 s623 s624 s625 s626 s627 s628 s629 s630 s631 s632 s633 s634 s635 s636 s637 s638 s639 s640 s641 s642 s643 s644 s645 s646 s647 s648 s649 s650 s651 c651 22out0 22out1 22out2 22out3 22out4 22out5 22out6 22out7 22out8 22out9 22out10 22out11 22out12 22out13 22out14 22out15 22out16 22out17 22out18 22out19 22out20 22out21 22out22 22out23 22out24 22out25 22out26 22out27 22out28 22out29 22out30 22out31 RCA_SUB XX=XXX
-	xpart23 0 Vdd 23out0 23out1 23out2 23out3 23out4 23out5 23out6 23out7 23out8 23out9 23out10 23out11 23out12 23out13 23out14 23out15 23out16 23out17 23out18 23out19 23out20 23out21 23out22 23out23 23out24 23out25 23out26 23out27 23out28 23out29 23out30 23out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_23 PART_SUB XX=XXX
-	xadd22 0 Vdd z23 s683 s684 s685 s686 s687 s688 s689 s690 s691 s692 s693 s694 s695 s696 s697 s698 s699 s700 s701 s702 s703 s704 s705 s706 s707 s708 s709 s710 s711 s712 s713 c713 c0 s652 s653 s654 s655 s656 s657 s658 s659 s660 s661 s662 s663 s664 s665 s666 s667 s668 s669 s670 s671 s672 s673 s674 s675 s676 s677 s678 s679 s680 s681 s682 c682 23out0 23out1 23out2 23out3 23out4 23out5 23out6 23out7 23out8 23out9 23out10 23out11 23out12 23out13 23out14 23out15 23out16 23out17 23out18 23out19 23out20 23out21 23out22 23out23 23out24 23out25 23out26 23out27 23out28 23out29 23out30 23out31 RCA_SUB XX=XXX
-	xpart24 0 Vdd 24out0 24out1 24out2 24out3 24out4 24out5 24out6 24out7 24out8 24out9 24out10 24out11 24out12 24out13 24out14 24out15 24out16 24out17 24out18 24out19 24out20 24out21 24out22 24out23 24out24 24out25 24out26 24out27 24out28 24out29 24out30 24out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_24 PART_SUB XX=XXX
-	xadd23 0 Vdd z24 s714 s715 s716 s717 s718 s719 s720 s721 s722 s723 s724 s725 s726 s727 s728 s729 s730 s731 s732 s733 s734 s735 s736 s737 s738 s739 s740 s741 s742 s743 s744 c744 c0 s683 s684 s685 s686 s687 s688 s689 s690 s691 s692 s693 s694 s695 s696 s697 s698 s699 s700 s701 s702 s703 s704 s705 s706 s707 s708 s709 s710 s711 s712 s713 c713 24out0 24out1 24out2 24out3 24out4 24out5 24out6 24out7 24out8 24out9 24out10 24out11 24out12 24out13 24out14 24out15 24out16 24out17 24out18 24out19 24out20 24out21 24out22 24out23 24out24 24out25 24out26 24out27 24out28 24out29 24out30 24out31 RCA_SUB XX=XXX
-	xpart25 0 Vdd 25out0 25out1 25out2 25out3 25out4 25out5 25out6 25out7 25out8 25out9 25out10 25out11 25out12 25out13 25out14 25out15 25out16 25out17 25out18 25out19 25out20 25out21 25out22 25out23 25out24 25out25 25out26 25out27 25out28 25out29 25out30 25out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_25 PART_SUB XX=XXX
-	xadd24 0 Vdd z25 s745 s746 s747 s748 s749 s750 s751 s752 s753 s754 s755 s756 s757 s758 s759 s760 s761 s762 s763 s764 s765 s766 s767 s768 s769 s770 s771 s772 s773 s774 s775 c775 c0 s714 s715 s716 s717 s718 s719 s720 s721 s722 s723 s724 s725 s726 s727 s728 s729 s730 s731 s732 s733 s734 s735 s736 s737 s738 s739 s740 s741 s742 s743 s744 c744 25out0 25out1 25out2 25out3 25out4 25out5 25out6 25out7 25out8 25out9 25out10 25out11 25out12 25out13 25out14 25out15 25out16 25out17 25out18 25out19 25out20 25out21 25out22 25out23 25out24 25out25 25out26 25out27 25out28 25out29 25out30 25out31 RCA_SUB XX=XXX
-	xpart26 0 Vdd 26out0 26out1 26out2 26out3 26out4 26out5 26out6 26out7 26out8 26out9 26out10 26out11 26out12 26out13 26out14 26out15 26out16 26out17 26out18 26out19 26out20 26out21 26out22 26out23 26out24 26out25 26out26 26out27 26out28 26out29 26out30 26out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_26 PART_SUB XX=XXX
-	xadd25 0 Vdd z26 s776 s777 s778 s779 s780 s781 s782 s783 s784 s785 s786 s787 s788 s789 s790 s791 s792 s793 s794 s795 s796 s797 s798 s799 s800 s801 s802 s803 s804 s805 s806 c806 c0 s745 s746 s747 s748 s749 s750 s751 s752 s753 s754 s755 s756 s757 s758 s759 s760 s761 s762 s763 s764 s765 s766 s767 s768 s769 s770 s771 s772 s773 s774 s775 c775 26out0 26out1 26out2 26out3 26out4 26out5 26out6 26out7 26out8 26out9 26out10 26out11 26out12 26out13 26out14 26out15 26out16 26out17 26out18 26out19 26out20 26out21 26out22 26out23 26out24 26out25 26out26 26out27 26out28 26out29 26out30 26out31 RCA_SUB XX=XXX
-	xpart27 0 Vdd 27out0 27out1 27out2 27out3 27out4 27out5 27out6 27out7 27out8 27out9 27out10 27out11 27out12 27out13 27out14 27out15 27out16 27out17 27out18 27out19 27out20 27out21 27out22 27out23 27out24 27out25 27out26 27out27 27out28 27out29 27out30 27out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_27 PART_SUB XX=XXX
-	xadd26 0 Vdd z27 s807 s808 s809 s810 s811 s812 s813 s814 s815 s816 s817 s818 s819 s820 s821 s822 s823 s824 s825 s826 s827 s828 s829 s830 s831 s832 s833 s834 s835 s836 s837 c837 c0 s776 s777 s778 s779 s780 s781 s782 s783 s784 s785 s786 s787 s788 s789 s790 s791 s792 s793 s794 s795 s796 s797 s798 s799 s800 s801 s802 s803 s804 s805 s806 c806 27out0 27out1 27out2 27out3 27out4 27out5 27out6 27out7 27out8 27out9 27out10 27out11 27out12 27out13 27out14 27out15 27out16 27out17 27out18 27out19 27out20 27out21 27out22 27out23 27out24 27out25 27out26 27out27 27out28 27out29 27out30 27out31 RCA_SUB XX=XXX
-	xpart28 0 Vdd 28out0 28out1 28out2 28out3 28out4 28out5 28out6 28out7 28out8 28out9 28out10 28out11 28out12 28out13 28out14 28out15 28out16 28out17 28out18 28out19 28out20 28out21 28out22 28out23 28out24 28out25 28out26 28out27 28out28 28out29 28out30 28out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_28 PART_SUB XX=XXX
-	xadd27 0 Vdd z28 s838 s839 s840 s841 s842 s843 s844 s845 s846 s847 s848 s849 s850 s851 s852 s853 s854 s855 s856 s857 s858 s859 s860 s861 s862 s863 s864 s865 s866 s867 s868 c868 c0 s807 s808 s809 s810 s811 s812 s813 s814 s815 s816 s817 s818 s819 s820 s821 s822 s823 s824 s825 s826 s827 s828 s829 s830 s831 s832 s833 s834 s835 s836 s837 c837 28out0 28out1 28out2 28out3 28out4 28out5 28out6 28out7 28out8 28out9 28out10 28out11 28out12 28out13 28out14 28out15 28out16 28out17 28out18 28out19 28out20 28out21 28out22 28out23 28out24 28out25 28out26 28out27 28out28 28out29 28out30 28out31 RCA_SUB XX=XXX
-	xpart29 0 Vdd 29out0 29out1 29out2 29out3 29out4 29out5 29out6 29out7 29out8 29out9 29out10 29out11 29out12 29out13 29out14 29out15 29out16 29out17 29out18 29out19 29out20 29out21 29out22 29out23 29out24 29out25 29out26 29out27 29out28 29out29 29out30 29out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_29 PART_SUB XX=XXX
-	xadd28 0 Vdd z29 s869 s870 s871 s872 s873 s874 s875 s876 s877 s878 s879 s880 s881 s882 s883 s884 s885 s886 s887 s888 s889 s890 s891 s892 s893 s894 s895 s896 s897 s898 s899 c899 c0 s838 s839 s840 s841 s842 s843 s844 s845 s846 s847 s848 s849 s850 s851 s852 s853 s854 s855 s856 s857 s858 s859 s860 s861 s862 s863 s864 s865 s866 s867 s868 c868 29out0 29out1 29out2 29out3 29out4 29out5 29out6 29out7 29out8 29out9 29out10 29out11 29out12 29out13 29out14 29out15 29out16 29out17 29out18 29out19 29out20 29out21 29out22 29out23 29out24 29out25 29out26 29out27 29out28 29out29 29out30 29out31 RCA_SUB XX=XXX
-	xpart30 0 Vdd 30out0 30out1 30out2 30out3 30out4 30out5 30out6 30out7 30out8 30out9 30out10 30out11 30out12 30out13 30out14 30out15 30out16 30out17 30out18 30out19 30out20 30out21 30out22 30out23 30out24 30out25 30out26 30out27 30out28 30out29 30out30 30out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_30 PART_SUB XX=XXX
-	xadd29 0 Vdd z30 s900 s901 s902 s903 s904 s905 s906 s907 s908 s909 s910 s911 s912 s913 s914 s915 s916 s917 s918 s919 s920 s921 s922 s923 s924 s925 s926 s927 s928 s929 s930 c930 c0 s869 s870 s871 s872 s873 s874 s875 s876 s877 s878 s879 s880 s881 s882 s883 s884 s885 s886 s887 s888 s889 s890 s891 s892 s893 s894 s895 s896 s897 s898 s899 c899 30out0 30out1 30out2 30out3 30out4 30out5 30out6 30out7 30out8 30out9 30out10 30out11 30out12 30out13 30out14 30out15 30out16 30out17 30out18 30out19 30out20 30out21 30out22 30out23 30out24 30out25 30out26 30out27 30out28 30out29 30out30 30out31 RCA_SUB XX=XXX
-	xpart31 0 Vdd 31out0 31out1 31out2 31out3 31out4 31out5 31out6 31out7 31out8 31out9 31out10 31out11 31out12 31out13 31out14 31out15 31out16 31out17 31out18 31out19 31out20 31out21 31out22 31out23 31out24 31out25 31out26 31out27 31out28 31out29 31out30 31out31 xin_0 xin_1 xin_2 xin_3 xin_4 xin_5 xin_6 xin_7 xin_8 xin_9 xin_10 xin_11 xin_12 xin_13 xin_14 xin_15 xin_16 xin_17 xin_18 xin_19 xin_20 xin_21 xin_22 xin_23 xin_24 xin_25 xin_26 xin_27 xin_28 xin_29 xin_30 xin_31 yin_31 PART_SUB XX=XXX
-	xadd30 0 Vdd z31 z32 z33 z34 z35 z36 z37 z38 z39 z40 z41 z42 z43 z44 z45 z46 z47 z48 z49 z50 z51 z52 z53 z54 z55 z56 z57 z58 z59 z60 z61 z62 z63 c0 s900 s901 s902 s903 s904 s905 s906 s907 s908 s909 s910 s911 s912 s913 s914 s915 s916 s917 s918 s919 s920 s921 s922 s923 s924 s925 s926 s927 s928 s929 s930 c930 31out0 31out1 31out2 31out3 31out4 31out5 31out6 31out7 31out8 31out9 31out10 31out11 31out12 31out13 31out14 31out15 31out16 31out17 31out18 31out19 31out20 31out21 31out22 31out23 31out24 31out25 31out26 31out27 31out28 31out29 31out30 31out31 RCA_SUB XX=XXX
+.subckt MP_SUB 0 Vdd z0 z1 z2 z3 z4 z5 z6 z7 c0 xin_0 xin_1 xin_2 xin_3 yin_0 yin_1 yin_2 yin_3 XX=1
+	xpart0 0 Vdd z0 0out1 0out2 0out3 xin_0 xin_1 xin_2 xin_3 yin_0 PART_SUB XX=XXX
+	xpart1 0 Vdd 1out0 1out1 1out2 1out3 xin_0 xin_1 xin_2 xin_3 yin_1 PART_SUB XX=XXX
+	xadd0 0 Vdd z1 s1 s2 s3 c3 c0 0out1 0out2 0out3 0 1out0 1out1 1out2 1out3 RCA_SUB XX=XXX
+	xpart2 0 Vdd 2out0 2out1 2out2 2out3 xin_0 xin_1 xin_2 xin_3 yin_2 PART_SUB XX=XXX
+	xadd1 0 Vdd z2 s4 s5 s6 c6 c0 s1 s2 s3 c3 2out0 2out1 2out2 2out3 RCA_SUB XX=XXX
+	xpart3 0 Vdd 3out0 3out1 3out2 3out3 xin_0 xin_1 xin_2 xin_3 yin_3 PART_SUB XX=XXX
+	xadd2 0 Vdd z3 z4 z5 z6 z7 c0 s4 s5 s6 c6 3out0 3out1 3out2 3out3 RCA_SUB XX=XXX
 .ends
 
-xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zz8 zz9 zz10 zz11 zz12 zz13 zz14 zz15 zz16 zz17 zz18 zz19 zz20 zz21 zz22 zz23 zz24 zz25 zz26 zz27 zz28 zz29 zz30 zz31 zz32 zz33 zz34 zz35 zz36 zz37 zz38 zz39 zz40 zz41 zz42 zz43 zz44 zz45 zz46 zz47 zz48 zz49 zz50 zz51 zz52 zz53 zz54 zz55 zz56 zz57 zz58 zz59 zz60 zz61 zz62 zz63 zc0 x0 x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12 x13 x14 x15 x16 x17 x18 x19 x20 x21 x22 x23 x24 x25 x26 x27 x28 x29 x30 x31 y0 y1 y2 y3 y4 y5 y6 y7 y8 y9 y10 y11 y12 y13 y14 y15 y16 y17 y18 y19 y20 y21 y22 y23 y24 y25 y26 y27 y28 y29 y30 y31 MP_SUB XX=XXX
+xmp 0 Vcc zz0 zz1 zz2 zz3 zz4 zz5 zz6 zz7 zc0 x0 x1 x2 x3 y0 y1 y2 y3 MP_SUB XX=XXX
 
-VinX31 X31 0 0
-VinX30 X30 0 0
-VinX29 X29 0 0
-VinX28 X28 0 0
-VinX27 X27 0 0
-VinX26 X26 0 0
-VinX25 X25 0 0
-VinX24 X24 0 0
-VinX23 X23 0 0
-VinX22 X22 0 0
-VinX21 X21 0 0
-VinX20 X20 0 0
-VinX19 X19 0 0
-VinX18 X18 0 0
-VinX17 X17 0 0
-VinX16 X16 0 0
-VinX15 X15 0 0
-VinX14 X14 0 0
-VinX13 X13 0 0
-VinX12 X12 0 0
-VinX11 X11 0 0
-VinX10 X10 0 0
-VinX9 X9 0 0
-VinX8 X8 0 0
-VinX7 X7 0 0
-VinX6 X6 0 0
-VinX5 X5 0 0
-VinX4 X4 0 0
-VinX3 X3 0 0
-VinX2 X2 0 0
-VinX1 X1 0 0
-VinX0 X0 0 ALIM
-VinY31 Y31 0 0
-VinY30 Y30 0 0
-VinY29 Y29 0 0
-VinY28 Y28 0 0
-VinY27 Y27 0 0
-VinY26 Y26 0 0
-VinY25 Y25 0 0
-VinY24 Y24 0 0
-VinY23 Y23 0 0
-VinY22 Y22 0 0
-VinY21 Y21 0 0
-VinY20 Y20 0 0
-VinY19 Y19 0 0
-VinY18 Y18 0 0
-VinY17 Y17 0 0
-VinY16 Y16 0 0
-VinY15 Y15 0 0
-VinY14 Y14 0 0
-VinY13 Y13 0 0
-VinY12 Y12 0 0
-VinY11 Y11 0 0
-VinY10 Y10 0 0
-VinY9 Y9 0 0
-VinY8 Y8 0 0
-VinY7 Y7 0 0
-VinY6 Y6 0 0
-VinY5 Y5 0 0
-VinY4 Y4 0 0
-VinY3 Y3 0 0
-VinY2 Y2 0 0
-VinY1 Y1 0 0
-VinY0 Y0 0 ALIM
-
-V_dd Vcc 0 ALIM
-
-.control
-run
-let k= length(time)-1
-print  zz0[k] zz1[k] zz2[k] zz3[k] zz4[k] zz5[k] zz6[k] zz7[k] zz8[k] zz9[k] zz10[k] zz11[k] zz12[k] zz13[k] zz14[k] zz15[k] zz16[k] zz17[k] zz18[k] zz19[k] zz20[k] zz21[k] zz22[k] zz23[k] zz24[k] zz25[k] zz26[k] zz27[k] zz28[k] zz29[k] zz30[k] zz31[k] zz32[k] zz33[k] zz34[k] zz35[k] zz36[k] zz37[k] zz38[k] zz39[k] zz40[k] zz41[k] zz42[k] zz43[k] zz44[k] zz45[k] zz46[k] zz47[k] zz48[k] zz49[k] zz50[k] zz51[k] zz52[k] zz53[k] zz54[k] zz55[k] zz56[k] zz57[k] zz58[k] zz59[k] zz60[k] zz61[k] zz62[k] zz63[k]>outputValue.txt
-quit
-.endc
-.end
