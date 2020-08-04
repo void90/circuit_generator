@@ -17,10 +17,15 @@ Per eseguire il programma è necessario utilizzare lo script contenuto in ogni s
 
 ```
 Sintassi:
-./script.sh nomeNetlist.net num_bit [alim]
-e.g.
+./script.sh netlistName.net bitNumber [Option]
 
-    ./script.sh rippleCarryAdder4.net 4 1.1
+Option:
+-h, --help, stampa l'help.
+-a, --ALIM, permette di inserire un valore di alimentazione differente da quello di default, ovvero 1V.
+
+e.g.
+    ./script.sh rippleCarryAdder4.net 4
+    ./script.sh rippleCarryAdder4.net 4 -a 3.3		
 ```
 
 Gli operandi d'ingresso vengono automaticamente prelevati dallo script dal file **inputFile.txt**, all'interno del quale sono inseriti nel formato: 
