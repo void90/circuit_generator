@@ -66,12 +66,12 @@ int main(int argc, char **argv)
 	if( bin == strtold(argv[3], &endptr) )
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
-		fprintf(outputFile, "Matched\n");
+//		fprintf(outputFile, "Matched\n");
 	}
 	else
 	{
 		printf("%sNot matched%s\n", RED(text), COLOR_OFF);
-		fprintf(outputFile, "Not matched\n");
+//		fprintf(outputFile, "Not matched\n");
 	}
 	fclose(outVal);
 	fclose(outputFile);

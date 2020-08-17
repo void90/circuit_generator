@@ -1,20 +1,9 @@
-FATTO-Scrivere Help e aggiungere meccanismo di lettura se non si attivano gli ingressi
-FATTO-Valore di default dell'alimentazione nello script
+1-Cambiare error -> Warning 
+Tagliare i numeri di ingresso, "cast" per il numero di bit utilizzati
 
-3-Ottimizzare simulazione in base al numero dei bit
+FATTO-Inserire in testa output file commento in cui si indica numero di bit e circuito utilizzato
 
-FATTO-Aggiustare Moltiplicatore Carry Save (per numbit>4)
-FATTO-Risimulare tutti gli altri circuiti mettendo cin a massa (RCA, CSA, MP)
-FATTO-Decidere come trattare il carry out
-FATTO-Modificare help per spiegare come inserire valori
-FATTO-Inserire controlli che permettono comunque di simulare
-FATTO-Modificare file uscita in modo che inA inB outatteso outsimul
-8-SIMULAZIONI FINALI
+FATTO-In coda al file di ouput inserire informazioni sul processore simulato
+iscpu -->variabile di simulazione
 
-Simulazioni da 4 a 32 bit per verificare che ogni uscita vada ad 1, eccetto la 32 bit (fermi a 2^16)
-LUCA
--Ripple Carry Adder
--Moltiplicatori Carry Save
-DILETTA
--Carry select Adder
--Moltiplicatore Parallelo
+FATTO-colonna in più al fie di output con tempo impiegato utilizzando date prima e dopo il comando ngspice e fare la differenza

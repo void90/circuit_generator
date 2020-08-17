@@ -72,7 +72,8 @@ if [ -e $fileout ]
 then
 	rm $fileout
 	touch $fileout
-	echo -e "inA\tinB\tout atteso\tout simul">$fileout
+	echo -e "RIPPLE CARRY ADDER $numBit bits\n">$fileout
+	echo -e "inA\tinB\tout atteso\tout simul\t\t time">>$fileout
 fi
 #controllo esistenza del file
 if [ -e $file ] && [ -r $file ]
@@ -101,12 +102,20 @@ then
 			echo "ngspice $netName"
 			echo "running $netName"
 			cd netlist
+			start_time=$(date +%s)
 			ngspice $netName 1>&displayNG.txt
+			end_time=$(date +%s)
 			cd ..
 			bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim
+			diff=$(($end_time-$start_time))
+			sec=$(($diff%60))
+			min=$((($sec/60)%60))
+			h=$(($sec/3600))
+			echo -e "\t\t" $h "h" $min "m" $sec "s\n">>$fileout
 		fi
 		(( i= i+3 ))
 	done
+	lscpu>>$fileout
 else
 	echo "$file doesen't exist"
 	exit -1	

@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define COLOR_OFF "\e[0m"
+#define MAGENTA(text) "\e[0;35m"
+
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
@@ -99,7 +102,7 @@ int main (int argc, char **argv)
 //Controllo ingressi
 	if( (a> (pow(2, max)-1)) || (b> (pow(2, max)-1)))
 	{
-		printf("ERROR: inserted number aren't representable with %d bit\n", max);
+		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
 		return -1;
 	}
 	int A_binary[max], B_binary[max];

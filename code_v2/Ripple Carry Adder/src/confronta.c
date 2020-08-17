@@ -63,12 +63,12 @@ int main(int argc, char **argv)
 	if( bin == atof(argv[3]))
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
-		fprintf(outputFile, "Matched\n");
+//		fprintf(outputFile, "Matched\t");
 	}
 	else
 	{
 		printf("%sNot matched%s\n", RED(text), COLOR_OFF);
-		fprintf(outputFile, "Not matched\n");
+//		fprintf(outputFile, "Not matched\t");
 	}
 	fclose(outVal);
 	fclose(outputFile);
