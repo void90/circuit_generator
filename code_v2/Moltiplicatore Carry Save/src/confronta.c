@@ -8,10 +8,13 @@
 int main(int argc, char **argv)
 {
 	FILE *outVal, *outputFile;
+	char count=0, rows=0, *endptr;
 	double valF=0, up, down, alim=1;
 //	unsigned long long int bin=0;
 	long double bin=0;
-	char count=0, rows=0, *endptr;
+	long double a=strtold(argv[1], &endptr), b=strtold(argv[2], &endptr), out_atteso=0;
+	int n=atoi(argv[5]);
+	short int i;
 	char val[100];
 	outputFile=fopen("outputFile.txt", "a");
 	if(outputFile==NULL)
@@ -60,10 +63,31 @@ int main(int argc, char **argv)
 			rows++;
 		}
 	}
+	if (a> pow(2, n)-1)
+	{
+		for(i=31; i>=n; i--)
+		{
+			if(a>=pow(2, i))
+			{	a-=pow(2, i);}
+		}
+	}
+	else if (b>pow(2, n)-1)
+	{
+		for(i=31; i>=n; i--)
+		{
+			if(b>=pow(2, i))
+			{	b-=pow(2, i);}
+		}
+	}
+	out_atteso=a*b;
 	printf("inA\tinB\tout atteso\tout simul\n");
-	printf("%s\t%s\t%s\t\t%Lf\n", argv[1], argv[2], argv[3], bin);
-	fprintf(outputFile, "%s\t%s\t%s\t\t%Lf\t", argv[1], argv[2], argv[3], bin);
-	if( bin == strtold(argv[3], &endptr) )
+	printf("%Lf\t%Lf\t%Lf\t\t%Lf\n", a, b, out_atteso, bin);
+	if (out_atteso != strtold(argv[3], &endptr))
+	{
+		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
+	}
+	fprintf(outputFile, "%Lf\t%Lf\t%Lf\t\t%Lf\t", a, b, out_atteso, bin);	
+	if( bin == out_atteso )
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
 //		fprintf(outputFile, "Matched\n");

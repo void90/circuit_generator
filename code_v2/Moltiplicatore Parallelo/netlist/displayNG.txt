@@ -1,3 +1,22 @@
+Note: Starting true gmin stepping
+Trying gmin =   1.0000E-03 Note: One successful gmin step
+Trying gmin =   1.0000E-04 Note: One successful gmin step
+Trying gmin =   1.0000E-05 Warning: Further gmin increment
+Trying gmin =   5.6234E-05 Note: One successful gmin step
+Trying gmin =   2.3714E-05 Note: One successful gmin step
+Trying gmin =   6.4938E-06 Warning: Further gmin increment
+Trying gmin =   1.7154E-05 Note: One successful gmin step
+Trying gmin =   1.0554E-05 Note: One successful gmin step
+Trying gmin =   5.0937E-06 Note: One successful gmin step
+Trying gmin =   1.7077E-06 Note: One successful gmin step
+Trying gmin =   3.3152E-07 Note: One successful gmin step
+Trying gmin =   3.3152E-08 Note: One successful gmin step
+Trying gmin =   3.3152E-09 Note: One successful gmin step
+Trying gmin =   3.3152E-10 Note: One successful gmin step
+Trying gmin =   3.3152E-11 Note: One successful gmin step
+Trying gmin =   3.3152E-12 Note: One successful gmin step
+Trying gmin =   1.0000E-12 Note: One successful gmin step
+Note: True gmin stepping completed
 ******
 ** ngspice-32 : Circuit level simulation program
 ** The U. C. Berkeley CAD Group
@@ -18,79 +37,79 @@ Initial Transient Solution
 
 Node                                   Voltage
 ----                                   -------
-xmp.xpart0.xand0.6                    0.167897
-x0                                           0
-xmp.xpart0.xand0.7                    0.999998
-y0                                           0
+xmp.xpart0.xand0.6                  0.00380259
+x0                                           1
+xmp.xpart0.xand0.7                  0.00761216
+y0                                           1
 vcc                                          1
-zz0                                  0.0036809
-xmp.xpart0.xand1.6                    0.167897
-x1                                           0
-xmp.xpart0.xand1.7                    0.999998
-xmp.0out1                           0.00368679
-xmp.xpart0.xand2.6                    0.167897
-x2                                           0
-xmp.xpart0.xand2.7                    0.999998
-xmp.0out2                           0.00368679
-xmp.xpart0.xand3.6                    0.167897
+zz0                                   0.998509
+xmp.xpart0.xand1.6                  0.00380259
+x1                                           1
+xmp.xpart0.xand1.7                  0.00761216
+xmp.0out1                               0.9985
+xmp.xpart0.xand2.6                  0.00380259
+x2                                           1
+xmp.xpart0.xand2.7                  0.00761216
+xmp.0out2                               0.9985
+xmp.xpart0.xand3.6                    0.724927
 x3                                           0
-xmp.xpart0.xand3.7                    0.999998
-xmp.0out3                           0.00368679
-xmp.xpart1.xand0.6                    0.167897
-xmp.xpart1.xand0.7                    0.999998
+xmp.xpart0.xand3.7                    0.999806
+xmp.0out3                           0.00370153
+xmp.xpart1.xand0.6                 0.000850461
+xmp.xpart1.xand0.7                    0.998128
 y1                                           0
-xmp.1out0                           0.00368733
-xmp.xpart1.xand1.6                    0.167897
-xmp.xpart1.xand1.7                    0.999998
-xmp.1out1                           0.00368733
-xmp.xpart1.xand2.6                    0.167897
-xmp.xpart1.xand2.7                    0.999998
-xmp.1out2                           0.00368733
+xmp.1out0                           0.00383299
+xmp.xpart1.xand1.6                 0.000850461
+xmp.xpart1.xand1.7                    0.998128
+xmp.1out1                           0.00383299
+xmp.xpart1.xand2.6                 0.000850461
+xmp.xpart1.xand2.7                    0.998128
+xmp.1out2                           0.00383327
 xmp.xpart1.xand3.6                    0.167897
 xmp.xpart1.xand3.7                    0.999998
 xmp.1out3                           0.00368733
-xmp.xadd0.xfa0.nodecon                0.999994
-xmp.xadd0.xfa0.node4                  0.167972
-xmp.xadd0.xfa0.1                      0.999998
-xmp.xadd0.xfa0.5                      0.151909
-xmp.xadd0.xfa0.4                      0.999996
-xmp.xadd0.xfa0.2                      0.999927
-xmp.xadd0.xfa0.3                       0.69929
-xmp.xadd0.xfa0.nodeson                0.999503
-xmp.xadd0.xfa0.9                      0.999785
-xmp.xadd0.xfa0.7                     0.0365121
-xmp.xadd0.xfa0.8                      0.999644
-xmp.xadd0.xfa0.6                      0.195114
-xmp.xadd0.cout0                     0.00482907
-zz1                                 0.00487502
-xmp.xadd0.xfa1.nodecon                0.999994
-xmp.xadd0.xfa1.node4                  0.167972
-xmp.xadd0.xfa1.1                      0.999998
-xmp.xadd0.xfa1.5                      0.154487
-xmp.xadd0.xfa1.4                      0.999996
-xmp.xadd0.xfa1.2                      0.999924
-xmp.xadd0.xfa1.3                      0.698418
-xmp.xadd0.xfa1.nodeson                0.999487
-xmp.xadd0.xfa1.9                      0.999778
-xmp.xadd0.xfa1.7                     0.0368961
-xmp.xadd0.xfa1.8                      0.999633
-xmp.xadd0.xfa1.6                      0.198007
-xmp.xadd0.cout1                     0.00482908
-xmp.s1                              0.00487975
+xmp.xadd0.xfa0.nodecon                0.996624
+xmp.xadd0.xfa0.node4               0.000915091
+xmp.xadd0.xfa0.1                      0.998311
+xmp.xadd0.xfa0.5                   0.000840374
+xmp.xadd0.xfa0.4                      0.996624
+xmp.xadd0.xfa0.2                      0.997647
+xmp.xadd0.xfa0.3                    0.00491502
+xmp.xadd0.xfa0.nodeson              0.00984575
+xmp.xadd0.xfa0.9                      0.997398
+xmp.xadd0.xfa0.7                     0.0368883
+xmp.xadd0.xfa0.8                      0.278733
+xmp.xadd0.xfa0.6                     0.0368884
+xmp.xadd0.cout0                     0.00517338
+zz1                                   0.998933
+xmp.xadd0.xfa1.nodecon                0.996426
+xmp.xadd0.xfa1.node4               0.000913607
+xmp.xadd0.xfa1.1                      0.998216
+xmp.xadd0.xfa1.5                   0.000941084
+xmp.xadd0.xfa1.4                      0.996426
+xmp.xadd0.xfa1.2                       0.99764
+xmp.xadd0.xfa1.3                    0.00492148
+xmp.xadd0.xfa1.nodeson              0.00985908
+xmp.xadd0.xfa1.9                      0.997397
+xmp.xadd0.xfa1.7                     0.0352337
+xmp.xadd0.xfa1.8                      0.281476
+xmp.xadd0.xfa1.6                     0.0352338
+xmp.xadd0.cout1                     0.00519595
+xmp.s1                                0.998929
 xmp.xadd0.xfa2.nodecon                0.999994
-xmp.xadd0.xfa2.node4                  0.167972
+xmp.xadd0.xfa2.node4                  0.168042
 xmp.xadd0.xfa2.1                      0.999998
-xmp.xadd0.xfa2.5                      0.154487
+xmp.xadd0.xfa2.5                      0.154641
 xmp.xadd0.xfa2.4                      0.999996
 xmp.xadd0.xfa2.2                      0.999924
-xmp.xadd0.xfa2.3                      0.698418
-xmp.xadd0.xfa2.nodeson                0.999487
+xmp.xadd0.xfa2.3                       0.69832
+xmp.xadd0.xfa2.nodeson                0.999485
 xmp.xadd0.xfa2.9                      0.999778
-xmp.xadd0.xfa2.7                     0.0368961
-xmp.xadd0.xfa2.8                      0.999633
-xmp.xadd0.xfa2.6                      0.198007
+xmp.xadd0.xfa2.7                     0.0368615
+xmp.xadd0.xfa2.8                      0.999631
+xmp.xadd0.xfa2.6                      0.198169
 xmp.xadd0.cout2                     0.00482908
-xmp.s2                              0.00487975
+xmp.s2                              0.00487994
 xmp.xadd0.xfa3.nodecon                0.999995
 xmp.xadd0.xfa3.node4                   0.16987
 xmp.xadd0.xfa3.1                      0.999998
@@ -105,61 +124,61 @@ xmp.xadd0.xfa3.8                      0.999642
 xmp.xadd0.xfa3.6                       0.19869
 xmp.c3                              0.00482893
 xmp.s3                               0.0048785
-xmp.xpart2.xand0.6                    0.167897
-xmp.xpart2.xand0.7                    0.999998
+xmp.xpart2.xand0.6                 0.000850461
+xmp.xpart2.xand0.7                    0.998128
 y2                                           0
-xmp.2out0                           0.00368733
-xmp.xpart2.xand1.6                    0.167897
-xmp.xpart2.xand1.7                    0.999998
-xmp.2out1                           0.00368733
-xmp.xpart2.xand2.6                    0.167897
-xmp.xpart2.xand2.7                    0.999998
-xmp.2out2                           0.00368733
+xmp.2out0                           0.00383299
+xmp.xpart2.xand1.6                 0.000850461
+xmp.xpart2.xand1.7                    0.998128
+xmp.2out1                           0.00383327
+xmp.xpart2.xand2.6                 0.000850461
+xmp.xpart2.xand2.7                    0.998128
+xmp.2out2                           0.00383327
 xmp.xpart2.xand3.6                    0.167897
 xmp.xpart2.xand3.7                    0.999998
 xmp.2out3                           0.00368733
-xmp.xadd1.xfa0.nodecon                0.999994
-xmp.xadd1.xfa0.node4                  0.167357
-xmp.xadd1.xfa0.1                      0.999998
-xmp.xadd1.xfa0.5                      0.151598
-xmp.xadd1.xfa0.4                      0.999996
-xmp.xadd1.xfa0.2                      0.999926
-xmp.xadd1.xfa0.3                      0.699061
-xmp.xadd1.xfa0.nodeson                0.999499
-xmp.xadd1.xfa0.9                      0.999783
-xmp.xadd1.xfa0.7                     0.0369988
-xmp.xadd1.xfa0.8                      0.999641
-xmp.xadd1.xfa0.6                      0.194896
-xmp.xadd1.cout0                     0.00482908
-zz2                                 0.00487544
+xmp.xadd1.xfa0.nodecon                0.996624
+xmp.xadd1.xfa0.node4               0.000914961
+xmp.xadd1.xfa0.1                      0.998311
+xmp.xadd1.xfa0.5                   0.000840253
+xmp.xadd1.xfa0.4                      0.996624
+xmp.xadd1.xfa0.2                      0.997649
+xmp.xadd1.xfa0.3                    0.00491152
+xmp.xadd1.xfa0.nodeson              0.00983948
+xmp.xadd1.xfa0.9                      0.997402
+xmp.xadd1.xfa0.7                     0.0369558
+xmp.xadd1.xfa0.8                      0.278514
+xmp.xadd1.xfa0.6                     0.0369559
+xmp.xadd1.cout0                     0.00517501
+zz2                                   0.998933
 xmp.xadd1.xfa1.nodecon                0.999994
-xmp.xadd1.xfa1.node4                  0.167357
+xmp.xadd1.xfa1.node4                  0.167435
 xmp.xadd1.xfa1.1                      0.999998
-xmp.xadd1.xfa1.5                      0.154176
+xmp.xadd1.xfa1.5                      0.154323
 xmp.xadd1.xfa1.4                      0.999996
-xmp.xadd1.xfa1.2                      0.999924
-xmp.xadd1.xfa1.3                      0.698198
-xmp.xadd1.xfa1.nodeson                0.999482
-xmp.xadd1.xfa1.9                      0.999777
-xmp.xadd1.xfa1.7                     0.0373853
-xmp.xadd1.xfa1.8                      0.999629
-xmp.xadd1.xfa1.6                      0.197791
-xmp.xadd1.cout1                     0.00482908
-xmp.s4                              0.00488017
+xmp.xadd1.xfa1.2                      0.999923
+xmp.xadd1.xfa1.3                      0.698107
+xmp.xadd1.xfa1.nodeson                0.999481
+xmp.xadd1.xfa1.9                      0.999776
+xmp.xadd1.xfa1.7                     0.0373429
+xmp.xadd1.xfa1.8                      0.999628
+xmp.xadd1.xfa1.6                      0.197942
+xmp.xadd1.cout1                     0.00482909
+xmp.s4                              0.00488035
 xmp.xadd1.xfa2.nodecon                0.999994
-xmp.xadd1.xfa2.node4                  0.167357
+xmp.xadd1.xfa2.node4                  0.167435
 xmp.xadd1.xfa2.1                      0.999998
-xmp.xadd1.xfa2.5                      0.154176
+xmp.xadd1.xfa2.5                      0.154139
 xmp.xadd1.xfa2.4                      0.999996
 xmp.xadd1.xfa2.2                      0.999924
-xmp.xadd1.xfa2.3                      0.698198
+xmp.xadd1.xfa2.3                      0.698172
 xmp.xadd1.xfa2.nodeson                0.999482
-xmp.xadd1.xfa2.9                      0.999777
-xmp.xadd1.xfa2.7                     0.0373848
+xmp.xadd1.xfa2.9                      0.999776
+xmp.xadd1.xfa2.7                     0.0373146
 xmp.xadd1.xfa2.8                      0.999629
-xmp.xadd1.xfa2.6                      0.197791
-xmp.xadd1.cout2                     0.00482908
-xmp.s5                              0.00488017
+xmp.xadd1.xfa2.6                      0.197735
+xmp.xadd1.cout2                     0.00482909
+xmp.s5                              0.00488022
 xmp.xadd1.xfa3.nodecon                0.999994
 xmp.xadd1.xfa3.node4                  0.167383
 xmp.xadd1.xfa3.1                      0.999998
@@ -174,61 +193,61 @@ xmp.xadd1.xfa3.8                       0.99963
 xmp.xadd1.xfa3.6                        0.1978
 xmp.c6                              0.00482896
 xmp.s6                              0.00488016
-xmp.xpart3.xand0.6                    0.167897
-xmp.xpart3.xand0.7                    0.999998
+xmp.xpart3.xand0.6                 0.000850461
+xmp.xpart3.xand0.7                    0.998128
 y3                                           0
-xmp.3out0                           0.00368733
-xmp.xpart3.xand1.6                    0.167897
-xmp.xpart3.xand1.7                    0.999998
-xmp.3out1                           0.00368733
-xmp.xpart3.xand2.6                    0.167897
-xmp.xpart3.xand2.7                    0.999998
-xmp.3out2                           0.00368733
+xmp.3out0                           0.00383327
+xmp.xpart3.xand1.6                 0.000850461
+xmp.xpart3.xand1.7                    0.998128
+xmp.3out1                           0.00383327
+xmp.xpart3.xand2.6                 0.000850461
+xmp.xpart3.xand2.7                    0.998128
+xmp.3out2                           0.00383327
 xmp.xpart3.xand3.6                    0.167897
 xmp.xpart3.xand3.7                    0.999998
 xmp.3out3                           0.00368733
 xmp.xadd2.xfa0.nodecon                0.999994
-xmp.xadd2.xfa0.node4                  0.167356
+xmp.xadd2.xfa0.node4                  0.167435
 xmp.xadd2.xfa0.1                      0.999998
-xmp.xadd2.xfa0.5                      0.151598
+xmp.xadd2.xfa0.5                      0.151561
 xmp.xadd2.xfa0.4                      0.999996
 xmp.xadd2.xfa0.2                      0.999926
-xmp.xadd2.xfa0.3                      0.699061
-xmp.xadd2.xfa0.nodeson                0.999499
+xmp.xadd2.xfa0.3                      0.699034
+xmp.xadd2.xfa0.nodeson                0.999498
 xmp.xadd2.xfa0.9                      0.999783
-xmp.xadd2.xfa0.7                      0.036999
-xmp.xadd2.xfa0.8                      0.999641
-xmp.xadd2.xfa0.6                      0.194895
+xmp.xadd2.xfa0.7                     0.0369292
+xmp.xadd2.xfa0.8                       0.99964
+xmp.xadd2.xfa0.6                       0.19484
 xmp.xadd2.cout0                     0.00482908
-zz3                                 0.00487544
+zz3                                  0.0048755
 xmp.xadd2.xfa1.nodecon                0.999994
-xmp.xadd2.xfa1.node4                  0.167356
+xmp.xadd2.xfa1.node4                  0.167435
 xmp.xadd2.xfa1.1                      0.999998
-xmp.xadd2.xfa1.5                      0.154176
+xmp.xadd2.xfa1.5                      0.154139
 xmp.xadd2.xfa1.4                      0.999996
 xmp.xadd2.xfa1.2                      0.999924
-xmp.xadd2.xfa1.3                      0.698198
+xmp.xadd2.xfa1.3                      0.698171
 xmp.xadd2.xfa1.nodeson                0.999482
-xmp.xadd2.xfa1.9                      0.999777
-xmp.xadd2.xfa1.7                     0.0373855
+xmp.xadd2.xfa1.9                      0.999776
+xmp.xadd2.xfa1.7                     0.0373153
 xmp.xadd2.xfa1.8                      0.999629
-xmp.xadd2.xfa1.6                      0.197791
-xmp.xadd2.cout1                     0.00482908
-zz4                                 0.00487709
+xmp.xadd2.xfa1.6                      0.197735
+xmp.xadd2.cout1                     0.00482909
+zz4                                 0.00487714
 xmp.xadd2.xfa2.nodecon                0.999994
-xmp.xadd2.xfa2.node4                  0.167356
+xmp.xadd2.xfa2.node4                  0.167435
 xmp.xadd2.xfa2.1                      0.999998
-xmp.xadd2.xfa2.5                      0.154176
+xmp.xadd2.xfa2.5                      0.154139
 xmp.xadd2.xfa2.4                      0.999996
 xmp.xadd2.xfa2.2                      0.999924
-xmp.xadd2.xfa2.3                      0.698198
+xmp.xadd2.xfa2.3                      0.698171
 xmp.xadd2.xfa2.nodeson                0.999482
-xmp.xadd2.xfa2.9                      0.999777
-xmp.xadd2.xfa2.7                     0.0373855
+xmp.xadd2.xfa2.9                      0.999776
+xmp.xadd2.xfa2.7                     0.0373153
 xmp.xadd2.xfa2.8                      0.999629
-xmp.xadd2.xfa2.6                      0.197791
-xmp.xadd2.cout2                     0.00482908
-zz5                                 0.00487709
+xmp.xadd2.xfa2.6                      0.197735
+xmp.xadd2.cout2                     0.00482909
+zz5                                 0.00487714
 xmp.xadd2.xfa3.nodecon                0.999994
 xmp.xadd2.xfa3.node4                  0.167383
 xmp.xadd2.xfa3.1                      0.999998
@@ -243,16 +262,16 @@ xmp.xadd2.xfa3.8                       0.99963
 xmp.xadd2.xfa3.6                        0.1978
 zz7                                 0.00482587
 zz6                                 0.00487707
-v_dd#branch                       -2.28482e-05
-viny0#branch                       3.70655e-10
-viny1#branch                       3.70655e-10
-viny2#branch                       3.70655e-10
-viny3#branch                       3.70655e-10
-vinx0#branch                       1.84332e-10
-vinx1#branch                       1.84332e-10
-vinx2#branch                       1.84332e-10
-vinx3#branch                       1.84332e-10
+v_dd#branch                       -2.66351e-05
+viny0#branch                      -3.97125e-10
+viny1#branch                       3.69287e-10
+viny2#branch                       3.69287e-10
+viny3#branch                       3.69287e-10
+vinx0#branch                      -5.43496e-10
+vinx1#branch                      -5.43496e-10
+vinx2#branch                      -5.43496e-10
+vinx3#branch                       1.99533e-10
 
- Reference value :  0.00000e+00 Reference value :  2.22800e-12 Reference value :  5.02800e-12 Reference value :  6.02800e-12 Reference value :  8.82800e-12 Reference value :  1.17280e-11 Reference value :  1.41280e-11 Reference value :  1.65280e-11 Reference value :  1.72280e-11 Reference value :  1.89280e-11 Reference value :  1.96280e-11 Reference value :  2.04280e-11 Reference value :  2.08280e-11 Reference value :  2.13280e-11 Reference value :  2.31280e-11 Reference value :  2.57280e-11 Reference value :  2.81280e-11 Reference value :  2.95280e-11 Reference value :  3.03280e-11 Reference value :  3.20280e-11 Reference value :  3.35280e-11 Reference value :  3.64280e-11 Reference value :  3.83280e-11 Reference value :  3.91280e-11 Reference value :  4.11280e-11 Reference value :  4.38280e-11 Reference value :  4.64280e-11 Reference value :  4.81280e-11 Reference value :  4.88280e-11 Reference value :  5.15280e-11 Reference value :  5.41280e-11 Reference value :  5.71280e-11 Reference value :  5.95280e-11 Reference value :  6.03280e-11 Reference value :  6.27280e-11 Reference value :  6.56280e-11 Reference value :  6.82280e-11 Reference value :  7.09280e-11 Reference value :  7.15280e-11 Reference value :  7.39280e-11 Reference value :  7.68280e-11 Reference value :  7.93280e-11 Reference value :  8.26280e-11 Reference value :  8.35280e-11 Reference value :  8.55280e-11 Reference value :  8.83280e-11 Reference value :  9.12280e-11 Reference value :  9.41280e-11 Reference value :  9.53280e-11 Reference value :  9.77280e-11 Reference value :  1.00928e-10 Reference value :  1.04128e-10 Reference value :  1.07128e-10 Reference value :  1.08528e-10 Reference value :  1.10328e-10 Reference value :  1.12928e-10 Reference value :  1.15828e-10 Reference value :  1.18828e-10 Reference value :  1.20228e-10 Reference value :  1.20828e-10 Reference value :  1.21928e-10 Reference value :  1.22828e-10 Reference value :  1.23628e-10 Reference value :  1.24328e-10 Reference value :  1.25828e-10 Reference value :  1.26928e-10 Reference value :  1.28328e-10 Reference value :  1.28628e-10 Reference value :  1.29728e-10 Reference value :  1.31028e-10 Reference value :  1.33128e-10 Reference value :  1.34428e-10 Reference value :  1.36228e-10 Reference value :  1.37628e-10 Reference value :  1.40028e-10 Reference value :  1.42228e-10 Reference value :  1.42928e-10 Reference value :  1.44428e-10 Reference value :  1.46728e-10 Reference value :  1.49728e-10 Reference value :  1.52728e-10 Reference value :  1.53828e-10 Reference value :  1.54928e-10 Reference value :  1.56828e-10 Reference value :  1.58528e-10 Reference value :  1.60528e-10 Reference value :  1.61228e-10 Reference value :  1.62328e-10 Reference value :  1.63428e-10 Reference value :  1.64928e-10 Reference value :  1.66428e-10 Reference value :  1.67028e-10 Reference value :  1.68528e-10 Reference value :  1.70428e-10 Reference value :  1.71728e-10 Reference value :  1.72428e-10 Reference value :  1.72628e-10 Reference value :  1.74528e-10 Reference value :  1.76528e-10 Reference value :  1.78128e-10 Reference value :  1.80228e-10 Reference value :  1.81328e-10 Reference value :  1.83428e-10 Reference value :  1.85228e-10 Reference value :  1.86828e-10 Reference value :  1.87428e-10 Reference value :  1.88628e-10 Reference value :  1.90328e-10 Reference value :  1.92728e-10 Reference value :  1.94928e-10 Reference value :  1.96728e-10 Reference value :  1.98528e-10 Reference value :  2.00328e-10 Reference value :  2.01828e-10 Reference value :  2.02728e-10 Reference value :  2.04828e-10 Reference value :  2.07028e-10 Reference value :  2.09028e-10 Reference value :  2.10228e-10 Reference value :  2.11328e-10 Reference value :  2.14528e-10 Reference value :  2.16928e-10 Reference value :  2.19628e-10 Reference value :  2.20928e-10 Reference value :  2.22128e-10 Reference value :  2.23728e-10 Reference value :  2.24828e-10 Reference value :  2.25828e-10 Reference value :  2.26328e-10 Reference value :  2.28228e-10 Reference value :  2.31628e-10 Reference value :  2.33928e-10 Reference value :  2.34528e-10 Reference value :  2.35728e-10 Reference value :  2.37228e-10 Reference value :  2.39928e-10 Reference value :  2.41728e-10 Reference value :  2.42228e-10 Reference value :  2.45128e-10 Reference value :  2.47828e-10 Reference value :  2.49828e-10 Reference value :  2.51428e-10 Reference value :  2.52928e-10 Reference value :  2.55428e-10 Reference value :  2.58128e-10 Reference value :  2.60228e-10 Reference value :  2.61028e-10 Reference value :  2.62228e-10 Reference value :  2.65228e-10 Reference value :  2.67628e-10 Reference value :  2.70128e-10 Reference value :  2.71128e-10 Reference value :  2.73728e-10 Reference value :  2.76928e-10 Reference value :  2.78428e-10 Reference value :  2.81328e-10 Reference value :  2.82328e-10 Reference value :  2.84828e-10 Reference value :  2.86928e-10 Reference value :  2.90528e-10 Reference value :  2.93528e-10 Reference value :  2.94428e-10 Reference value :  2.97228e-10 Reference value :  3.00328e-10 Reference value :  3.03528e-10 Reference value :  3.06428e-10 Reference value :  3.07328e-10 Reference value :  3.10228e-10 Reference value :  3.13328e-10 Reference value :  3.16028e-10 Reference value :  3.19128e-10 Reference value :  3.19928e-10 Reference value :  3.22428e-10 Reference value :  3.25728e-10 Reference value :  3.28028e-10 Reference value :  3.30228e-10 Reference value :  3.31028e-10 Reference value :  3.32728e-10 Reference value :  3.34728e-10 Reference value :  3.37428e-10 Reference value :  3.40128e-10 Reference value :  3.41428e-10 Reference value :  3.43028e-10 Reference value :  3.45828e-10 Reference value :  3.47928e-10 Reference value :  3.49728e-10 Reference value :  3.50928e-10 Reference value :  3.53228e-10 Reference value :  3.56128e-10 Reference value :  3.59128e-10 Reference value :  3.62228e-10 Reference value :  3.64128e-10 Reference value :  3.66128e-10 Reference value :  3.69128e-10 Reference value :  3.72628e-10 Reference value :  3.75728e-10 Reference value :  3.77228e-10 Reference value :  3.78928e-10 Reference value :  3.81528e-10 Reference value :  3.84228e-10 Reference value :  3.86728e-10 Reference value :  3.87928e-10 Reference value :  3.89928e-10 Reference value :  3.92628e-10 Reference value :  3.95628e-10 Reference value :  3.98628e-10 Reference value :  3.99828e-10 Reference value :  4.01828e-10 Reference value :  4.04828e-10 Reference value :  4.08228e-10 Reference value :  4.11428e-10 Reference value :  4.12828e-10 Reference value :  4.14928e-10 Reference value :  4.18228e-10 Reference value :  4.21628e-10 Reference value :  4.24928e-10 Reference value :  4.26028e-10 Reference value :  4.28828e-10 Reference value :  4.32028e-10 Reference value :  4.34628e-10 Reference value :  4.37728e-10 Reference value :  4.38628e-10 Reference value :  4.41428e-10 Reference value :  4.44128e-10 Reference value :  4.47428e-10 Reference value :  4.50728e-10 Reference value :  4.51828e-10 Reference value :  4.54528e-10 Reference value :  4.57428e-10 Reference value :  4.60628e-10 Reference value :  4.63728e-10 Reference value :  4.64628e-10 Reference value :  4.67828e-10 Reference value :  4.71128e-10 Reference value :  4.74328e-10 Reference value :  4.77628e-10 Reference value :  4.78828e-10 Reference value :  4.82228e-10 Reference value :  4.85528e-10 Reference value :  4.88728e-10 Reference value :  4.91728e-10 Reference value :  4.92928e-10 Reference value :  4.95928e-10 Reference value :  4.99028e-10 Reference value :  5.02128e-10 Reference value :  5.04928e-10 Reference value :  5.06328e-10 Reference value :  5.09528e-10 Reference value :  5.12628e-10 Reference value :  5.15728e-10 Reference value :  5.17828e-10 Reference value :  5.19528e-10 Reference value :  5.22728e-10 Reference value :  5.26028e-10 Reference value :  5.29228e-10 Reference value :  5.30928e-10 Reference value :  5.32428e-10 Reference value :  5.35328e-10 Reference value :  5.37928e-10 Reference value :  5.40828e-10 Reference value :  5.42628e-10 Reference value :  5.44228e-10 Reference value :  5.47328e-10 Reference value :  5.50228e-10 Reference value :  5.53228e-10 Reference value :  5.55428e-10 Reference value :  5.57228e-10 Reference value :  5.59428e-10 Reference value :  5.61928e-10 Reference value :  5.65128e-10 Reference value :  5.66728e-10 Reference value :  5.69028e-10 Reference value :  5.72128e-10 Reference value :  5.75128e-10 Reference value :  5.77228e-10 Reference value :  5.78428e-10 Reference value :  5.80428e-10 Reference value :  5.83228e-10 Reference value :  5.85328e-10 Reference value :  5.87528e-10 Reference value :  5.88228e-10 Reference value :  5.89228e-10 Reference value :  5.91328e-10 Reference value :  5.93228e-10 Reference value :  5.95328e-10 Reference value :  5.96528e-10 Reference value :  5.97928e-10 Reference value :  6.00128e-10 Reference value :  6.02228e-10 Reference value :  6.04228e-10 Reference value :  6.05728e-10 Reference value :  6.07028e-10 Reference value :  6.09228e-10 Reference value :  6.11628e-10 Reference value :  6.14228e-10 Reference value :  6.15828e-10 Reference value :  6.17128e-10 Reference value :  6.19528e-10 Reference value :  6.21928e-10 Reference value :  6.24528e-10 Reference value :  6.25728e-10 Reference value :  6.27228e-10 Reference value :  6.29728e-10 Reference value :  6.32128e-10 Reference value :  6.33928e-10 Reference value :  6.35428e-10 Reference value :  6.36628e-10 Reference value :  6.38928e-10 Reference value :  6.41228e-10 Reference value :  6.43728e-10 Reference value :  6.45628e-10 Reference value :  6.46528e-10 Reference value :  6.48728e-10 Reference value :  6.51228e-10 Reference value :  6.53628e-10 Reference value :  6.55428e-10 Reference value :  6.56928e-10 Reference value :  6.59428e-10 Reference value :  6.61828e-10 Reference value :  6.63828e-10 Reference value :  6.64828e-10 Reference value :  6.66428e-10 Reference value :  6.69028e-10 Reference value :  6.71328e-10 Reference value :  6.73728e-10 Reference value :  6.74728e-10 Reference value :  6.76528e-10 Reference value :  6.78728e-10 Reference value :  6.81328e-10 Reference value :  6.83628e-10 Reference value :  6.84828e-10 Reference value :  6.86128e-10 Reference value :  6.88728e-10 Reference value :  6.91228e-10 Reference value :  6.93428e-10 Reference value :  6.94428e-10 Reference value :  6.95828e-10 Reference value :  6.98228e-10 Reference value :  7.00628e-10 Reference value :  7.02528e-10 Reference value :  7.03628e-10 Reference value :  7.05128e-10 Reference value :  7.06828e-10 Reference value :  7.08528e-10 Reference value :  7.10628e-10 Reference value :  7.11628e-10 Reference value :  7.13128e-10 Reference value :  7.15428e-10 Reference value :  7.18028e-10 Reference value :  7.20628e-10 Reference value :  7.21628e-10 Reference value :  7.23228e-10 Reference value :  7.25628e-10 Reference value :  7.28128e-10 Reference value :  7.30628e-10 Reference value :  7.31628e-10 Reference value :  7.33028e-10 Reference value :  7.35228e-10 Reference value :  7.37528e-10 Reference value :  7.39928e-10 Reference value :  7.40928e-10 Reference value :  7.43028e-10 Reference value :  7.45428e-10 Reference value :  7.47628e-10 Reference value :  7.49728e-10 Reference value :  7.50528e-10 Reference value :  7.52228e-10 Reference value :  7.54328e-10 Reference value :  7.56528e-10 Reference value :  7.58128e-10 Reference value :  7.58728e-10 Reference value :  7.60228e-10 Reference value :  7.61728e-10 Reference value :  7.63328e-10 Reference value :  7.64428e-10 Reference value :  7.65728e-10 Reference value :  7.68128e-10 Reference value :  7.70628e-10 Reference value :  7.72928e-10 Reference value :  7.74228e-10 Reference value :  7.75328e-10 Reference value :  7.77128e-10 Reference value :  7.78628e-10 Reference value :  7.80328e-10 Reference value :  7.81328e-10 Reference value :  7.82728e-10 Reference value :  7.84628e-10 Reference value :  7.86528e-10 Reference value :  7.88528e-10 Reference value :  7.89428e-10 Reference value :  7.90328e-10 Reference value :  7.91828e-10 Reference value :  7.93628e-10 Reference value :  7.95428e-10 Reference value :  7.96628e-10 Reference value :  7.97328e-10 Reference value :  7.99228e-10 Reference value :  8.00128e-10 Reference value :  8.01328e-10 Reference value :  8.01828e-10 Reference value :  8.03128e-10 Reference value :  8.04928e-10 Reference value :  8.06728e-10 Reference value :  8.08028e-10 Reference value :  8.09228e-10 Reference value :  8.10728e-10 Reference value :  8.12028e-10 Reference value :  8.13428e-10 Reference value :  8.14828e-10 Reference value :  8.15428e-10 Reference value :  8.15828e-10 Reference value :  8.16428e-10 Reference value :  8.16728e-10 Reference value :  8.17128e-10 Reference value :  8.17828e-10 Reference value :  8.18428e-10 Reference value :  8.19328e-10 Reference value :  8.20000e-10
+ Reference value :  0.00000e+00 Reference value :  3.32800e-12 Reference value :  5.52800e-12 Reference value :  9.92800e-12 Reference value :  1.43280e-11 Reference value :  1.84280e-11 Reference value :  2.21280e-11 Reference value :  2.51280e-11 Reference value :  2.92280e-11 Reference value :  3.34280e-11 Reference value :  3.77280e-11 Reference value :  4.02280e-11 Reference value :  4.43280e-11 Reference value :  4.85280e-11 Reference value :  5.27280e-11 Reference value :  5.63280e-11 Reference value :  5.93280e-11 Reference value :  6.35280e-11 Reference value :  6.77280e-11 Reference value :  7.16280e-11 Reference value :  7.43280e-11 Reference value :  7.81280e-11 Reference value :  8.23280e-11 Reference value :  8.63280e-11 Reference value :  8.98280e-11 Reference value :  9.33280e-11 Reference value :  9.68280e-11 Reference value :  1.01328e-10 Reference value :  1.05128e-10 Reference value :  1.08028e-10 Reference value :  1.11928e-10 Reference value :  1.15728e-10 Reference value :  1.20028e-10 Reference value :  1.23328e-10 Reference value :  1.26728e-10 Reference value :  1.30328e-10 Reference value :  1.34128e-10 Reference value :  1.37728e-10 Reference value :  1.40728e-10 Reference value :  1.44328e-10 Reference value :  1.47728e-10 Reference value :  1.51128e-10 Reference value :  1.54428e-10 Reference value :  1.58128e-10 Reference value :  1.61228e-10 Reference value :  1.64728e-10 Reference value :  1.67628e-10 Reference value :  1.70728e-10 Reference value :  1.74928e-10 Reference value :  1.79028e-10 Reference value :  1.82728e-10 Reference value :  1.86128e-10 Reference value :  1.88128e-10 Reference value :  1.91528e-10 Reference value :  1.94428e-10 Reference value :  1.97828e-10 Reference value :  1.99728e-10 Reference value :  2.03128e-10 Reference value :  2.07228e-10 Reference value :  2.10728e-10 Reference value :  2.14328e-10 Reference value :  2.16028e-10 Reference value :  2.19228e-10 Reference value :  2.21028e-10 Reference value :  2.23328e-10 Reference value :  2.25828e-10 Reference value :  2.29328e-10 Reference value :  2.32828e-10 Reference value :  2.35428e-10 Reference value :  2.39328e-10 Reference value :  2.42328e-10 Reference value :  2.46728e-10 Reference value :  2.50628e-10 Reference value :  2.54928e-10 Reference value :  2.58028e-10 Reference value :  2.62528e-10 Reference value :  2.66228e-10 Reference value :  2.70628e-10 Reference value :  2.74528e-10 Reference value :  2.76728e-10 Reference value :  2.79228e-10 Reference value :  2.82928e-10 Reference value :  2.87028e-10 Reference value :  2.90328e-10 Reference value :  2.94528e-10 Reference value :  2.98028e-10 Reference value :  3.02128e-10 Reference value :  3.05928e-10 Reference value :  3.08828e-10 Reference value :  3.12528e-10 Reference value :  3.16628e-10 Reference value :  3.20828e-10 Reference value :  3.23828e-10 Reference value :  3.27428e-10 Reference value :  3.31428e-10 Reference value :  3.35728e-10 Reference value :  3.39228e-10 Reference value :  3.42828e-10 Reference value :  3.46328e-10 Reference value :  3.50128e-10 Reference value :  3.54228e-10 Reference value :  3.56728e-10 Reference value :  3.59328e-10 Reference value :  3.62528e-10 Reference value :  3.65628e-10 Reference value :  3.67628e-10 Reference value :  3.69828e-10 Reference value :  3.72228e-10 Reference value :  3.74928e-10 Reference value :  3.77828e-10 Reference value :  3.80328e-10 Reference value :  3.83128e-10 Reference value :  3.87428e-10 Reference value :  3.91428e-10 Reference value :  3.94828e-10 Reference value :  3.98328e-10 Reference value :  4.02628e-10 Reference value :  4.06628e-10 Reference value :  4.10628e-10 Reference value :  4.13328e-10 Reference value :  4.17228e-10 Reference value :  4.21328e-10 Reference value :  4.25528e-10 Reference value :  4.28628e-10 Reference value :  4.32428e-10 Reference value :  4.36428e-10 Reference value :  4.40628e-10 Reference value :  4.44628e-10 Reference value :  4.47628e-10 Reference value :  4.51728e-10 Reference value :  4.55828e-10 Reference value :  4.59028e-10 Reference value :  4.61228e-10 Reference value :  4.63228e-10 Reference value :  4.66928e-10 Reference value :  4.69228e-10 Reference value :  4.71228e-10 Reference value :  4.73828e-10 Reference value :  4.77528e-10 Reference value :  4.81328e-10 Reference value :  4.85328e-10 Reference value :  4.87228e-10 Reference value :  4.90528e-10 Reference value :  4.94728e-10 Reference value :  4.98828e-10 Reference value :  5.02528e-10 Reference value :  5.05428e-10 Reference value :  5.09628e-10 Reference value :  5.13828e-10 Reference value :  5.18128e-10 Reference value :  5.20828e-10 Reference value :  5.24928e-10 Reference value :  5.29028e-10 Reference value :  5.33128e-10 Reference value :  5.37028e-10 Reference value :  5.40428e-10 Reference value :  5.44628e-10 Reference value :  5.48628e-10 Reference value :  5.52728e-10 Reference value :  5.54928e-10 Reference value :  5.58428e-10 Reference value :  5.61128e-10 Reference value :  5.63928e-10 Reference value :  5.65228e-10 Reference value :  5.66628e-10 Reference value :  5.68028e-10 Reference value :  5.69828e-10 Reference value :  5.71228e-10 Reference value :  5.73128e-10 Reference value :  5.77228e-10 Reference value :  5.81428e-10 Reference value :  5.84428e-10 Reference value :  5.86528e-10 Reference value :  5.90228e-10 Reference value :  5.94628e-10 Reference value :  5.98528e-10 Reference value :  6.00928e-10 Reference value :  6.03928e-10 Reference value :  6.06828e-10 Reference value :  6.09328e-10 Reference value :  6.10928e-10 Reference value :  6.12828e-10 Reference value :  6.16728e-10 Reference value :  6.20128e-10 Reference value :  6.22928e-10 Reference value :  6.24628e-10 Reference value :  6.25828e-10 Reference value :  6.28928e-10 Reference value :  6.33228e-10 Reference value :  6.36728e-10 Reference value :  6.40128e-10 Reference value :  6.41328e-10 Reference value :  6.42928e-10 Reference value :  6.45828e-10 Reference value :  6.49628e-10 Reference value :  6.51428e-10 Reference value :  6.54228e-10 Reference value :  6.56528e-10 Reference value :  6.60028e-10 Reference value :  6.63528e-10 Reference value :  6.66928e-10 Reference value :  6.71128e-10 Reference value :  6.75028e-10 Reference value :  6.78928e-10 Reference value :  6.81828e-10 Reference value :  6.85628e-10 Reference value :  6.89428e-10 Reference value :  6.93028e-10 Reference value :  6.97228e-10 Reference value :  7.00628e-10 Reference value :  7.04928e-10 Reference value :  7.06728e-10 Reference value :  7.08628e-10 Reference value :  7.10228e-10 Reference value :  7.13428e-10 Reference value :  7.16728e-10 Reference value :  7.20628e-10 Reference value :  7.24628e-10 Reference value :  7.27728e-10 Reference value :  7.31728e-10 Reference value :  7.35328e-10 Reference value :  7.39028e-10 Reference value :  7.42228e-10 Reference value :  7.46128e-10 Reference value :  7.49628e-10 Reference value :  7.54028e-10 Reference value :  7.58028e-10 Reference value :  7.60828e-10 Reference value :  7.64328e-10 Reference value :  7.68428e-10 Reference value :  7.72428e-10 Reference value :  7.74828e-10 Reference value :  7.78428e-10 Reference value :  7.81928e-10 Reference value :  7.86028e-10 Reference value :  7.89528e-10 Reference value :  7.92328e-10 Reference value :  7.95828e-10 Reference value :  7.99828e-10 Reference value :  8.03628e-10 Reference value :  8.06428e-10 Reference value :  8.10028e-10 Reference value :  8.12228e-10 Reference value :  8.14128e-10 Reference value :  8.16328e-10 Reference value :  8.18528e-10
 No. of Data Rows : 8208
 ngspice-32 done

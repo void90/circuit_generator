@@ -178,10 +178,23 @@ int main (int argc, char **argv)
 	x=atof(argv[3]);
 	y=atof(argv[4]);
 //Controllo ingressi
-	if( (x> (pow(2, max)-1)) || (y> (pow(2, max)-1)))
+	if (x> pow(2, max)-1)
 	{
 		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
-		return -1;
+		for(i=31; i>=max; i--)
+		{
+			if(x>=pow(2, i))
+			{	x-=pow(2, i);}
+		}
+	}
+	else if (y>pow(2, max)-1)
+	{
+		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
+		for(i=31; i>=max; i--)
+		{
+			if(y>=pow(2, i))
+			{	y-=pow(2, i);}
+		}
 	}
 	int X_binary[max];
 	int Y_binary[max];

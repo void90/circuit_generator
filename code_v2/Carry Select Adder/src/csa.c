@@ -100,10 +100,23 @@ int main (int argc, char **argv)
 //Conversione operandi di ingresso
 	unsigned long long int a=atof(argv[3]), b=atof(argv[4]);
 //Controllo ingressi
-	if( (a> (pow(2, max)-1)) || (b> (pow(2, max)-1)))
+	if (a> pow(2, max)-1)
 	{
 		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
-		return -1;
+		for(i=31; i>=max; i--)
+		{
+			if(a>=pow(2, i))
+			{	a-=pow(2, i);}
+		}
+	}
+	else if (b>pow(2, max)-1)
+	{
+		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
+		for(i=31; i>=max; i--)
+		{
+			if(b>=pow(2, i))
+			{	b-=pow(2, i);}
+		}
 	}
 	int A_binary[max], B_binary[max];
 ///*TEST*/int S_binary[max];

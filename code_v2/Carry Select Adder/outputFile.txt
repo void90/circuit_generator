@@ -1,7 +1,8 @@
-CARRY SELECT ADDER 4 bits
+CARRY SELECT ADDER 16 bits
 
 inA	inB	out atteso	out simul		 time
-0	0	0		0			 0 h 0 m 28 s
+***WARNING: next line is different with input file ***
+3567	100	3667		3667			 0 h 0 m 51 s
 
 Architecture:        x86_64
 CPU op-mode(s):      32-bit, 64-bit
@@ -17,7 +18,7 @@ CPU family:          6
 Model:               61
 Model name:          Intel(R) Core(TM) i7-5500U CPU @ 2.40GHz
 Stepping:            4
-CPU MHz:             2394.460
+CPU MHz:             2394.461
 BogoMIPS:            4788.92
 Hypervisor vendor:   VMware
 Virtualization type: full

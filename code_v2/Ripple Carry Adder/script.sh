@@ -106,7 +106,7 @@ then
 			ngspice $netName 1>&displayNG.txt
 			end_time=$(date +%s)
 			cd ..
-			bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim
+			bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim $numBit
 			diff=$(($end_time-$start_time))
 			sec=$(($diff%60))
 			min=$((($sec/60)%60))

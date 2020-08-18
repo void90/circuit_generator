@@ -1,4 +1,4 @@
-1-Cambiare error -> Warning 
+FATTO - Cambiare error -> Warning 
 Tagliare i numeri di ingresso, "cast" per il numero di bit utilizzati
 
 FATTO-Inserire in testa output file commento in cui si indica numero di bit e circuito utilizzato
