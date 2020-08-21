@@ -6,6 +6,11 @@
 #define COLOR_OFF "\e[0m"
 #define MAGENTA(text) "\e[0;35m"
 
+#define MASK4 0x0000000F
+#define MASK8 0x000000FF
+#define MASK16 0x0000FFFF
+#define MASK32 0xFFFFFFFF
+
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
@@ -99,24 +104,32 @@ int main (int argc, char **argv)
 
 //Conversione operandi di ingresso
 	unsigned long long int a=atof(argv[3]), b=atof(argv[4]);
+	unsigned long long int mask;
+	switch (max)
+	{
+		case 4:
+			mask = MASK4;
+			break;
+		case 8:
+			mask = MASK8;
+			break;
+		case 16:
+			mask = MASK16;
+			break;
+		case 32:
+			mask = MASK32;
+			break;
+	}
 //Controllo ingressi
 	if (a> pow(2, max)-1)
 	{
 		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
-		for(i=31; i>=max; i--)
-		{
-			if(a>=pow(2, i))
-			{	a-=pow(2, i);}
-		}
+		a = (a&mask);
 	}
-	else if (b>pow(2, max)-1)
+	if (b>pow(2, max)-1)
 	{
 		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
-		for(i=31; i>=max; i--)
-		{
-			if(b>=pow(2, i))
-			{	b-=pow(2, i);}
-		}
+		b = (b&mask);
 	}
 	int A_binary[max], B_binary[max];
 ///*TEST*/int S_binary[max];

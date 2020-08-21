@@ -10,7 +10,7 @@ CARRY SELECT ADDER
 .PARAM Lmin=16n
 .PARAM Wmin=16n
 .PARAM XXX=1
-.TRAN 1p 2000p
+.TRAN 0.1p 820p
 
 ***Setup logic
 ***Indipendente Numero dei bit nel circuito finale (NO CAMBIARE)
@@ -58,47 +58,20 @@ CARRY SELECT ADDER
 .ends
 
 ***Questo componente racchiude per numeroBit>4 più CSA4_SUB quindi cambia in base al numero dei bit
-.subckt CSA_SUB 0 Vdd sum0 sum1 sum2 sum3 sum4 sum5 sum6 sum7 sum8 sum9 sum10 sum11 sum12 sum13 sum14 sum15 cout15 cin0 cin1 cin ain0 ain1 ain2 ain3 ain4 ain5 ain6 ain7 ain8 ain9 ain10 ain11 ain12 ain13 ain14 ain15 bin0 bin1 bin2 bin3 bin4 bin5 bin6 bin7 bin8 bin9 bin10 bin11 bin12 bin13 bin14 bin15 XX=1
+.subckt CSA_SUB 0 Vdd sum0 sum1 sum2 sum3 cout3 cin0 cin1 cin ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 XX=1
 	xcsa4_0 0 Vdd sum0 sum1 sum2 sum3 cout3 0 cin1 0 ain0 ain1 ain2 ain3 bin0 bin1 bin2 bin3 CSA4_SUB XX=1
-	xcsa4_1 0 Vdd sum4 sum5 sum6 sum7 cout7 0 cin1 cout3 ain4 ain5 ain6 ain7 bin4 bin5 bin6 bin7 CSA4_SUB XX=1
-	xcsa4_2 0 Vdd sum8 sum9 sum10 sum11 cout11 0 cin1 cout7 ain8 ain9 ain10 ain11 bin8 bin9 bin10 bin11 CSA4_SUB XX=1
-	xcsa4_3 0 Vdd sum12 sum13 sum14 sum15 cout15 0 cin1 cout11 ain12 ain13 ain14 ain15 bin12 bin13 bin14 bin15 CSA4_SUB XX=1
 .ends
 
-xcsa 0 Vcc s0 s1 s2 s3 s4 s5 s6 s7 s8 s9 s10 s11 s12 s13 s14 s15 CCout C0 C1 Ci a0 a1 a2 a3 a4 a5 a6 a7 a8 a9 a10 a11 a12 a13 a14 a15 b0 b1 b2 b3 b4 b5 b6 b7 b8 b9 b10 b11 b12 b13 b14 b15 CSA_SUB XX=1
+xcsa 0 Vcc s0 s1 s2 s3 CCout C0 C1 Ci a0 a1 a2 a3 b0 b1 b2 b3 CSA_SUB XX=1
 
-VinA15 A15 0 0
-VinA14 A14 0 0
-VinA13 A13 0 0
-VinA12 A12 0 0
-VinA11 A11 0 ALIM
-VinA10 A10 0 ALIM
-VinA9 A9 0 0
-VinA8 A8 0 ALIM
-VinA7 A7 0 ALIM
-VinA6 A6 0 ALIM
-VinA5 A5 0 ALIM
-VinA4 A4 0 0
-VinA3 A3 0 ALIM
-VinA2 A2 0 ALIM
-VinA1 A1 0 ALIM
-VinA0 A0 0 ALIM
-VinB15 B15 0 0
-VinB14 B14 0 0
-VinB13 B13 0 0
-VinB12 B12 0 0
-VinB11 B11 0 0
-VinB10 B10 0 0
-VinB9 B9 0 0
-VinB8 B8 0 0
-VinB7 B7 0 0
-VinB6 B6 0 ALIM
-VinB5 B5 0 ALIM
-VinB4 B4 0 0
+VinA3 A3 0 0
+VinA2 A2 0 0
+VinA1 A1 0 0
+VinA0 A0 0 0
 VinB3 B3 0 0
-VinB2 B2 0 ALIM
+VinB2 B2 0 0
 VinB1 B1 0 0
-VinB0 B0 0 0
+VinB0 B0 0 ALIM
 ***Tensioni Fisse
 V_C1 C1 0 ALIM
 V_dd Vcc 0 ALIM
@@ -106,7 +79,7 @@ V_dd Vcc 0 ALIM
 .control
 run
 let k= length(time)-1
-print s0[k] s1[k] s2[k] s3[k] s4[k] s5[k] s6[k] s7[k] s8[k] s9[k] s10[k] s11[k] s12[k] s13[k] s14[k] s15[k] Ccout[k]>outputValue.txt
+print s0[k] s1[k] s2[k] s3[k] Ccout[k]>outputValue.txt
 quit
 .endc
 .end
