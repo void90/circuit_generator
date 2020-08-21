@@ -71,10 +71,10 @@ paramSimulation
 if [ -e $fileout ]
 then
 	rm $fileout
+fi
 	touch $fileout
 	echo -e "RIPPLE CARRY ADDER $numBit bits\n">$fileout
 	echo -e "inA\tinB\tout atteso\tout simul\t\t time">>$fileout
-fi
 #controllo esistenza del file
 if [ -e $file ] && [ -r $file ]
 then
