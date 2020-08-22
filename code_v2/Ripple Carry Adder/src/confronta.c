@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	FILE *outVal, *outputFile;
 	double valF=0, up, down, alim=1;
 	unsigned long long int bin=0;
-	unsigned long long int a=atof(argv[1]), b=atof(argv[2]), out_atteso=0;
+	unsigned long long int a=atoll(argv[1]), b=atoll(argv[2]), out_atteso=0;
 	int n=atoi(argv[5]);
 	//short int i;
 	char count=0, rows=0;
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
 	out_atteso=a+b;
 	printf("inA\tinB\tout atteso\tout simul\n");
 	printf("%lld\t%lld\t%lld\t\t%llu\n", a, b, out_atteso, bin);
-	if (out_atteso != atof(argv[3]))
+	if (out_atteso != atoll(argv[3]))
 	{
 		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
 	}

@@ -5,19 +5,20 @@
 #define RED(text) "\e[0;31m"
 #define GREEN(text) "\e[0;32m"
 
-#define MASK4 0x0000000000000000000000000000000F
-#define MASK8 0x000000000000000000000000000000FF
-#define MASK16 0x0000000000000000000000000000FFFF
-#define MASK32 0x000000000000000000000000FFFFFFFF
+#define MASK4 0x0000000F
+#define MASK8 0x000000FF
+#define MASK16 0x0000FFFF
+#define MASK32 0xFFFFFFFF
 
 int main(int argc, char **argv)
 {
 	FILE *outVal, *outputFile;
-	char count=0, rows=0, *endptr;
+	char count=0, rows=0;
 	double valF=0, up, down, alim=1;
-//	unsigned long long int bin=0;
-	long double bin=0;
-	long double a=strtold(argv[1], &endptr), b=strtold(argv[2], &endptr), out_atteso=0;
+	unsigned long long int bin=0;
+//	long double bin=0;
+//	long double a=strtold(argv[1], &endptr), b=strtold(argv[2], &endptr), out_atteso=0;
+	unsigned long long int a=atoll(argv[1]), b=atoll(argv[2]), out_atteso=0;
 	int n=atoi(argv[5]);
 	//short int i;
 	char val[100];
@@ -68,7 +69,8 @@ int main(int argc, char **argv)
 			rows++;
 		}
 	}
-	long double mask;
+//	long double mask;
+	unsigned long long int mask;
 	switch (n)
 	{
 		case 4:
@@ -91,12 +93,14 @@ int main(int argc, char **argv)
 	{	b = (b&mask);	}
 	out_atteso=a*b;
 	printf("inA\tinB\tout atteso\tout simul\n");
-	printf("%Lf\t%Lf\t%Lf\t\t%Lf\n", a, b, out_atteso, bin);
-	if (out_atteso != strtold(argv[3], &endptr))
+//	printf("%Lf\t%Lf\t%Lf\t\t%Lf\n", a, b, out_atteso, bin);
+	printf("%lld\t%lld\t%lld\t\t%lld\n", a, b, out_atteso, bin);
+	if (out_atteso != atoll(argv[3]))
 	{
 		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
 	}
-	fprintf(outputFile, "%Lf\t%Lf\t%Lf\t\t%Lf\t", a, b, out_atteso, bin);	
+//	fprintf(outputFile, "%Lf\t%Lf\t%Lf\t\t%Lf\t", a, b, out_atteso, bin);
+	fprintf(outputFile, "%lld\t%lld\t%lld\t\t%lld\t", a, b, out_atteso, bin);	
 	if( bin == out_atteso )
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);

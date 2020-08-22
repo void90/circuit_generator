@@ -5,16 +5,22 @@
 #define RED(text) "\e[0;31m"
 #define GREEN(text) "\e[0;32m"
 
+#define MASK4 0x0000000F
+#define MASK8 0x000000FF
+#define MASK16 0x0000FFFF
+#define MASK32 0xFFFFFFFF
+
 int main(int argc, char **argv)
 {
 	FILE *outVal, *outputFile;
-	char count=0, rows=0, *endptr;
+	char count=0, rows=0;
 	double valF=0, up, down, alim=1;
-//	unsigned long long int bin=0;
-	long double bin=0;
-	long double a=strtold(argv[1], &endptr), b=strtold(argv[2], &endptr), out_atteso=0;
+	unsigned long long int bin=0;
+//	long double bin=0;
+//	long double a=strtold(argv[1], &endptr), b=strtold(argv[2], &endptr), out_atteso=0;
+	unsigned long long int a=atoll(argv[1]), b=atoll(argv[2]), out_atteso=0;
 	int n=atoi(argv[5]);
-	short int i;
+	//short int i;
 	char val[100];
 	outputFile=fopen("outputFile.txt", "a");
 	if(outputFile==NULL)
@@ -63,30 +69,35 @@ int main(int argc, char **argv)
 			rows++;
 		}
 	}
+	unsigned long long int mask;
+	switch (n)
+	{
+		case 4:
+			mask = MASK4;
+			break;
+		case 8:
+			mask = MASK8;
+			break;
+		case 16:
+			mask = MASK16;
+			break;
+		case 32:
+			mask = MASK32;
+			break;
+	}
+//Controllo ingressi
 	if (a> pow(2, n)-1)
-	{
-		for(i=31; i>=n; i--)
-		{
-			if(a>=pow(2, i))
-			{	a-=pow(2, i);}
-		}
-	}
-	else if (b>pow(2, n)-1)
-	{
-		for(i=31; i>=n; i--)
-		{
-			if(b>=pow(2, i))
-			{	b-=pow(2, i);}
-		}
-	}
+	{	a = (a&mask);	}
+	if (b>pow(2, n)-1)
+	{	b = (b&mask);	}
 	out_atteso=a*b;
 	printf("inA\tinB\tout atteso\tout simul\n");
-	printf("%Lf\t%Lf\t%Lf\t\t%Lf\n", a, b, out_atteso, bin);
-	if (out_atteso != strtold(argv[3], &endptr))
+	printf("%lld\t%lld\t%lld\t\t%lld\n", a, b, out_atteso, bin);
+	if (out_atteso != atoll(argv[3]))
 	{
 		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
 	}
-	fprintf(outputFile, "%Lf\t%Lf\t%Lf\t\t%Lf\t", a, b, out_atteso, bin);	
+	fprintf(outputFile, "%lld\t%lld\t%lld\t\t%lld\t", a, b, out_atteso, bin);	
 	if( bin == out_atteso )
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);

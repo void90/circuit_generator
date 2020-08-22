@@ -253,12 +253,12 @@ int main (int argc, char **argv)
 //Controllo ingressi
 	if (a> pow(2, n)-1)
 	{
-		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, n);
+		printf("%sWARNING%s: inserted numbers aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, n);
 		a = (a&mask);
 	}
 	if (b>pow(2, n)-1)
 	{
-		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, n);
+		printf("%sWARNING%s: inserted numbers aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, n);
 		b = (b&mask);
 	}
 	int A_binary[n], B_binary[n];

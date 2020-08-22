@@ -123,12 +123,12 @@ int main (int argc, char **argv)
 //Controllo ingressi
 	if (a> pow(2, max)-1)
 	{
-		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
+		printf("%sWARNING%s: inserted numbers aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
 		a = (a&mask);
 	}
 	if (b>pow(2, max)-1)
 	{
-		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
+		printf("%sWARNING%s: inserted numbers aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
 		b = (b&mask);
 	}
 	int A_binary[max], B_binary[max];

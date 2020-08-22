@@ -6,6 +6,11 @@
 #define COLOR_OFF "\e[0m"
 #define MAGENTA(text) "\e[0;35m"
 
+#define MASK4 0x0000000F
+#define MASK8 0x000000FF
+#define MASK16 0x0000FFFF
+#define MASK32 0xFFFFFFFF
+
 int main (int argc, char **argv)
 {
 //Inizializzazione variabili
@@ -177,24 +182,32 @@ int main (int argc, char **argv)
 /*TEST*/unsigned long long int p;
 	x=atof(argv[3]);
 	y=atof(argv[4]);
+		unsigned long long int mask;
+	switch (max)
+	{
+		case 4:
+			mask = MASK4;
+			break;
+		case 8:
+			mask = MASK8;
+			break;
+		case 16:
+			mask = MASK16;
+			break;
+		case 32:
+			mask = MASK32;
+			break;
+	}
 //Controllo ingressi
 	if (x> pow(2, max)-1)
 	{
-		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
-		for(i=31; i>=max; i--)
-		{
-			if(x>=pow(2, i))
-			{	x-=pow(2, i);}
-		}
+		printf("%sWARNING%s: inserted numbers aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
+		x = (x&mask);
 	}
-	else if (y>pow(2, max)-1)
+	if (y>pow(2, max)-1)
 	{
-		printf("%sWARNING%s: inserted number aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
-		for(i=31; i>=max; i--)
-		{
-			if(y>=pow(2, i))
-			{	y-=pow(2, i);}
-		}
+		printf("%sWARNING%s: inserted numbers aren't representable with %d bit\n", MAGENTA(text), COLOR_OFF, max);
+		y = (y&mask);
 	}
 	int X_binary[max];
 	int Y_binary[max];
