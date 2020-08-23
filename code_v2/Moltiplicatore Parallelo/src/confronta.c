@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		{
 			valF=atof(val);
 			if(valF >= up)
-			{	bin+=pow(2, rows);}
+			{	bin+=(unsigned long long int)pow(2, rows);}
 /*			{	bin |= (1 <<rows) ;	}
 			else if (valF<= down)
 			{	bin &=~ (1 <<rows);	}
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
 				printf("WARNING: param [%d] is between %f and %f\n", rows, down, up);
 				fprintf(outputFile, "WARNING: param [%d] of %s is between %f and %f\n", rows, argv[3], down, up);
 				if( valF>=0.50*alim)
-				{	bin+=pow(2, rows);}
+				{	bin+=(unsigned long long int)pow(2, rows);}
 /*				{
 					bin |= (1 <<rows) ;
 				}
@@ -92,12 +92,12 @@ int main(int argc, char **argv)
 	{	b = (b&mask);	}
 	out_atteso=a*b;
 	printf("inA\tinB\tout atteso\tout simul\n");
-	printf("%lld\t%lld\t%llu\t\t%llu\n", a, b, out_atteso, bin);
+	printf("%llu\t%llu\t%llu\t\t%llu\n", a, b, out_atteso, bin);
 	if (out_atteso != atoll(argv[3]))
 	{
 		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
 	}
-	fprintf(outputFile, "%lld\t%lld\t%llu\t\t%llu\t", a, b, out_atteso, bin);	
+	fprintf(outputFile, "%llu\t%llu\t%llu\t\t%llu\t", a, b, out_atteso, bin);	
 	if( bin == out_atteso )
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
