@@ -94,13 +94,13 @@ int main(int argc, char **argv)
 	out_atteso=a*b;
 	printf("inA\tinB\tout atteso\tout simul\n");
 //	printf("%Lf\t%Lf\t%Lf\t\t%Lf\n", a, b, out_atteso, bin);
-	printf("%lld\t%lld\t%lld\t\t%lld\n", a, b, out_atteso, bin);
+	printf("%lld\t%lld\t%llu\t\t%llu\n", a, b, out_atteso, bin);
 	if (out_atteso != atoll(argv[3]))
 	{
 		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
 	}
 //	fprintf(outputFile, "%Lf\t%Lf\t%Lf\t\t%Lf\t", a, b, out_atteso, bin);
-	fprintf(outputFile, "%lld\t%lld\t%lld\t\t%lld\t", a, b, out_atteso, bin);	
+	fprintf(outputFile, "%lld\t%lld\t%llu\t\t%llu\t", a, b, out_atteso, bin);	
 	if( bin == out_atteso )
 	{
 		printf("%sMatched%s\n", GREEN(text), COLOR_OFF);
