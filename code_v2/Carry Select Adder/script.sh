@@ -109,8 +109,8 @@ then
 			bin/confronta.out ${stringa[i]} ${stringa[i+1]} ${stringa[i+2]} $alim $numBit
 			diff=$(($end_time-$start_time))
 			sec=$(($diff%60))
-			min=$((($sec/60)%60))
-			h=$(($sec/3600))
+			min=$((($diff/60)%60))
+			h=$(($diff/3600))
 			echo -e "\t\t" $h "h" $min "m" $sec "s\n">>$fileout
 		fi
 		(( i= i+3 ))
