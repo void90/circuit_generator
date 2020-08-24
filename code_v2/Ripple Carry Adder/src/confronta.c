@@ -15,10 +15,10 @@ int main(int argc, char **argv)
 	FILE *outVal, *outputFile;
 	double valF=0, up, down, alim=1;
 	unsigned long long int bin=0;
-	unsigned long long int a=atoll(argv[1]), b=atoll(argv[2]), out_atteso=0;
-	int n=atoi(argv[5]);
+	int n=atoi(argv[5]), base=10;
+	char count=0, rows=0, *endptr;
+	unsigned long long int a=strtoull(argv[1], &endptr, base), b=strtoull(argv[2], &endptr, base), out_atteso=0;
 	//short int i;
-	char count=0, rows=0;
 	char val[100];
 	outputFile=fopen("outputFile.txt", "a");
 	if(outputFile==NULL)
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
 	out_atteso=a+b;
 	printf("inA\tinB\tout atteso\tout simul\n");
 	printf("%llu\t%llu\t%llu\t\t%llu\n", a, b, out_atteso, bin);
-	if (out_atteso != atoll(argv[3]))
+	if (out_atteso != strtoull(argv[3], &endptr, base))
 	{
 		fprintf(outputFile, "***WARNING: next line is different with input file ***\n");
 	}
