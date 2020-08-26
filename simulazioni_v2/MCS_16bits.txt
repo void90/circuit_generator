@@ -1,15 +1,12 @@
 CARRY SAVE MULTIPLIER 16 bits
 
 inA	inB	out atteso	out simul		 time
-0	0	0		0		 0 h 3 m 42 s
+65535	32768	2147450880		2147450880		 0 h 6 m 41 s
+
+65535	65535	4294836225		4294836225		 0 h 4 m 2 s
 
 ***WARNING: next line is different with input file ***
-65535	32768	2147450880		2147450880		 0 h 6 m 37 s
-
-65535	65535	4294836225		4294836225		 0 h 4 m 30 s
-
-***WARNING: next line is different with input file ***
-0	1	0		0		 0 h 4 m 16 s
+0	1	0		0		 0 h 3 m 59 s
 
 Architecture:        x86_64
 CPU op-mode(s):      32-bit, 64-bit
