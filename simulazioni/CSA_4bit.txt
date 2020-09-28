@@ -1,8 +1,0 @@
-inA	inB	out atteso	out simul
-0	0	0		0	Matched
-0	1	1		1	Matched
-1	1	2		2	Matched
-3	1	4		4	Matched
-5	3	8		8	Matched
-15	1	16		16	Matched
-15	15	30		30	Matched

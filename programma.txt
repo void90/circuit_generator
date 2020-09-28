@@ -1,9 +1,0 @@
-FATTO - Cambiare error -> Warning 
-Tagliare i numeri di ingresso, "cast" per il numero di bit utilizzati
-
-FATTO-Inserire in testa output file commento in cui si indica numero di bit e circuito utilizzato
-
-FATTO-In coda al file di ouput inserire informazioni sul processore simulato
-iscpu -->variabile di simulazione
-
-FATTO-colonna in più al fie di output con tempo impiegato utilizzando date prima e dopo il comando ngspice e fare la differenza
